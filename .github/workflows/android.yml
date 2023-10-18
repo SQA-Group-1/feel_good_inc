@@ -19,10 +19,10 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-        - name: Run Tests
+    - name: Run Tests
           run: ./gradlew test
 
-        - name: Buld Project
+    - name: Buld Project
            run: ./gradlew assemble
 
   #   - name: Grant execute permission for gradlew
