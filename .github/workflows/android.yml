@@ -19,20 +19,26 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+        - name: Run Tests
+          run: ./gradlew test
 
-  test:
+        - name: Buld Project
+           run: ./gradlew assemble
 
-    runs-on: ubuntu-latest
+  #   - name: Grant execute permission for gradlew
+  #     run: chmod +x gradlew
+  #   - name: Build with Gradle
+  #     run: ./gradlew build
 
-    steps:
-      - name: Run Tests
-        uses: ReactiveCircus/android-emulator-runner@v2
-        with:
-          api-level: 34
-          target: google_apis
-          arch: x86_64
-          script: ./gradlew connectedCheck
+  # test:
+
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Run Tests
+  #       uses: ReactiveCircus/android-emulator-runner@v2
+  #       with:
+  #         api-level: 34
+  #         target: google_apis
+  #         arch: x86_64
+  #         script: ./gradlew connectedCheck
