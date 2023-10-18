@@ -23,3 +23,16 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Tests
+        uses: ReactiveCircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          script: ./gradlew connectedCheck
