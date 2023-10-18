@@ -19,26 +19,26 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Unit tests
-      run: bash ./gradlew test --stacktrace
+    # Execute unit tests
+    - name: Unit Test
+      run: ./gradlew testDebugUnitTest
 
+    - name: Android Test Report
+      uses: asadmansr/android-test-report-action@v1.2.0
+      if: ${{ always() }} # IMPORTANT: run Android Test Report regardless
 
-    # - name: Unit tests results
-    #   uses: actions/upload-artifact@v1
-    #   with:
-    #     name: unit-tests-results
-    #     path: app/build/reports/tests/testDebugUnitTest/index.html
+    # - name: Unit tests
+    #   run: bash ./gradlew test --stacktrace
 
-     # Execute unit tests
-      - name: Unit Test
-        run: ./gradlew testDebugUnitTest
+      
+    # # - name: Unit tests results
+    # #   uses: actions/upload-artifact@v1
+    # #   with:
+    # #     name: unit-tests-results
+    # #     path: app/build/reports/tests/testDebugUnitTest/index.html
 
-      - name: Android Test Report
-        uses: asadmansr/android-test-report-action@v1.2.0
-        if: ${{ always() }} # IMPORTANT: run Android Test Report regardless
-
-    - name: Buld Project
-      run: ./gradlew assemble
+    # - name: Buld Project
+    #   run: ./gradlew assemble
 
   #   - name: Grant execute permission for gradlew
   #     run: chmod +x gradlew
