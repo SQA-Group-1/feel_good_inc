@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/activityButton"
+        android:enabled="true"
+        android:icon="@drawable/browse_activity"
+        android:title="@string/activities"/>
+    <item android:id="@+id/moodButton"
+        android:enabled="true"
+        android:icon="@drawable/add_circle"
+        android:title="@string/add_mood"/>
+    <item android:id="@+id/homeButton"
+        android:enabled="true"
+        android:icon="@drawable/home"
+        android:title="@string/home"/>
+    <item android:id="@+id/resourcesButton"
+        android:enabled="true"
+        android:icon="@drawable/library_books"
+        android:title="@string/resources"/>
+</menu>
