@@ -25,6 +25,8 @@
                 representation or warranty that they are fit for this purpose. The App licensee should not
                 delay in obtaining such intervention as a result of usage.\n\n
     </string>
-
-
+    <string name="activities">Activities</string>
+    <string name="add_mood">Add mood</string>
+    <string name="home">Home</string>
+    <string name="resources">Resources</string>
 </resources>
