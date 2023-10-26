@@ -30,9 +30,9 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="65dp"
-        android:layout_marginBottom="151dp"
-        android:text="Button"
+        android:layout_marginStart="136dp"
+        android:layout_marginBottom="148dp"
+        android:text="Open Tutorial"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
