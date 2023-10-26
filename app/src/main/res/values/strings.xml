@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">Feel Good Inc</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tut_content_desc">Graphic of a woman with flowers blooming from her head</string>
     <string name="tut_1_text">Welcome to Feel Good Inc.</string>
     <string name="tut_2_text">A daily mental health journaling tool</string>
     <string name="tut_3_text">Select your current mood\n\nWrite a log\n\nSee trends\nover time\n\nFeel Good!</string>
     <string name="eula_accept">Accept</string>
-
+    <string name="activities">Activities</string>
+    <string name="add_mood">Add mood</string>
+    <string name="home">Home</string>
+    <string name="resources">Resources</string>
 </resources>
