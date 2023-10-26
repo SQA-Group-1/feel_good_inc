@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.TutorialFragment1">
+    tools:context=".fragments.TutorialFragment3">
 
     <ImageView
         android:contentDescription="@string/tut_content_desc"

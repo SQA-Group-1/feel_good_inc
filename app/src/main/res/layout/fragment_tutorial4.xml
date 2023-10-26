@@ -4,7 +4,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.TutorialFragment1">
+    tools:context=".fragments.TutorialFragment4">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -24,11 +24,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
-                android:padding="40dp"
+                android:paddingLeft="40dp"
+                android:paddingTop="40dp"
+                android:paddingRight="40dp"
                 android:paddingBottom="0dp"
+                android:text="@string/eula"
                 android:textAlignment="viewStart"
-                android:textSize="20sp"
-                android:text="@string/eula"/>
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/acceptEulaButton"
