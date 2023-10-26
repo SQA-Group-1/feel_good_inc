@@ -27,7 +27,8 @@
                 android:padding="40dp"
                 android:paddingBottom="0dp"
                 android:textAlignment="viewStart"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:text="@string/eula"/>
 
             <Button
                 android:id="@+id/acceptEulaButton"
