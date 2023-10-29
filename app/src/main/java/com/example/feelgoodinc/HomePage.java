@@ -11,27 +11,54 @@ import android.view.View;
 import com.example.feelgoodinc.fragments.HomeFragment;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
+
 import android.content.Intent;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class HomePage extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
+    FirebaseFirestore firestore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity);
+
+        firestore = FirebaseFirestore.getInstance();
+
+        // create navbar and set selected item to HomePage
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(this);
-        getSupportFragmentManager().beginTransaction().replace(R.id.flFragment,homeFragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, homeFragment).commit();
         bottomNavigationView.setSelectedItemId(R.id.homeButton);
+
+        // setup Firebase stuff
+        Map<String, Object> users = new HashMap<>();
+        users.put("firstName", "EASY");
+        users.put("lastName", "TUTO");
+        users.put("description", "Subscribe");
+
+        firestore.collection("users").add(users).addOnSuccessListener(documentReference ->
+                Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show()
+        ).addOnFailureListener(e ->
+                Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_LONG).show());
+
+
 
         /*Button button = findViewById(R.id.button);
 
@@ -41,14 +68,15 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
             HomePage.this.startActivity(myIntent);
         });*/
     }
+
     //ActivitiesFragment activityFragment = new ActivitiesFragment();
     HomeFragment homeFragment = new HomeFragment();
     //MoodFragment moodFragment = new MoodFragment();
     //ResourcesFragment resourcesFragment = new ResourcesFragment();
 
-    public void addEvent(View view){
+    public void addEvent(View view) {
         //For the date format
-        SimpleDateFormat sdf =  new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
         //Create a date object
         Date date;
         try {
@@ -75,27 +103,27 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
                         .replace(R.id.flFragment, firstFragment)
                         .commit();*/
         //return true;
-    //}
-        if(item.getItemId() == R.id.homeButton){
+        //}
+        if (item.getItemId() == R.id.homeButton) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.flFragment, homeFragment)
                     .commit();
         }
-                /**/
-                //return true;
+        /**/
+        //return true;
 
-            //case R.id.resourcesButton:
+        //case R.id.resourcesButton:
                 /*getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.flFragment, thirdFragment)
                         .commit();*/
-                //return true;
-            if(item.getItemId() == R.id.tutorial) {
-                Intent intent = new Intent(HomePage.this, TutorialActivity.class);
-                startActivity(intent);
-                return true;
-            }
-    return true;
+        //return true;
+        if (item.getItemId() == R.id.tutorial) {
+            Intent intent = new Intent(HomePage.this, TutorialActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return true;
     }
 }
