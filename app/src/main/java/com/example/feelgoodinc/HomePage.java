@@ -1,25 +1,15 @@
 package com.example.feelgoodinc;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-
 import com.example.feelgoodinc.fragments.HomeFragment;
-import com.github.sundeepk.compactcalendarview.CompactCalendarView;
-import com.github.sundeepk.compactcalendarview.domain.Event;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-import android.content.Intent;
-import android.widget.Button;
 
 public class HomePage extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
@@ -45,26 +35,6 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
     HomeFragment homeFragment = new HomeFragment();
     //MoodFragment moodFragment = new MoodFragment();
     //ResourcesFragment resourcesFragment = new ResourcesFragment();
-
-    public void addEvent(View view){
-        //For the date format
-        SimpleDateFormat sdf =  new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
-        //Create a date object
-        Date date;
-        try {
-            //Parse inputted date string and assign to date
-            date = sdf.parse("26/10/2023");
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-        assert date != null;
-        //Create a new event with the color, date in miliseconds and extra data if needed
-        Event ev1 = new Event(Color.GREEN, date.getTime(), "Some extra data that I want to store.");
-        //Find calendar on display
-        CompactCalendarView c = findViewById(R.id.calendar);
-        //Add event
-        c.addEvent(ev1);
-    }
 
     @Override
     public boolean
