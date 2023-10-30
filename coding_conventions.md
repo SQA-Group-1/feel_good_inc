@@ -22,16 +22,16 @@ When creating a branch, make sure to use the corresponding issue your branch is 
 
 Below is an example of how to link a branch to an issue:
 
-![Alt text](<Screenshot 2023-10-29 at 19.05.07.png>)
+![Alt text](<assets/pull_request.png>)
 
 If you already created a branch, when you are ready to merge into `main`, add the pull request to the issue.
 
 ## Committing
 In general, make commit messages clear and concise. Commit messages shouldn't be vague. Keep them below 72 characters wherever possible.
 
-Whenever needed, make sure to reference issues in your commits. For example
+Whenever possible, make sure to reference issues in your commits. For example:
 
-`fixes bug with user table not updating correctly (#18)`
+```fixes bug with user table not updating correctly (#18)```
 
 ## Spaces & Indentation
 * Spaces rather than tabs
@@ -108,7 +108,3 @@ public class MainMenu extends Application {
     }
 }
 ```
-
-
-
-
