@@ -12,7 +12,8 @@ import java.util.Date;
 import java.util.Locale;
 
 public class CalendarUtility {
-    public void addDateColour(CompactCalendarView c, String stringDate){
+    // This function will create a coloured event on the calendar without event details, date is formatted dd/mm/yyyy
+    public static void addDateColour(CompactCalendarView c, String stringDate, int color){
         //For the date format
         SimpleDateFormat sdf =  new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
         //Create a date object
@@ -25,11 +26,12 @@ public class CalendarUtility {
         }
         assert date != null;
         //Create a new event with the color, date in miliseconds and extra data if needed
-        Event ev1 = new Event(Color.GREEN, date.getTime());
+        Event ev1 = new Event(color, date.getTime());
         //Add event
         c.addEvent(ev1);
     }
-    public void addDateColour(CompactCalendarView c, String stringDate, String eventDetails){
+    //This function takes an additional data string to add data about the event on the calendar
+    public static void addDateColourWithData(CompactCalendarView c, String stringDate, String eventDetails, int color){
         //For the date format
         SimpleDateFormat sdf =  new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
         //Create a date object
@@ -42,7 +44,7 @@ public class CalendarUtility {
         }
         assert date != null;
         //Create a new event with the color, date in miliseconds and extra data if needed
-        Event ev1 = new Event(Color.GREEN, date.getTime(), eventDetails);
+        Event ev1 = new Event(color, date.getTime(), eventDetails);
         //Add event
         c.addEvent(ev1);
     }
