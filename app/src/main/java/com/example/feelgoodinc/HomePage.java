@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.feelgoodinc.database.MoodDatabaseHelper;
 import com.example.feelgoodinc.fragments.HomeFragment;
+import com.example.feelgoodinc.models.Mood;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -22,6 +24,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
@@ -39,14 +44,18 @@ import org.w3c.dom.Document;
 public class HomePage extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
-    FirebaseFirestore firestore;
+//    FirebaseFirestore firestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity);
 
-        firestore = FirebaseFirestore.getInstance();
+        MoodDatabaseHelper moodHelper = new MoodDatabaseHelper();
+//        moodHelper.addNewMood(new Mood(Mood.MoodType.GOOD, Date.from(Instant.now())), HomePage.this);
+        moodHelper.getMoodsForMonth(Date.from(Instant.now()));
+
+//        firestore = FirebaseFirestore.getInstance();
 
         // create navbar and set selected item to HomePage
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
@@ -66,50 +75,38 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
 //                Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_LONG).show());
 
 
-        CollectionReference journalsRef = firestore.collection("users").document("Q1owyXZv2qytn1QXHmPs").collection("journals");
+//        CollectionReference journalsRef = firestore.collection("users").document("Q1owyXZv2qytn1QXHmPs").collection("journals");
+//
+//        CollectionReference moodsRef = firestore.collection("users").document("Q1owyXZv2qytn1QXHmPs").collection("moods");
+//
+//        Map<String, Object> moods = new HashMap<>();
+//        Random rand = new Random();
+//        moods.put("mood", rand.nextInt(3));
+//        moods.put("moodWhen", Instant.now().getEpochSecond());
+//
+//        moodsRef.add(moods).addOnSuccessListener(
+//                documentReference -> Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show())
+//                .addOnFailureListener(e -> {
+//                    Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_LONG).show();
+//                });
+//
+//        Map<String, Object> journals = new HashMap<>();
+//        journals.put("journalName", "test name");
+//        journals.put("createdWhen", Instant.now().getEpochSecond());
+//        journals.put("lastEditedWhen", Instant.now().getEpochSecond());
+//        journals.put("content", "This is a not really super long string telling you about my day and emotions.");
+//
+//
+//        journalsRef.add(journals).addOnSuccessListener(
+//                        documentReference -> Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show())
+//                .addOnFailureListener(e -> {
+//                    Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_LONG).show();
+//                });
 
-        CollectionReference moodsRef = firestore.collection("users").document("Q1owyXZv2qytn1QXHmPs").collection("moods");
-
-        Map<String, Object> moods = new HashMap<>();
-        Random rand = new Random();
-        moods.put("mood", rand.nextInt(3));
-        moods.put("moodWhen", Instant.now().getEpochSecond());
-
-        moodsRef.add(moods).addOnSuccessListener(
-                documentReference -> Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show())
-                .addOnFailureListener(e -> {
-                    Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_LONG).show();
-                });
-
-        Map<String, Object> journals = new HashMap<>();
-        journals.put("journalName", "test name");
-        journals.put("createdWhen", Instant.now().getEpochSecond());
-        journals.put("lastEditedWhen", Instant.now().getEpochSecond());
-        journals.put("content", "This is a not really super long string telling you about my day and emotions.");
-
-
-        journalsRef.add(journals).addOnSuccessListener(
-                        documentReference -> Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show())
-                .addOnFailureListener(e -> {
-                    Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_LONG).show();
-                });
-
-
-
-
-        /*Button button = findViewById(R.id.button);
-
-        button.setOnClickListener(view -> {
-            Intent myIntent = new Intent(HomePage.this, TutorialActivity.class);
-//            myIntent.putExtra("key", value); //Optional parameters
-            HomePage.this.startActivity(myIntent);
-        });*/
     }
 
-    //ActivitiesFragment activityFragment = new ActivitiesFragment();
     HomeFragment homeFragment = new HomeFragment();
-    //MoodFragment moodFragment = new MoodFragment();
-    //ResourcesFragment resourcesFragment = new ResourcesFragment();
+
 
     public void addEvent(View view) {
         //For the date format

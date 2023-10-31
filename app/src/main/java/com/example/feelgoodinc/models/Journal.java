@@ -5,6 +5,14 @@ import java.util.Date;
 /**
  * This class is a Model class that will be used to store a user's
  * journal.
+ *
+ * Usage example:
+ * <pre>
+ *  String journalTitle = "";
+ *  Date createdWhen = Date.
+ * Journal journal = new Journal(journalTitle, new Date(), newDate(), "This is a journal about my feelings");
+ * </pre>
+ *
  */
 public class Journal {
     private String journalName;

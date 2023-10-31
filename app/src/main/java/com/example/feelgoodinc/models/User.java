@@ -33,4 +33,17 @@ public class User {
     public void setLastLoginWhen(Date lastLoginWhen) {
         this.lastLoginWhen = lastLoginWhen;
     }
+
+
+    /***
+     *
+     * @return the documentID of the current user
+     */
+    public static String getCurrentUserKey() {
+        return "Q1owyXZv2qytn1QXHmPs";
+    }
+
+
+
+    //TODO: get the currently logged in user's user key (which should probably be static)
 }
