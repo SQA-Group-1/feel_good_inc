@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.MoodFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="263dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="39dp"
+        android:fontFamily="@font/ltim"
+        android:text="How are you feeling?"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#081042"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText"
+        android:layout_width="297dp"
+        android:layout_height="183dp"
+        android:hint="Describe how you feel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="391dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="261dp">
+
+        <RadioButton
+            android:id="@+id/rad"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:drawableTop="@drawable/face_laugh_squint_solid"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/Itim"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:text="rad"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <RadioButton
+            android:id="@+id/good"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:drawableTop="@drawable/face_smile_solid_1_"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/Itim"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:text="good"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/meh"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:drawableTop="@drawable/face_meh_solid"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/Itim"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:text="meh"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/sad"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:drawableTop="@drawable/face_frown_solid"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/Itim"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:text="sad"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/awful"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:drawableTop="@drawable/face_grimace_solid"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/ltim"
+
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:text="awful"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="203dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="44dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        tools:layout_editor_absoluteX="104dp" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="600dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="414dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/Itim"
+        android:text="Also ..."
+        android:textColor="#081042"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
+        tools:layout_editor_absoluteX="61dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
