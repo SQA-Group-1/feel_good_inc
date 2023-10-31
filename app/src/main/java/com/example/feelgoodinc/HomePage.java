@@ -61,11 +61,10 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
                         .replace(R.id.flFragment, thirdFragment)
                         .commit();*/
                 //return true;
-            if(item.getItemId() == R.id.tutorial) {
-                Intent intent = new Intent(HomePage.this, TutorialActivity.class);
-                startActivity(intent);
+            /*if(item.getItemId() == R.id.account) {
+
                 return true;
-            }
+            }*/
     return true;
     }
 }
