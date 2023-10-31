@@ -15,7 +15,7 @@
         android:layout_height="79dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="39dp"
-        android:fontFamily="@font/ltim"
+        android:fontFamily="@font/itim_font"
         android:text="How are you feeling?"
         android:textAlignment="center"
         android:textAllCaps="false"
@@ -46,6 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="261dp">
 
+
         <RadioButton
             android:id="@+id/rad"
             android:layout_width="wrap_content"
@@ -55,13 +56,12 @@
             android:checked="false"
             android:drawableTop="@drawable/face_laugh_squint_solid"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/Itim"
+            android:fontFamily="@font/itim"
             android:gravity="center"
             android:paddingHorizontal="4dp"
             android:text="rad"
             android:textSize="16sp"
             android:textStyle="bold" />
-
 
         <RadioButton
             android:id="@+id/good"
@@ -72,7 +72,7 @@
             android:checked="true"
             android:drawableTop="@drawable/face_smile_solid_1_"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/Itim"
+            android:fontFamily="@font/itim"
             android:gravity="center"
             android:paddingHorizontal="4dp"
             android:text="good"
@@ -88,7 +88,7 @@
             android:checked="true"
             android:drawableTop="@drawable/face_meh_solid"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/Itim"
+            android:fontFamily="@font/itim"
             android:gravity="center"
             android:paddingHorizontal="4dp"
             android:text="meh"
@@ -104,7 +104,7 @@
             android:checked="true"
             android:drawableTop="@drawable/face_frown_solid"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/Itim"
+            android:fontFamily="@font/itim"
             android:gravity="center"
             android:paddingHorizontal="4dp"
             android:text="sad"
@@ -120,7 +120,7 @@
             android:checked="true"
             android:drawableTop="@drawable/face_grimace_solid"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/ltim"
+            android:fontFamily="@font/itim_font"
 
             android:gravity="center"
             android:paddingHorizontal="4dp"
@@ -161,7 +161,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:fontFamily="@font/Itim"
+        android:fontFamily="@font/itim_font"
         android:text="Also ..."
         android:textColor="#081042"
         android:textSize="20sp"
