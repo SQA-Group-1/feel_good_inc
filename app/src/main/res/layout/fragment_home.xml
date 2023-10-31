@@ -7,13 +7,13 @@
     tools:context=".fragments.HomeFragment">
 
     <ImageButton
-        android:id="@+id/profileButton"
+        android:id="@+id/tutorialButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/account"
+        android:contentDescription="@string/tutorial"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/account_circle" />
+        app:srcCompat="@drawable/help" />
 
     <com.github.sundeepk.compactcalendarview.CompactCalendarView
         android:id="@+id/calendar"
@@ -25,6 +25,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileButton" />
+        app:layout_constraintTop_toBottomOf="@+id/tutorialButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

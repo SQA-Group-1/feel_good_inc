@@ -16,8 +16,8 @@
         android:enabled="true"
         android:icon="@drawable/library_books"
         android:title="@string/resources"/>
-    <item android:id="@+id/tutorial"
+    <item android:id="@+id/account"
         android:enabled="true"
-        android:icon="@drawable/help"
-        android:title="@string/tutorial"/>
+        android:icon="@drawable/account_circle"
+        android:title="@string/account"/>
 </menu>
