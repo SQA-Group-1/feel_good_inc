@@ -43,8 +43,6 @@ import java.util.Random;
  */
 public class MoodDatabaseHelper {
     private FirebaseFirestore firestore;
-
-    //TODO reference to the collection
     CollectionReference moodsRef;
 
     public MoodDatabaseHelper() {
@@ -84,18 +82,6 @@ public class MoodDatabaseHelper {
                 Log.d("COMP3013", "Error getting documents");
             }
         });
-
-//        moodsRef.whereGreaterThanOrEqualTo("moodWhen", start).whereLessThanOrEqualTo("moodWhen", end).get().addOnCompleteListener(task -> {
-//            if (task.isSuccessful()) {
-//                for (QueryDocumentSnapshot document : task.getResult()) {
-//                    Mood mood = Mood.fromMap(document.getData());
-//                    Log.d("Feel Good Inc", document.getId() + " => " + document.getData());
-//                    results.add(mood);
-//                }
-//            } else {
-//                Log.d("Feel Good Inc", "Error getting documents: ", task.getException());
-//            }
-//        });
 
         return results;
     }

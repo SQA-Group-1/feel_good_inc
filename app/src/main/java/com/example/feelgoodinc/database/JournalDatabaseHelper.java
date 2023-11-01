@@ -28,8 +28,6 @@ import java.util.List;
  */
 public class JournalDatabaseHelper {
     private FirebaseFirestore firestore;
-
-    //TODO reference to the collection
     CollectionReference journalsRef;
 
     public JournalDatabaseHelper() {
@@ -76,8 +74,8 @@ public class JournalDatabaseHelper {
 
     /**
      * puts a new {@link Journal} into Firebase
-     * @param journal
-     * @param activity
+     * @param journal a {@link Journal} to be added to Firebase DB
+     * @param activity the currently showing {@link Activity} to make a toast if adding is sucessful
      */
     public void addNewJournal(Journal journal, Activity activity) {
         //TODO: determine what kind of error handling should go here
