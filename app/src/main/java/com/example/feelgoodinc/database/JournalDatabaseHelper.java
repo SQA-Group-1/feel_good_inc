@@ -4,61 +4,46 @@ import android.app.Activity;
 import android.util.Log;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-
 import com.example.feelgoodinc.models.Journal;
-import com.example.feelgoodinc.models.Mood;
 import com.example.feelgoodinc.models.User;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.YearMonth;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Random;
 
 /**
- * This handles how {@link Mood}s are stored/retrieving when communicating with
+ * This handles how {@link Journal}s are stored/retrieving when communicating with
  * Firebase's cloud firestore
  *
  *
- * @see Mood
- * @see com.example.feelgoodinc.models.Mood.MoodType
+ * @see Journal
  */
-public class MoodDatabaseHelper {
+public class JournalDatabaseHelper {
     private FirebaseFirestore firestore;
 
     //TODO reference to the collection
-    CollectionReference moodsRef;
+    CollectionReference journalsRef;
 
-    public MoodDatabaseHelper() {
+    public JournalDatabaseHelper() {
         firestore = FirebaseFirestore.getInstance();
-        moodsRef = firestore.collection("users").document(User.getCurrentUserKey()).collection("moods");
+        journalsRef = firestore.collection("users").document(User.getCurrentUserKey()).collection("journals");
     }
 
     /**
-     * This method updates {@link MoodDatabaseHelper}'s list of moods for the input month.
      *
      * @param date should be a {@link Date} within the month you are trying to get the moods for
+     * @return a list of {@link Journal} showing all user journals for the current month
      */
-    public List<Mood> getMoodsForMonth(Date date) {
-        ArrayList<Mood> results = new ArrayList<>();
+    public List<Journal> getJournalsForMonth(Date date) {
+        ArrayList<Journal> results = new ArrayList<>();
 
         // get the start of the month epoch
         // get the end of the month epoch
@@ -73,46 +58,33 @@ public class MoodDatabaseHelper {
         long end = endOfMonth.atStartOfDay().toEpochSecond(ZoneOffset.UTC);
 
         // make a FB query for everything between the epochs
-        moodsRef.whereGreaterThanOrEqualTo("moodWhen", start).whereLessThanOrEqualTo("moodWhen", end).get().addOnCompleteListener(task -> {
+        journalsRef.whereGreaterThanOrEqualTo("createdWhen", start).whereLessThanOrEqualTo("createdWhen", end).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
-                    Mood mood = Mood.fromMap(document.getData());
+                    Journal journal = Journal.fromMap(document.getData());
                     Log.d("Feel Good Inc", document.getId() + " => " + document.getData());
-                    results.add(mood);
+                     results.add(journal);
                 }
             } else {
-                Log.d("COMP3013", "Error getting documents");
+                Log.d("Feel Good Inc", "Error getting documents: ", task.getException());
             }
         });
 
-//        moodsRef.whereGreaterThanOrEqualTo("moodWhen", start).whereLessThanOrEqualTo("moodWhen", end).get().addOnCompleteListener(task -> {
-//            if (task.isSuccessful()) {
-//                for (QueryDocumentSnapshot document : task.getResult()) {
-//                    Mood mood = Mood.fromMap(document.getData());
-//                    Log.d("Feel Good Inc", document.getId() + " => " + document.getData());
-//                    results.add(mood);
-//                }
-//            } else {
-//                Log.d("Feel Good Inc", "Error getting documents: ", task.getException());
-//            }
-//        });
-
         return results;
+
     }
 
     /**
-     * puts a new {@link Mood} into Firebase
-     * @param mood
+     * puts a new {@link Journal} into Firebase
+     * @param journal
      * @param activity
      */
-    public void addNewMood(Mood mood, Activity activity) {
+    public void addNewJournal(Journal journal, Activity activity) {
         //TODO: determine what kind of error handling should go here
-        moodsRef.add(mood.toMap()).addOnSuccessListener(
+        journalsRef.add(journal.toMap()).addOnSuccessListener(
                         documentReference -> Toast.makeText(activity.getApplicationContext(), "Success", Toast.LENGTH_LONG).show())
                 .addOnFailureListener(e ->
                         Toast.makeText(activity.getApplicationContext(), "Failure", Toast.LENGTH_LONG).show()
                 );
     }
-
-
 }

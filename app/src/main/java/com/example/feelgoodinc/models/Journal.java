@@ -1,6 +1,9 @@
 package com.example.feelgoodinc.models;
 
+import java.time.Instant;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class is a Model class that will be used to store a user's
@@ -59,4 +62,19 @@ public class Journal {
     public void setContent(String content) {
         this.content = content;
     }
+
+    public Map<String, Object> toMap() {
+        Map<String, Object> map  = new HashMap<>();
+        map.put("content", content);
+        map.put("createdWhen", createdWhen.toInstant().getEpochSecond());
+        map.put("journalName", journalName);
+        map.put("lastEditedWhen", lastEditedWhen.toInstant().getEpochSecond());
+
+        return map;
+    }
+
+    public static Journal fromMap(Map<String,Object> map) {
+        return new Journal(map.get("journalName").toString(),  Date.from(Instant.ofEpochSecond((Long) map.get("createdWhen"))), Date.from(Instant.ofEpochSecond((Long) map.get("lastEditedWhen"))), map.get("content").toString());
+    }
+
 }
