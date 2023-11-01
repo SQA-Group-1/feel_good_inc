@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".fragments.HomeFragment">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/tutorialButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="addEvent"
-        android:contentDescription="@string/account"
+        android:contentDescription="@string/tutorial"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/account_circle" />
+        app:srcCompat="@drawable/help" />
 
     <com.github.sundeepk.compactcalendarview.CompactCalendarView
         android:id="@+id/calendar"
@@ -22,8 +22,9 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         app:compactCalendarTextSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintTop_toBottomOf="@+id/tutorialButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
