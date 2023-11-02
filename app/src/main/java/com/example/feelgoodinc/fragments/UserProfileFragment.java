@@ -27,8 +27,6 @@ public class UserProfileFragment extends Fragment {
         Button submitButton = v.findViewById(R.id.submitPasswordButton);
         submitButton.setOnClickListener(l -> submitNewPassword(v));
 
-
-
         return v;
     }
 
@@ -50,6 +48,10 @@ public class UserProfileFragment extends Fragment {
         // TODO: Update user password in backend
 
         Log.d("Feel Good Inc", "submit new password clicked");
+
+        /* TODO: give user a popup saying password was either changed successfully or password didn't
+        meet requirements
+         */
     }
 
 
