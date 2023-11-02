@@ -47,16 +47,8 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
                     .replace(R.id.flFragment, moodFragment)
                     .commit();
         }
-                /**/
-                //return true;
 
-            //case R.id.resourcesButton:
-                /*getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.flFragment, thirdFragment)
-                        .commit();*/
-                //return true;
-            if(item.getItemId() == R.id.tutorial) {
+            if(item.getItemId() == R.id.tutorialButton) {
                 Intent intent = new Intent(HomePage.this, TutorialActivity.class);
                 startActivity(intent);
                 return true;

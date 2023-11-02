@@ -35,12 +35,9 @@ public class MoodFragment extends Fragment {
 
         dateText.setText(dateStr);
 
-        confirmButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                int selectedId = moodsGroup.getCheckedRadioButtonId();
-                RadioButton moodButton = (RadioButton) view.findViewById(selectedId);
-            }
-
+        confirmButton.setOnClickListener(view1 -> {
+            int selectedId = moodsGroup.getCheckedRadioButtonId();
+            RadioButton moodButton1 = (RadioButton) view1.findViewById(selectedId);
         });
 
         moodsGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
