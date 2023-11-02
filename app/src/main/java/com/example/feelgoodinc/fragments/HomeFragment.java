@@ -1,5 +1,6 @@
 package com.example.feelgoodinc.fragments;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -12,6 +13,7 @@ import android.widget.ImageButton;
 
 import com.example.feelgoodinc.CalendarUtility;
 import com.example.feelgoodinc.R;
+import com.example.feelgoodinc.TutorialActivity;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 
 public class HomeFragment extends Fragment {
@@ -21,8 +23,8 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        ImageButton button = view.findViewById(R.id.profileButton);
-        button.setOnClickListener(l -> eventAdder(view));
+        ImageButton button = view.findViewById(R.id.tutorialButton);
+        button.setOnClickListener(l -> account(view));
         return view;
     }
 
@@ -32,6 +34,9 @@ public class HomeFragment extends Fragment {
         CalendarUtility.addDateColourWithData(calendarView,"27/10/2023","This is an event", Color.GREEN);
     }
 
-
+    public void account(View view){
+        Intent intent = new Intent(getActivity(), TutorialActivity.class);
+        startActivity(intent);
+    }
 
 }
