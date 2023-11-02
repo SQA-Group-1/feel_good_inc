@@ -2,12 +2,14 @@ package com.example.feelgoodinc;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.feelgoodinc.fragments.HomeFragment;
+import com.example.feelgoodinc.fragments.MoodFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -33,7 +35,7 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
     }
     //ActivitiesFragment activityFragment = new ActivitiesFragment();
     HomeFragment homeFragment = new HomeFragment();
-    //MoodFragment moodFragment = new MoodFragment();
+    MoodFragment moodFragment = new MoodFragment();
     //ResourcesFragment resourcesFragment = new ResourcesFragment();
 
     @Override
@@ -52,6 +54,12 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
                     .replace(R.id.flFragment, homeFragment)
                     .commit();
         }
+        if(item.getItemId() == R.id.moodButton){
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.flFragment, moodFragment)
+                    .commit();
+        }
                 /**/
                 //return true;
 
@@ -66,6 +74,7 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
                 startActivity(intent);
                 return true;
             }
+
     return true;
     }
 }

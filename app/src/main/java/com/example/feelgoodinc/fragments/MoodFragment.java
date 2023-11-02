@@ -1,66 +1,60 @@
 package com.example.feelgoodinc.fragments;
 
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import com.example.feelgoodinc.R;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MoodFragment#newInstance} factory method to
- * create an instance of this fragment.
  */
 public class MoodFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public MoodFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MoodFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MoodFragment newInstance(String param1, String param2) {
-        MoodFragment fragment = new MoodFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mood, container, false);
+        View view = inflater.inflate(R.layout.fragment_mood, container, false);
+        RadioGroup moodsGroup = view.findViewById(R.id.moodsGroup);
+        Button confirmButton = view.findViewById(R.id.moodComfirmButton);
+        TextView dateText = view.findViewById(R.id.date);
+        RadioButton moodButton;
+        SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
+        Date todayDate = new Date();
+        String dateStr = currentDate.format(todayDate);
+
+        dateText.setText(dateStr);
+
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                int selectedId = moodsGroup.getCheckedRadioButtonId();
+                RadioButton moodButton = (RadioButton) view.findViewById(selectedId);
+            }
+
+        });
+
+        moodsGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+            }
+        });
+
+        return view;
     }
+
+
+
+
+
 }
