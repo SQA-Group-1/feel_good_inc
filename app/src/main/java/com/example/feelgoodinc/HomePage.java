@@ -1,6 +1,5 @@
 package com.example.feelgoodinc;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -8,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.feelgoodinc.fragments.HomeFragment;
+import com.example.feelgoodinc.fragments.UserProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -33,6 +33,13 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.flFragment, homeFragment)
+                    .commit();
+        }
+
+        if(item.getItemId() == R.id.accountButton){
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.flFragment, new UserProfileFragment())
                     .commit();
         }
 
