@@ -2,12 +2,14 @@ package com.example.feelgoodinc;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.feelgoodinc.fragments.HomeFragment;
+import com.example.feelgoodinc.fragments.MoodFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -24,6 +26,9 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
         bottomNavigationView.setSelectedItemId(R.id.homeButton);
     }
     HomeFragment homeFragment = new HomeFragment();
+    MoodFragment moodFragment = new MoodFragment();
+    //ResourcesFragment resourcesFragment = new ResourcesFragment();
+
 
     @Override
     public boolean
@@ -36,6 +41,19 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
                     .commit();
         }
 
-        return true;
+        if(item.getItemId() == R.id.moodButton){
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.flFragment, moodFragment)
+                    .commit();
+        }
+
+            if(item.getItemId() == R.id.tutorialButton) {
+                Intent intent = new Intent(HomePage.this, TutorialActivity.class);
+                startActivity(intent);
+                return true;
+            }
+
+    return true;
     }
 }
