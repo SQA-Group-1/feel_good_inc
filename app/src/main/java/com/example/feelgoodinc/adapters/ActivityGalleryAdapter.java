@@ -1,11 +1,13 @@
 package com.example.feelgoodinc.adapters;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.feelgoodinc.R;
@@ -38,7 +40,8 @@ public class ActivityGalleryAdapter extends RecyclerView.Adapter<ActivityViewHol
     public void onBindViewHolder(final ActivityViewHolder viewHolder, final int position){
         final int index = viewHolder.getAdapterPosition();
         viewHolder.activityName.setText(list.get(position).activityTitle);
-        viewHolder.activityPicture.setImageDrawable(list.get(position).imagePath);
+        Drawable drawable = ResourcesCompat.getDrawable(viewHolder.view.getResources(), list.get(position).imagePath, null);
+        viewHolder.activityPicture.setImageDrawable(drawable);
         viewHolder.view.setOnClickListener(v -> listener.click(index));
     }
 

@@ -1,13 +1,11 @@
 package com.example.feelgoodinc.activityRecyclerView;
 
-import android.graphics.drawable.Drawable;
-
 public class ActivityData {
     public String activityTitle;
-    public Drawable imagePath;
+    public int imagePath;
 
-    ActivityData(String title, Drawable image){
+    ActivityData(String title, int imageID){
         this.activityTitle = title;
-        this.imagePath = image;
+        this.imagePath = imageID;
     }
 }
