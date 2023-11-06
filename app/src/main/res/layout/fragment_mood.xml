@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4EFFC"
+    tools:context=".fragments.MoodFragment">
+
+
+    <TextView
+        android:id="@+id/MoodTitle"
+        android:layout_width="342dp"
+        android:layout_height="104dp"
+        android:fontFamily="@font/poppins_medium"
+        android:includeFontPadding="true"
+
+        android:text="How are you feeling?"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#081042"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/moodsGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/journalEntry"
+        android:layout_width="307dp"
+        android:layout_height="226dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rectbox"
+        android:fontFamily="@font/itim_font"
+        android:hint="How's going today?"
+        android:textColor="#081042"
+        app:layout_constraintBottom_toTopOf="@+id/moodComfirmButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/moodsGroup" />
+
+    <RadioGroup
+        android:id="@+id/moodsGroup"
+        android:layout_width="299dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/journalEntry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.57">
+
+
+        <RadioButton
+            android:id="@+id/rad"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:drawableTop="@drawable/face_laugh_squint_solid"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/itim"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:text="rad"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/good"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:drawableTop="@drawable/face_smile_solid_1_"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/itim"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:text="good"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/meh"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:drawableTop="@drawable/face_meh_solid"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/itim"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:text="meh"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/sad"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:drawableTop="@drawable/face_frown_solid"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/itim"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:text="sad"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/awful"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:drawableTop="@drawable/face_grimace_solid"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/itim_font"
+
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:text="awful"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/moodComfirmButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="90dp"
+        android:backgroundTint="#8C7CE3"
+        android:onClick="onComfirmClick"
+        android:text="Log feeling"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/journalEntry" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="414dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="bottom"
+        android:text="Let's write about it"
+        android:textColor="#081042"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/journalEntry"
+        app:layout_constraintStart_toStartOf="@+id/journalEntry" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="DATE"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/moodsGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MoodTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
