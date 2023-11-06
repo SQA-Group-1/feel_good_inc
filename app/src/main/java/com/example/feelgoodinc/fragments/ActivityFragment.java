@@ -2,6 +2,7 @@ package com.example.feelgoodinc.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -35,7 +36,7 @@ public class ActivityFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
-        ArrayList<ActivityData> activityList = new ArrayList<>();
+        List<ActivityData> activityList = populateList();
         adapter = new ActivityGalleryAdapter(activityList, requireActivity().getApplication(), listener);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setAdapter(adapter);
@@ -44,7 +45,10 @@ public class ActivityFragment extends Fragment {
 
     public List<ActivityData> populateList(){
         List<ActivityData> list = new ArrayList<>();
-        
+        ActivityData meditateActivity = new ActivityData("Meditate", R.drawable.loving);
+        ActivityData breathingActivity = new ActivityData("Breathing Exercises", R.drawable.meditating);
+        list.add(meditateActivity);
+        list.add(breathingActivity);
         return list;
     }
 }
