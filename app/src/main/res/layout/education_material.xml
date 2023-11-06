@@ -37,26 +37,11 @@
             android:fontFamily="sans-serif"
             android:gravity="center"
             android:inputType="text"
-            android:text="Crisis Hotline Page"
+            android:text="Education Materials"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textSize="22sp"
             tools:layout_editor_absoluteX="11dp"
-            tools:layout_editor_absoluteY="63dp" />
-
-        <EditText
-            android:id="@+id/editTextText5"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:ems="10"
-            android:fontFamily="sans-serif"
-            android:gravity="center"
-            android:inputType="text"
-            android:text="and Emergency Contacts"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="22sp"
-            tools:layout_editor_absoluteX="11dp"
-            tools:layout_editor_absoluteY="93dp" />
+            tools:layout_editor_absoluteY="91dp" />
 
         <EditText
             android:id="@+id/editTextText"
@@ -75,51 +60,51 @@
 
         <EditText
             android:id="@+id/editTextText6"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
             android:background="@null"
             android:ems="10"
             android:fontFamily="sans-serif"
             android:gravity="center"
             android:inputType="text"
-            android:text="+44 1111 8888"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textStyle="bold"
             android:textSize="17sp"
-            tools:layout_editor_absoluteX="38dp"
-            tools:layout_editor_absoluteY="228dp" />
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="95dp"
+            tools:layout_editor_absoluteY="207dp"
+            tools:text="This is sample text." />
 
         <EditText
-            android:id="@+id/editTextText7"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/editTextText9"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
             android:background="@null"
             android:ems="10"
             android:fontFamily="sans-serif"
             android:gravity="center"
             android:inputType="text"
-            android:text="+44 1111 8888"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textStyle="bold"
             android:textSize="17sp"
-            tools:layout_editor_absoluteX="38dp"
-            tools:layout_editor_absoluteY="397dp" />
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="95dp"
+            tools:layout_editor_absoluteY="380dp"
+            tools:text="This is sample text." />
 
         <EditText
-            android:id="@+id/editTextText8"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/editTextText10"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
             android:background="@null"
             android:ems="10"
             android:fontFamily="sans-serif"
             android:gravity="center"
             android:inputType="text"
-            android:text="+44 1111 8888"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textStyle="bold"
             android:textSize="17sp"
-            tools:layout_editor_absoluteX="38dp"
-            tools:layout_editor_absoluteY="558dp" />
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="95dp"
+            tools:layout_editor_absoluteY="533dp"
+            tools:text="This is sample text." />
 
         <EditText
             android:id="@+id/editTextText2"
@@ -184,28 +169,28 @@
             tools:layout_editor_absoluteY="491dp" />
 
         <ImageView
-            android:id="@+id/imageView12"
+            android:id="@+id/imageView9"
             android:layout_width="72dp"
-            android:layout_height="56dp"
-            app:srcCompat="@drawable/phone"
-            tools:layout_editor_absoluteX="47dp"
-            tools:layout_editor_absoluteY="195dp" />
+            android:layout_height="62dp"
+            app:srcCompat="@drawable/books"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="194dp" />
 
         <ImageView
-            android:id="@+id/imageView13"
+            android:id="@+id/imageView15"
             android:layout_width="72dp"
-            android:layout_height="56dp"
-            app:srcCompat="@drawable/phone"
-            tools:layout_editor_absoluteX="47dp"
-            tools:layout_editor_absoluteY="364dp" />
+            android:layout_height="62dp"
+            app:srcCompat="@drawable/books"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="358dp" />
 
         <ImageView
-            android:id="@+id/imageView14"
+            android:id="@+id/imageView16"
             android:layout_width="72dp"
-            android:layout_height="56dp"
-            app:srcCompat="@drawable/phone"
-            tools:layout_editor_absoluteX="47dp"
-            tools:layout_editor_absoluteY="525dp" />
+            android:layout_height="62dp"
+            app:srcCompat="@drawable/books"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="524dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
