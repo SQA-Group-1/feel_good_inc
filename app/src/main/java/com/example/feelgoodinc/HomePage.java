@@ -27,8 +27,8 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
     }
     HomeFragment homeFragment = new HomeFragment();
     MoodFragment moodFragment = new MoodFragment();
-    //ResourcesFragment resourcesFragment = new ResourcesFragment();
 
+    //ResourcesFragment resourcesFragment = new ResourcesFragment();
 
     @Override
     public boolean
@@ -62,6 +62,12 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
                 Intent intent = new Intent(HomePage.this, TutorialActivity.class);
                 startActivity(intent);
                 return true;
+        }
+
+        if(item.getItemId() == R.id.resourcesButton) {
+            Intent intent = new Intent(HomePage.this, ResourcePage.class);
+            startActivity(intent);
+            return true;
         }
 
     return true;
