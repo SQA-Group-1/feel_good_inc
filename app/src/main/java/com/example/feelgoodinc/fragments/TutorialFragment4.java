@@ -22,6 +22,7 @@ public class TutorialFragment4 extends Fragment {
         TextView tv = (v.findViewById(R.id.eulaText));
         tv.setMovementMethod(new ScrollingMovementMethod());
 
+        // Link accept button to the homePage activity
         Button acceptButton = v.findViewById(R.id.acceptEulaButton);
         acceptButton.setOnClickListener(v1 -> {
             if (getActivity() != null) {
