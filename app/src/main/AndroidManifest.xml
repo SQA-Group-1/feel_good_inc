@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FeelGoodInc">
         <activity
-            android:name=".HomePage"
+            android:name=".ui.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,15 +21,14 @@
         </activity>
         <activity
             android:name=".TutorialActivity"
-            android:exported="false"/>
-
-
-
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
