@@ -58,6 +58,7 @@ public class MoodFragment extends Fragment {
                 }
             }
         });
+
         return view;
     }
 

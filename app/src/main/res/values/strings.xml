@@ -29,6 +29,13 @@
     <string name="add_mood">Add mood</string>
     <string name="home">Home</string>
     <string name="resources">Resources</string>
-    <string name="account">account</string>
+    <string name="account">Account</string>
     <string name="tutorial">Tutorial</string>
+    <string name="email_example">exampleuser@feelgood.com</string>
+    <string name="email_tag">Email:</string>
+    <string name="change_password">Change Password</string>
+    <string name="enter_new_password_tag">Enter New Password:</string>
+    <string name="enter_password">Enter password</string>
+    <string name="submit">Submit</string>
+
 </resources>
