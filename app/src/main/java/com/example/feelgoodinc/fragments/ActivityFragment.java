@@ -48,10 +48,12 @@ public class ActivityFragment extends Fragment {
 
     public List<ActivityData> populateList(){
         List<ActivityData> list = new ArrayList<>();
-        ActivityData meditateActivity = new ActivityData("Meditate", "Calm down with our meditation routines", 20, R.drawable.meditating);
+        ActivityData groundingActivity = new ActivityData("Grounding", "Calm down with our meditation routines", 20, R.drawable.meditating);
         ActivityData breathingActivity = new ActivityData("Breathing Exercises", "Slow your heart rate with our breathing exercises",5, R.drawable.loving);
-        list.add(meditateActivity);
+        ActivityData sleepingActivity = new ActivityData("Sleeping Aid","Listen to calming nature sounds to help sleep",60,R.drawable.levitate);
+        list.add(groundingActivity);
         list.add(breathingActivity);
+        list.add(sleepingActivity);
         return list;
     }
 }

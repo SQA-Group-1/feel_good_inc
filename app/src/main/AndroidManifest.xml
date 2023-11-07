@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FeelGoodInc">
         <activity
+            android:name=".models.ActivityActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomePage"
             android:exported="true">
             <intent-filter>
@@ -21,15 +24,11 @@
         </activity>
         <activity
             android:name=".TutorialActivity"
-            android:exported="false"/>
-
-
-
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
     </application>
 
 </manifest>
