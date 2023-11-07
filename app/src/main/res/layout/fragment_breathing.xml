@@ -6,6 +6,15 @@
     android:background="?android:attr/colorBackground"
     tools:context=".fragments.BreathingFragment">
 
+    <TextView
+        android:id="@+id/breathInstruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="150dp"
+        android:textSize="28sp"
+        />
     <RelativeLayout
         android:id="@+id/progress_layout"
         android:layout_width="wrap_content"
@@ -30,10 +39,17 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:text="@string/breathe_in"
             android:textColor="@color/primary"
             android:textSize="28sp"
             android:textStyle="bold" />
     </RelativeLayout>
+    <Button
+        android:id="@+id/breathActivityClose"
+        android:text="@string/close_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="150dp"
+        />
 
 </FrameLayout>
