@@ -183,6 +183,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/poppins_medium"
         android:text="DATE"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/moodsGroup"
         app:layout_constraintEnd_toEndOf="parent"
