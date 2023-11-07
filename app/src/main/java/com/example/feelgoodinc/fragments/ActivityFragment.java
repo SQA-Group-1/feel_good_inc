@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +18,7 @@ import com.example.feelgoodinc.adapters.ActivityGalleryAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class ActivityFragment extends Fragment {
@@ -36,8 +38,28 @@ public class ActivityFragment extends Fragment {
             //Choose what you do with each item
             @Override
             public void click(int index){
-                ActivityData data = activityList.get(index);
-                Log.d("SQA", data.description);
+                FragmentManager fm = requireActivity().getSupportFragmentManager();
+                switch(index){
+                    case 0:
+                        GroundingFragment groundingFragment = new GroundingFragment();
+                        fm.beginTransaction()
+                                .replace(R.id.flFragment, groundingFragment)
+                                .commit();
+                        break;
+                    case 1:
+                        BreathingFragment breathingFragment = new BreathingFragment();
+                        fm.beginTransaction()
+                                .replace(R.id.flFragment, breathingFragment)
+                                .commit();
+                        break;
+                    case 2:
+                        SleepFragment sleepFragment = new SleepFragment();
+                        fm.beginTransaction()
+                                .replace(R.id.flFragment, sleepFragment)
+                                .commit();
+                        break;
+                }
+
             }
         };
         adapter = new ActivityGalleryAdapter(activityList, requireActivity().getApplication(), listener);

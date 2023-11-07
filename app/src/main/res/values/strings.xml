@@ -38,5 +38,8 @@
     <string name="enter_password">Enter password</string>
     <string name="submit">Submit</string>
     <string name="activity_image">Activity Image</string>
+    <string name="breathe_in">Breathe in</string>
+    <string name="breathe_out">Breathe out</string>
+    <string name="congratulations">Congratulations</string>
 
 </resources>

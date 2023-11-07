@@ -11,9 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FeelGoodInc">
         <activity
-            android:name=".models.ActivityActivity"
-            android:exported="false" />
-        <activity
             android:name=".HomePage"
             android:exported="true">
             <intent-filter>
