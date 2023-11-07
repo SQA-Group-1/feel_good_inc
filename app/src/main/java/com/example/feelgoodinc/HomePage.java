@@ -2,6 +2,7 @@ package com.example.feelgoodinc;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -57,6 +58,7 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
                     .replace(R.id.flFragment, moodFragment)
                     .commit();
         }
+
 
         if(item.getItemId() == R.id.tutorialButton) {
                 Intent intent = new Intent(HomePage.this, TutorialActivity.class);
