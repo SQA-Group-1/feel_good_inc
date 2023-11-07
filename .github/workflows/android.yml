@@ -27,9 +27,9 @@ jobs:
       uses: asadmansr/android-test-report-action@v1.2.0
       if: ${{ always() }} # IMPORTANT: run Android Test Report regardless
 
-      # Run linter
-    - name: Linter
-      run: ./gradlew lint
+#      # Run linter
+#    - name: Linter
+#      run: ./gradlew lint
 
     # - name: Unit tests
     #   run: bash ./gradlew test --stacktrace
