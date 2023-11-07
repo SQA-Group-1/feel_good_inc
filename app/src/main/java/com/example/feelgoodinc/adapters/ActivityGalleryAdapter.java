@@ -40,6 +40,9 @@ public class ActivityGalleryAdapter extends RecyclerView.Adapter<ActivityViewHol
     public void onBindViewHolder(final ActivityViewHolder viewHolder, final int position){
         final int index = viewHolder.getAdapterPosition();
         viewHolder.activityName.setText(list.get(position).activityTitle);
+        viewHolder.description.setText(list.get(position).description);
+        String estimatedTime = list.get(position).estimatedTime + " minutes";
+        viewHolder.estimatedTime.setText(estimatedTime);
         Drawable drawable = ResourcesCompat.getDrawable(viewHolder.view.getResources(), list.get(position).imagePath, null);
         viewHolder.activityPicture.setImageDrawable(drawable);
         viewHolder.view.setOnClickListener(v -> listener.click(index));

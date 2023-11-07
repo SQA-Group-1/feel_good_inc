@@ -37,5 +37,6 @@
     <string name="enter_new_password_tag">Enter New Password:</string>
     <string name="enter_password">Enter password</string>
     <string name="submit">Submit</string>
+    <string name="activity_image">Activity Image</string>
 
 </resources>
