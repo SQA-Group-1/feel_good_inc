@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Feel Good Inc</string>
-    <!-- TODO: Remove or change this placeholder text -->
-<!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
     <string name="tut_content_desc">Graphic of a woman with flowers blooming from her head</string>
     <string name="tut_1_text">Welcome to Feel Good Inc.</string>
     <string name="tut_2_text">A daily mental health journaling tool</string>

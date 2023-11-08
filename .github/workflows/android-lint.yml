@@ -25,17 +25,6 @@ jobs:
           java-version: 17
           cache: gradle
 
-#      - name: Check lint
-#        run: ./gradlew :app:lintProdRelease :app-nia-catalog:lintRelease :lint:lint
-#
-#      - name: Upload lint reports (HTML)
-#        if: always()
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: lint-reports
-#          path: '**/build/reports/lint-results-*.html'
-
-
       - run: ./gradlew lint
       - uses: yutailang0119/action-android-lint@v3
         with:
