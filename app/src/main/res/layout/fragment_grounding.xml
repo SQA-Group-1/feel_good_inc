@@ -1,14 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.GroundingFragment">
+    tools:context=".fragments.GroundingFragment"
+    android:padding="50dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        tools:ignore="UselessParent">
+    <LinearLayout
+        android:id="@+id/groundingHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/eye"
+            android:contentDescription="@string/sight"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/what_do_you_see"/>
+        <EditText
+            android:id="@+id/see1"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:autofillHints="none"
+            android:inputType="text"
+            android:hint="@string/enter_one_thing_you_can_see"/>
+        <EditText
+            android:id="@+id/see2"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:autofillHints="none"
+            android:inputType="text"
+            android:hint="@string/enter_one_thing_you_can_see"/>
+        <EditText
+            android:id="@+id/see3"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:autofillHints="none"
+            android:inputType="text"
+            android:hint="@string/enter_one_thing_you_can_see"/>
+        <EditText
+            android:id="@+id/see4"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:autofillHints="none"
+            android:inputType="text"
+            android:hint="@string/enter_one_thing_you_can_see"/>
+        <EditText
+            android:id="@+id/see5"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:autofillHints="none"
+            android:inputType="text"
+            android:hint="@string/enter_one_thing_you_can_see"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/hand"
+            android:contentDescription="@string/touch"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/what_do_you_touch"/>
+        <EditText
+            android:id="@+id/touch1"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:autofillHints="none"
+            android:inputType="text"
+            android:hint="@string/enter_one_thing_you_can_touch"/>
+        <EditText
+            android:id="@+id/touch2"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:autofillHints="none"
+            android:inputType="text"
+            android:hint="@string/enter_one_thing_you_can_touch"/>
+        <EditText
+            android:id="@+id/touch3"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:autofillHints="none"
+            android:inputType="text"
+            android:hint="@string/enter_one_thing_you_can_touch"/>
+        <EditText
+            android:id="@+id/touch4"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:autofillHints="none"
+            android:inputType="text"
+            android:hint="@string/enter_one_thing_you_can_touch"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/hear"
+            android:contentDescription="@string/hear"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/what_do_you_hear"/>
+
+        <EditText
+            android:id="@+id/hear1"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:autofillHints="none"
+            android:inputType="text"
+            android:hint="@string/enter_one_thing_you_can_hear"/>
+        <EditText
+            android:id="@+id/hear2"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:autofillHints="none"
+            android:inputType="text"
+            android:hint="@string/enter_one_thing_you_can_hear"/>
+        <EditText
+            android:id="@+id/hear3"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:autofillHints="none"
+            android:inputType="text"
+            android:hint="@string/enter_one_thing_you_can_hear"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/nose"
+            android:contentDescription="@string/smell"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/what_do_you_smell"/>
+
+        <EditText
+            android:id="@+id/smell1"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:autofillHints="none"
+            android:inputType="text"
+            android:hint="@string/enter_one_thing_you_can_smell"/>
+        <EditText
+            android:id="@+id/smell2"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:autofillHints="none"
+            android:inputType="text"
+            android:hint="@string/enter_one_thing_you_can_smell"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/taste"
+            android:contentDescription="@string/taste"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/what_do_you_taste"/>
+
+        <EditText
+            android:id="@+id/taste"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:autofillHints="none"
+            android:inputType="text"
+            android:hint="@string/enter_one_thing_you_can_taste"/>
+        <TextView
+            android:id="@+id/feedbackGrounding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/submitGrounding"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="@string/submit"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+    </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

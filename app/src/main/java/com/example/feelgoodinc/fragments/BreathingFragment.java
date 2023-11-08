@@ -1,10 +1,6 @@
 package com.example.feelgoodinc.fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +9,10 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.feelgoodinc.R;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
-import org.w3c.dom.Text;
+import com.example.feelgoodinc.R;
 
 public class BreathingFragment extends Fragment {
     int breathingTime;
