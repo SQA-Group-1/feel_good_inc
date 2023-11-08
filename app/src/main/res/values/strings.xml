@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Feel Good Inc</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+<!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
     <string name="tut_content_desc">Graphic of a woman with flowers blooming from her head</string>
     <string name="tut_1_text">Welcome to Feel Good Inc.</string>
     <string name="tut_2_text">A daily mental health journaling tool</string>
@@ -37,5 +37,15 @@
     <string name="enter_new_password_tag">Enter New Password:</string>
     <string name="enter_password">Enter password</string>
     <string name="submit">Submit</string>
+    <string name="mood_fragment_title">How are you feeling?</string>
+    <string name="today">How\'s going today?</string>
+    <string name="mood5">rad</string>
+    <string name="mood4">good</string>
+    <string name="mood_3">meh</string>
+    <string name="mood2">sad</string>
+    <string name="mood1">awful</string>
+    <string name="moodButtonText">Log feeling</string>
+    <string name="journalTitleText">Let\'s write about it</string>
+    <string name="date">DATE</string>
 
 </resources>
