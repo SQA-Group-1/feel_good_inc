@@ -1,6 +1,8 @@
 package com.example.feelgoodinc.fragments;
 
 
+import static java.text.DateFormat.getDateInstance;
+
 import android.graphics.Color;
 import android.os.Bundle;
 
