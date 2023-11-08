@@ -10,13 +10,10 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.feelgoodinc.R;
-
-import java.util.Objects;
 
 public class GroundingFragment extends Fragment {
     @Override
@@ -46,10 +43,14 @@ public class GroundingFragment extends Fragment {
             }
         if(notEmpty){
             layout.removeAllViews();
-            AppCompatButton close = new AppCompatButton(this.requireContext(),null);
+            Button close = new Button(new ContextThemeWrapper(this.requireContext(),
+                    com.google.android.material.R.style.Widget_Material3_Button),
+                    null,
+                    com.google.android.material.R.style.Widget_Material3_Button);
             TextView congrats = new TextView(this.getContext());
             close.setText(R.string.close_activity);
             congrats.setText(R.string.congratulations);
+            congrats.setTextSize(28);
             close.setOnClickListener(l -> {
                 FragmentManager fm = requireActivity().getSupportFragmentManager();
                 ActivityFragment activityFragment = new ActivityFragment();

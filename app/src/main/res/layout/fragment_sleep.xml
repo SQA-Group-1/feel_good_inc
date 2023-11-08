@@ -1,10 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.SleepFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/animalSounds"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="match_parent"
+            android:layout_height="161dp"
+            android:layout_marginBottom="100dp"
+            android:background="@color/primary"
+            android:drawableEnd="@drawable/birds"
+            android:text="@string/animal_sounds"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
+        <Button
+            android:id="@+id/oceanSounds"
+            android:layout_width="match_parent"
+            android:layout_height="161dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/ocean_sounds"
+            android:background="@color/primary"
+            android:drawableEnd="@drawable/ocean"
+            app:layout_constraintBottom_toTopOf="@+id/rainforestSounds"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/rainforestSounds"
+            android:layout_width="match_parent"
+            android:layout_height="161dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/rainforest_sounds"
+            android:background="@color/primary"
+            android:drawableEnd="@drawable/rainforest"
+            app:layout_constraintBottom_toTopOf="@+id/animalSounds"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/closeSoundActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/close_activity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
