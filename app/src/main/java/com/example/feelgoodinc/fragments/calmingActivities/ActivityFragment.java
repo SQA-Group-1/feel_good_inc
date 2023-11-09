@@ -1,24 +1,23 @@
-package com.example.feelgoodinc.fragments;
+package com.example.feelgoodinc.fragments.calmingActivities;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.feelgoodinc.R;
-import com.example.feelgoodinc.activityRecyclerView.ActivityData;
 import com.example.feelgoodinc.activityRecyclerView.ClickListener;
 import com.example.feelgoodinc.adapters.ActivityGalleryAdapter;
+import com.example.feelgoodinc.models.Activity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 
 public class ActivityFragment extends Fragment {
@@ -31,9 +30,9 @@ public class ActivityFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState){
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
-        List<ActivityData> activityList = populateList();
+        List<Activity> activityList = populateList();
         listener = new ClickListener(){
             //Choose what you do with each item
             @Override
@@ -68,11 +67,11 @@ public class ActivityFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity()));
     }
 
-    public List<ActivityData> populateList(){
-        List<ActivityData> list = new ArrayList<>();
-        ActivityData groundingActivity = new ActivityData("Grounding", "Calm down with our meditation routines", 20, R.drawable.meditating);
-        ActivityData breathingActivity = new ActivityData("Breathing Exercises", "Slow your heart rate with our breathing exercises",5, R.drawable.loving);
-        ActivityData sleepingActivity = new ActivityData("Sleeping Aid","Listen to calming nature sounds to help sleep",60,R.drawable.levitate);
+    public List<Activity> populateList(){
+        List<Activity> list = new ArrayList<>();
+        Activity groundingActivity = new Activity("Grounding", "Calm down with our meditation routines", 20, R.drawable.meditating);
+        Activity breathingActivity = new Activity("Breathing Exercises", "Slow your heart rate with our breathing exercises",5, R.drawable.loving);
+        Activity sleepingActivity = new Activity("Sleeping Aid","Listen to calming nature sounds to help sleep",60,R.drawable.levitate);
         list.add(groundingActivity);
         list.add(breathingActivity);
         list.add(sleepingActivity);

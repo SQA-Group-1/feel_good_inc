@@ -9,7 +9,10 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.feelgoodinc.adapters.TutorialPagerAdapter;
-import com.example.feelgoodinc.fragments.*;
+import com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment1;
+import com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment2;
+import com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment3;
+import com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment4;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 

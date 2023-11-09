@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?android:attr/colorBackground"
-    tools:context=".fragments.BreathingFragment">
+    tools:context=".fragments.calmingActivities.BreathingFragment">
 
     <TextView
         android:id="@+id/breathInstruction"

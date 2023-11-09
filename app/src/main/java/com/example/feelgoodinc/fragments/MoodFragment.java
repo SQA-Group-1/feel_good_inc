@@ -1,6 +1,7 @@
 package com.example.feelgoodinc.fragments;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -29,7 +30,7 @@ public class MoodFragment extends Fragment {
         Button confirmButton = view.findViewById(R.id.moodComfirmButton);
         TextView dateText = view.findViewById(R.id.date);
         RadioButton moodButton;
-        SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
         Date todayDate = new Date();
         String dateStr = currentDate.format(todayDate);
 
@@ -40,11 +41,8 @@ public class MoodFragment extends Fragment {
             RadioButton moodButton1 = (RadioButton) view1.findViewById(selectedId);
         });
 
-        moodsGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
+        moodsGroup.setOnCheckedChangeListener((group, checkedId) -> {
 
-            }
         });
 
         return view;

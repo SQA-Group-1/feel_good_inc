@@ -1,4 +1,4 @@
-package com.example.feelgoodinc.fragments;
+package com.example.feelgoodinc.fragments.calmingActivities;
 
 import android.content.Intent;
 import android.net.Uri;

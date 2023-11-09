@@ -11,17 +11,20 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.feelgoodinc.R;
-import com.example.feelgoodinc.activityRecyclerView.ActivityData;
+import com.example.feelgoodinc.models.Activity;
 import com.example.feelgoodinc.activityRecyclerView.ActivityViewHolder;
 import com.example.feelgoodinc.activityRecyclerView.ClickListener;
 
 import java.util.List;
 
+/**
+ * This class binds the {@link Activity} data provided in a list to the {@link ActivityViewHolder} which is displayed in the recyclerView layout
+ */
 public class ActivityGalleryAdapter extends RecyclerView.Adapter<ActivityViewHolder> {
-    List<ActivityData> list;
+    List<Activity> list;
     Context context;
     ClickListener listener;
-    public ActivityGalleryAdapter(List<ActivityData> list, Context context, ClickListener listener){
+    public ActivityGalleryAdapter(List<Activity> list, Context context, ClickListener listener){
         this.list = list;
         this.context = context;
         this.listener = listener;
@@ -43,7 +46,7 @@ public class ActivityGalleryAdapter extends RecyclerView.Adapter<ActivityViewHol
         viewHolder.description.setText(list.get(position).description);
         String estimatedTime = list.get(position).estimatedTime + " minutes";
         viewHolder.estimatedTime.setText(estimatedTime);
-        Drawable drawable = ResourcesCompat.getDrawable(viewHolder.view.getResources(), list.get(position).imagePath, null);
+        Drawable drawable = ResourcesCompat.getDrawable(viewHolder.view.getResources(), list.get(position).imageID, null);
         viewHolder.activityPicture.setImageDrawable(drawable);
         viewHolder.view.setOnClickListener(v -> listener.click(index));
     }
