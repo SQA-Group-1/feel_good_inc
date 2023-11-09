@@ -6,7 +6,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import com.example.feelgoodinc.adapters.TutorialPagerAdapter;
 import com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment1;
@@ -24,7 +23,8 @@ public class TutorialActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
-        Log.d("debug", "reached");
+
+        // create the fragment pages and add to an arraylist
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(new TutorialFragment1());
         fragments.add(new TutorialFragment2());
@@ -32,11 +32,14 @@ public class TutorialActivity extends AppCompatActivity {
         fragments.add(new TutorialFragment4());
 
         ViewPager2 viewPager = findViewById(R.id.pager);
+
+        // instantiate new pagerAdapter using the fragments list and assign it to the viewPager
         FragmentStateAdapter pagerAdapter = new TutorialPagerAdapter(this, fragments);
         viewPager.setAdapter(pagerAdapter);
 
         TabLayout tabLayout = findViewById(R.id.tab_layout);
 
+        // attach tab layout to the view pager
         TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager, true,
                 (tab, position) -> {});
         tabLayoutMediator.attach();
