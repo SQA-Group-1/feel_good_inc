@@ -1,6 +1,6 @@
-package com.example.feelgoodinc.data;
+package com.example.feelgoodinc.database;
 
-import com.example.feelgoodinc.data.model.LoggedInUser;
+import com.example.feelgoodinc.models.LoggedInUser;
 
 /**
  * Class that requests authentication and user information from the remote data source and

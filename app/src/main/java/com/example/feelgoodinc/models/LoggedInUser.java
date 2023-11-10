@@ -1,4 +1,4 @@
-package com.example.feelgoodinc.data.model;
+package com.example.feelgoodinc.models;
 
 /**
  * Data class that captures user information for logged in users retrieved from LoginRepository

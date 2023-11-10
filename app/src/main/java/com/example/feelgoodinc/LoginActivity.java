@@ -1,4 +1,4 @@
-package com.example.feelgoodinc.ui;
+package com.example.feelgoodinc;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +11,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.feelgoodinc.HomePage;
-import com.example.feelgoodinc.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -20,10 +18,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
-public class Signup extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText emailTextView, passwordTextView;
-    private Button btn;
+    private Button Btn;
 
     /**
      * It initializes the UI components
@@ -37,19 +35,19 @@ public class Signup extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_login);
 
         //Initialise Firebase Authentication
         mAuth = FirebaseAuth.getInstance();
         emailTextView = findViewById(R.id.username);
         passwordTextView = findViewById(R.id.password);
-        btn = findViewById(R.id.login);
+        Btn = findViewById(R.id.login);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
-                registerNewUser();
+                loginUserAccount();
             }
         });
     }
@@ -61,7 +59,6 @@ public class Signup extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             currentUser.reload();
@@ -69,40 +66,42 @@ public class Signup extends AppCompatActivity {
     }
 
     /**
-     *  This method handles the registration process for the user
+     *  This method handles the login process for the user
      *  It retrieves the email and password entered by the user
      */
-    private void registerNewUser() {
+    private void loginUserAccount() {
         String email, password;
         email = emailTextView.getText().toString();
         password = passwordTextView.getText().toString();
+
         if (TextUtils.isEmpty(email)) {Toast.makeText(getApplicationContext(),
                             "Please enter your email", Toast.LENGTH_LONG).show();
             return;
         }
         if (TextUtils.isEmpty(password)) {Toast.makeText(getApplicationContext(),
-                        "Please enter your password", Toast.LENGTH_LONG).show();
+                            "Please enter your password", Toast.LENGTH_LONG).show();
             return;
         }
 
-     mAuth.createUserWithEmailAndPassword(email, password)
-             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-        @Override
-        public void onComplete(@NonNull Task<AuthResult> task)
-        {
-            if (task.isSuccessful()) {
-                Toast.makeText(getApplicationContext(), "Registration successful",
-                                Toast.LENGTH_LONG).show();
-                // if the user created intent to login activity
-                Intent intent = new Intent(Signup.this, HomePage.class);
-                startActivity(intent);
-            } else {
-                // Registration failed
-                Toast.makeText(getApplicationContext(), "Could not sign up",
-                                Toast.LENGTH_LONG).show();
-            }
-        }
-    });
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task)
+                    {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(),
+                                    "Logged in", Toast.LENGTH_LONG).show();
+                            // login -> intent to home page
+                            Intent intent
+                                    = new Intent(LoginActivity.this,
+                                    HomePage.class);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Could not log in",
+                                            Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
     }
 
 }

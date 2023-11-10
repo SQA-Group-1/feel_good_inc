@@ -1,4 +1,4 @@
-package com.example.feelgoodinc.data;
+package com.example.feelgoodinc.database;
 
 /**
  * A generic class that holds a result success w/ data or an error exception.
