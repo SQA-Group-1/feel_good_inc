@@ -1,7 +1,6 @@
 package com.example.feelgoodinc;
 
 import android.graphics.Color;
-import android.view.View;
 
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
