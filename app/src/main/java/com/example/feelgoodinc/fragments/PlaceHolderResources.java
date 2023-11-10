@@ -16,6 +16,8 @@ import com.example.feelgoodinc.R;
  * A simple {@link Fragment} subclass.
  * Use the {@link PlaceHolderResources#newInstance} factory method to
  * create an instance of this fragment.
+ *
+ * This is the fragment for the placeholder resources page
  */
 public class PlaceHolderResources extends Fragment {
 

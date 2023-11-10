@@ -13,9 +13,8 @@ import android.widget.Button;
 import com.example.feelgoodinc.R;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link ResourcesFragment#newInstance} factory method to
- * create an instance of this fragment.
+ This is the fragment representing the resources page, it is a simple ui that lays out the
+ resources a user can access when need be
  */
 public class ResourcesFragment extends Fragment {
 
@@ -62,6 +61,19 @@ public class ResourcesFragment extends Fragment {
 
     }
 
+    /**
+     *
+     * @param inflater The LayoutInflater object that can be used to inflate
+     * any views in the fragment,
+     * @param container If non-null, this is the parent view that the fragment's
+     * UI should be attached to.  The fragment should not add the view itself,
+     * but this can be used to generate the LayoutParams of the view.
+     * @param savedInstanceState If non-null, this fragment is being re-constructed
+     * from a previous saved state as given here.
+     *
+     *  This method directs all the buttons in the resources page to the placeholder resources page.
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
