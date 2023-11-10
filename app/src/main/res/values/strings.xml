@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Feel Good Inc</string>
+
     <!--Tutorial page strings-->
     <string name="tut_content_desc">Graphic of a woman with flowers blooming from her head</string>
     <string name="tut_1_text">Welcome to Feel Good Inc.</string>
@@ -38,6 +39,7 @@
     <string name="enter_new_password_tag">Enter New Password:</string>
     <string name="enter_password">Enter password</string>
     <string name="submit">Submit</string>
+
     <string name="activity_image">Activity Image</string>
     <!--Breathing activity strings-->
     <string name="breathe_in">Breathe in</string>
@@ -75,5 +77,6 @@
     <string name="animal_sounds">Animal Sounds</string>
     <string name="ocean_sounds">Ocean Sounds</string>
     <string name="rainforest_sounds">Rainforest Sounds</string>
+
 
 </resources>

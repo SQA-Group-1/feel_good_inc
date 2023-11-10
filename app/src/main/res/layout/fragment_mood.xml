@@ -71,6 +71,7 @@
             android:fontFamily="@font/itim"
             android:gravity="center"
             android:paddingHorizontal="4dp"
+
             android:text="@string/rad"
             android:textColor="#808080"
             android:textSize="16sp"
