@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="89dp"
         android:layout_marginBottom="71dp"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,26 +75,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/linkTextView"
+        android:id="@+id/loginLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="243dp"
         android:autoLink="web"
         android:shadowColor="#0000ff"
         android:shadowRadius="1"
         android:text="@string/already_have_an_account"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login"
-        app:layout_constraintVertical_bias="0.296" />
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/login"
         android:layout_width="204dp"
         android:layout_height="51dp"
         android:layout_marginTop="44dp"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

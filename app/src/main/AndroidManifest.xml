@@ -19,8 +19,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".SignupActivity"
+            android:exported="false" />
+
         <activity
             android:name=".TutorialActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".HomePage"
             android:exported="false" />
 
         <meta-data

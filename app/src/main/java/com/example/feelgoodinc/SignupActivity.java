@@ -1,27 +1,18 @@
 package com.example.feelgoodinc;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
 
 public class SignupActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText emailTextView, passwordTextView;
-    private Button btn;
 
     /**
      * It initializes the UI components
@@ -41,15 +32,15 @@ public class SignupActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         emailTextView = findViewById(R.id.username);
         passwordTextView = findViewById(R.id.password);
-        btn = findViewById(R.id.login);
+        Button btn = findViewById(R.id.login);
+        TextView loginLink = findViewById(R.id.loginLink);
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                registerNewUser();
-            }
+        loginLink.setOnClickListener(v -> {
+            // redirect to Log In page
+            startActivity(new Intent(SignupActivity.this, LoginActivity.class));
+            finish();
         });
+        btn.setOnClickListener(v -> registerNewUser());
     }
 
     /**
@@ -74,33 +65,30 @@ public class SignupActivity extends AppCompatActivity {
         String email, password;
         email = emailTextView.getText().toString();
         password = passwordTextView.getText().toString();
-        if (TextUtils.isEmpty(email)) {Toast.makeText(getApplicationContext(),
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(getApplicationContext(),
                             "Please enter your email", Toast.LENGTH_LONG).show();
             return;
         }
-        if (TextUtils.isEmpty(password)) {Toast.makeText(getApplicationContext(),
-                        "Please enter your password", Toast.LENGTH_LONG).show();
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(getApplicationContext(),
+                    "Please enter your password", Toast.LENGTH_LONG).show();
             return;
         }
 
-     mAuth.createUserWithEmailAndPassword(email, password)
-             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-        @Override
-        public void onComplete(@NonNull Task<AuthResult> task)
-        {
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                Toast.makeText(getApplicationContext(), "Registration successful",
-                                Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),
+                        "Registration successful", Toast.LENGTH_LONG).show();
                 // if the user created intent to login activity
                 Intent intent = new Intent(SignupActivity.this, HomePage.class);
                 startActivity(intent);
+                finish();
             } else {
                 // Registration failed
-                Toast.makeText(getApplicationContext(), "Could not sign up",
-                                Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),
+                        "Could not sign up", Toast.LENGTH_LONG).show();
             }
-        }
-    });
+        });
     }
-
 }

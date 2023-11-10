@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="89dp"
         android:layout_marginBottom="71dp"
-        android:text="Log In"
+        android:text="@string/log_in"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,17 +75,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/linkTextView"
+        android:id="@+id/createLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="243dp"
+        android:layout_marginTop="20dp"
+        android:autoLink="web"
         android:shadowColor="#0000ff"
         android:shadowRadius="1"
-        android:autoLink="web"
         android:text="@string/create_an_account"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login" />
 
     <Button
@@ -93,7 +92,7 @@
         android:layout_width="204dp"
         android:layout_height="51dp"
         android:layout_marginTop="44dp"
-        android:text="Log In"
+        android:text="@string/log_in"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
