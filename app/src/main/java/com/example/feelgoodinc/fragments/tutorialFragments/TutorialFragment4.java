@@ -1,4 +1,4 @@
-package com.example.feelgoodinc.fragments;
+package com.example.feelgoodinc.fragments.tutorialFragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +22,7 @@ public class TutorialFragment4 extends Fragment {
         TextView tv = (v.findViewById(R.id.eulaText));
         tv.setMovementMethod(new ScrollingMovementMethod());
 
+        // Link accept button to the homePage activity
         Button acceptButton = v.findViewById(R.id.acceptEulaButton);
         acceptButton.setOnClickListener(v1 -> {
             if (getActivity() != null) {

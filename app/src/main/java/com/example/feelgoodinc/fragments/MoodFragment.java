@@ -1,11 +1,10 @@
 package com.example.feelgoodinc.fragments;
 
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +20,7 @@ import java.util.Date;
  * A simple {@link Fragment} subclass.
  */
 public class MoodFragment extends Fragment {
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class MoodFragment extends Fragment {
         Button confirmButton = view.findViewById(R.id.moodComfirmButton);
         TextView dateText = view.findViewById(R.id.date);
         RadioButton moodButton;
-        SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
         Date todayDate = new Date();
         String dateStr = currentDate.format(todayDate);
 
@@ -40,10 +40,21 @@ public class MoodFragment extends Fragment {
             RadioButton moodButton1 = (RadioButton) view1.findViewById(selectedId);
         });
 
+
         moodsGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton selectedRadioButton = view.findViewById(checkedId);
 
+                for (int i = 0; i < moodsGroup.getChildCount(); i++) {
+                    RadioButton radioButton = (RadioButton) moodsGroup.getChildAt(i);
+
+                    if (radioButton == selectedRadioButton) {
+                        radioButton.setTextColor(Color.BLUE); // Change the text color for the selected radio button
+                    } else {
+                        radioButton.setTextColor(Color.GRAY); // Set the text color for other radio buttons to gray
+                    }
+                }
             }
         });
 
