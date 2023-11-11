@@ -6,6 +6,8 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import com.example.feelgoodinc.R;
+import com.example.feelgoodinc.database.JournalDatabaseHelper;
+import com.example.feelgoodinc.database.MoodDatabaseHelper;
+import com.example.feelgoodinc.models.Journal;
+import com.example.feelgoodinc.models.Mood;
+import com.google.android.material.textfield.TextInputEditText;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -22,6 +30,10 @@ import java.util.Date;
  */
 public class MoodFragment extends Fragment {
 
+    JournalDatabaseHelper journalDatabaseHelper;
+    MoodDatabaseHelper moodDatabaseHelper;
+    Journal journalObj;
+    Mood moodObj;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -29,16 +41,28 @@ public class MoodFragment extends Fragment {
         RadioGroup moodsGroup = view.findViewById(R.id.moodsGroup);
         Button confirmButton = view.findViewById(R.id.moodComfirmButton);
         TextView dateText = view.findViewById(R.id.date);
-        RadioButton moodButton;
+        TextInputEditText journalEntry = view.findViewById(R.id.journalEntry);
         @SuppressLint("SimpleDateFormat") SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
         Date todayDate = new Date();
         String dateStr = currentDate.format(todayDate);
-
         dateText.setText(dateStr);
 
+        moodDatabaseHelper = new MoodDatabaseHelper();
+        journalDatabaseHelper = new JournalDatabaseHelper();
+
+
         confirmButton.setOnClickListener(view1 -> {
+            String selectedMood = "";
             int selectedId = moodsGroup.getCheckedRadioButtonId();
-            RadioButton moodButton1 = (RadioButton) view1.findViewById(selectedId);
+
+            if(selectedId != -1) {
+                RadioButton moodButton = (RadioButton) view.findViewById(selectedId);
+                selectedMood = moodButton.getText().toString();
+                moodObj = new Mood(convertTextToMoodType(selectedMood), todayDate);
+            }
+
+            moodDatabaseHelper.addNewMood(moodObj,getActivity());
+            String journalText = String.valueOf(journalEntry.getText());
         });
 
 
@@ -62,6 +86,22 @@ public class MoodFragment extends Fragment {
         return view;
     }
 
+    public Mood.MoodType convertTextToMoodType(String buttonText) {
+        switch (buttonText) {
+            case "Rad":
+                return Mood.MoodType.RAD;
+            case "Good":
+                return Mood.MoodType.GOOD;
+            case "Meh":
+                return Mood.MoodType.MEH;
+            case "Sad":
+                return Mood.MoodType.SAD;
+            case "Awful":
+                return Mood.MoodType.AWFUL;
+            default:
+                return null;
+        }
+    }
 
 
 
