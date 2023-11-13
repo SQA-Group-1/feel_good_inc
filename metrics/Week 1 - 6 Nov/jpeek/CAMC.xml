@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metric xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        date="2023-11-08T14:47:35.377011500Z"
+        schema="xsd/skeleton.xsd"
+        version="0.32.0"
+        xsi:noNamespaceSchemaLocation="xsd/metric.xsd">
+   <title>CAMC</title>
+   <description>
+                The Cohesion Among Methods in Class (CAMC) measures
+                the extent of intersections of individual method
+                parameter type lists with the parameter type list of all
+                methods in the class.
+            </description>
+   <app element="false"
+        id="D:\Uni\Resources\Year 3\git_projects\feel_good_inc\app">
+      <package element="false" id="com.example.feelgoodinc.data.model">
+         <class color="green" element="false" id="LoggedInUser" value="NaN">
+            <vars>
+               <var id="k">2</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false" id="com.example.feelgoodinc.fragments">
+         <class color="green" element="false" id="TutorialFragment2" value="1">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">3</var>
+            </vars>
+         </class>
+         <class color="green" element="false" id="TutorialFragment1" value="1">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">3</var>
+            </vars>
+         </class>
+         <class color="green" element="false" id="TutorialFragment3" value="1">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">3</var>
+            </vars>
+         </class>
+         <class color="green" element="false" id="TutorialFragment4" value="1">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">3</var>
+            </vars>
+         </class>
+         <class color="yellow"
+                element="true"
+                id="UserProfileFragment"
+                value="0.4167">
+            <vars>
+               <var id="k">3</var>
+               <var id="l">4</var>
+            </vars>
+         </class>
+         <class color="green" element="false" id="MoodFragment" value="1">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">3</var>
+            </vars>
+         </class>
+         <class color="yellow" element="true" id="HomeFragment" value="0.4167">
+            <vars>
+               <var id="k">3</var>
+               <var id="l">4</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false" id="com.example.feelgoodinc.data">
+         <class color="green" element="false" id="Result$Error" value="NaN">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+         <class color="green" element="false" id="Result$Success" value="NaN">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+         <class color="yellow" element="true" id="LoginDataSource" value="0.5">
+            <vars>
+               <var id="k">2</var>
+               <var id="l">1</var>
+            </vars>
+         </class>
+         <class color="green" element="false" id="Result" value="NaN">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+         <class color="red" element="true" id="LoginRepository" value="0.3333">
+            <vars>
+               <var id="k">3</var>
+               <var id="l">1</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false" id="com.example.feelgoodinc.ui">
+         <class color="yellow" element="true" id="Login" value="0.5">
+            <vars>
+               <var id="k">2</var>
+               <var id="l">1</var>
+            </vars>
+         </class>
+         <class color="yellow" element="true" id="Signup" value="0.5">
+            <vars>
+               <var id="k">2</var>
+               <var id="l">1</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false" id="com.example.feelgoodinc">
+         <class color="green" element="false" id="TutorialActivity" value="1">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">1</var>
+            </vars>
+         </class>
+         <class color="green" element="false" id="CalendarUtility" value="NaN">
+            <vars>
+               <var id="k">0</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+         <class color="yellow" element="true" id="HomePage" value="0.5">
+            <vars>
+               <var id="k">2</var>
+               <var id="l">2</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false" id="com.example.feelgoodinc.database">
+         <class color="yellow"
+                element="true"
+                id="JournalDatabaseHelper"
+                value="0.5">
+            <vars>
+               <var id="k">2</var>
+               <var id="l">3</var>
+            </vars>
+         </class>
+         <class color="yellow"
+                element="true"
+                id="MoodDatabaseHelper"
+                value="0.5">
+            <vars>
+               <var id="k">2</var>
+               <var id="l">3</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false" id="com.example.feelgoodinc.models">
+         <class color="red" element="true" id="User" value="0.25">
+            <vars>
+               <var id="k">6</var>
+               <var id="l">2</var>
+            </vars>
+         </class>
+         <class color="red" element="false" id="Mood" value="0.2">
+            <vars>
+               <var id="k">5</var>
+               <var id="l">2</var>
+            </vars>
+         </class>
+         <class color="red" element="true" id="Journal" value="0.2222">
+            <vars>
+               <var id="k">9</var>
+               <var id="l">2</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false" id="com.example.feelgoodinc.databinding">
+         <class color="green"
+                element="false"
+                id="FragmentTutorial3Binding"
+                value="NaN">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentTutorial2Binding"
+                value="NaN">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentTutorial1Binding"
+                value="NaN">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="ActivityTutorialBinding"
+                value="NaN">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentTutorial4Binding"
+                value="NaN">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentUserProfileBinding"
+                value="NaN">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentHomeBinding"
+                value="NaN">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="ActivitySignupBinding"
+                value="NaN">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentMoodBinding"
+                value="NaN">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="HomeActivityBinding"
+                value="NaN">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="ActivityLoginBinding"
+                value="NaN">
+            <vars>
+               <var id="k">1</var>
+               <var id="l">0</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false" id="com.example.feelgoodinc.adapters">
+         <class color="yellow"
+                element="true"
+                id="TutorialPagerAdapter"
+                value="0.5">
+            <vars>
+               <var id="k">2</var>
+               <var id="l">1</var>
+            </vars>
+         </class>
+      </package>
+   </app>
+   <colors high="0.6" low="0.4">[0.4000 .. 0.6000]</colors>
+   <min>0.2222</min>
+   <max>0.5</max>
+   <bars xmlns:xs="http://www.w3.org/2001/XMLSchema"><!--count: 35, steps: 32; all: 12; min: 0.2222; max: 0.5; delta: 0.00868125-->
+      <bar color="red" x="0">1</bar>
+      <!--step: 0, left: 0.2222, right: 0.23088126-->
+      <bar color="yellow" x="0.03125">0</bar>
+      <!--step: 1, left: 0.23088126, right: 0.23956251-->
+      <bar color="yellow" x="0.0625">0</bar>
+      <!--step: 2, left: 0.23956251, right: 0.24824375-->
+      <bar color="red" x="0.09375">1</bar>
+      <!--step: 3, left: 0.24824375, right: 0.25692502-->
+      <bar color="yellow" x="0.125">0</bar>
+      <!--step: 4, left: 0.25692502, right: 0.26560625-->
+      <bar color="yellow" x="0.15625">0</bar>
+      <!--step: 5, left: 0.26560625, right: 0.27428752-->
+      <bar color="yellow" x="0.1875">0</bar>
+      <!--step: 6, left: 0.27428752, right: 0.28296876-->
+      <bar color="yellow" x="0.21875">0</bar>
+      <!--step: 7, left: 0.28296876, right: 0.29165-->
+      <bar color="yellow" x="0.25">0</bar>
+      <!--step: 8, left: 0.29165, right: 0.30033126-->
+      <bar color="yellow" x="0.28125">0</bar>
+      <!--step: 9, left: 0.30033126, right: 0.3090125-->
+      <bar color="yellow" x="0.3125">0</bar>
+      <!--step: 10, left: 0.3090125, right: 0.31769377-->
+      <bar color="yellow" x="0.34375">0</bar>
+      <!--step: 11, left: 0.31769377, right: 0.326375-->
+      <bar color="red" x="0.375">1</bar>
+      <!--step: 12, left: 0.326375, right: 0.33505625-->
+      <bar color="yellow" x="0.40625">0</bar>
+      <!--step: 13, left: 0.33505625, right: 0.3437375-->
+      <bar color="yellow" x="0.4375">0</bar>
+      <!--step: 14, left: 0.3437375, right: 0.35241875-->
+      <bar color="yellow" x="0.46875">0</bar>
+      <!--step: 15, left: 0.35241875, right: 0.36110002-->
+      <bar color="yellow" x="0.5">0</bar>
+      <!--step: 16, left: 0.36110002, right: 0.36978126-->
+      <bar color="yellow" x="0.53125">0</bar>
+      <!--step: 17, left: 0.36978126, right: 0.3784625-->
+      <bar color="yellow" x="0.5625">0</bar>
+      <!--step: 18, left: 0.3784625, right: 0.38714373-->
+      <bar color="yellow" x="0.59375">0</bar>
+      <!--step: 19, left: 0.38714373, right: 0.395825-->
+      <bar color="yellow" x="0.625">0</bar>
+      <!--step: 20, left: 0.395825, right: 0.40450627-->
+      <bar color="yellow" x="0.65625">0</bar>
+      <!--step: 21, left: 0.40450627, right: 0.4131875-->
+      <bar color="yellow" x="0.6875">2</bar>
+      <!--step: 22, left: 0.4131875, right: 0.42186874-->
+      <bar color="yellow" x="0.71875">0</bar>
+      <!--step: 23, left: 0.42186874, right: 0.43055-->
+      <bar color="yellow" x="0.75">0</bar>
+      <!--step: 24, left: 0.43055, right: 0.43923125-->
+      <bar color="yellow" x="0.78125">0</bar>
+      <!--step: 25, left: 0.43923125, right: 0.4479125-->
+      <bar color="yellow" x="0.8125">0</bar>
+      <!--step: 26, left: 0.4479125, right: 0.45659375-->
+      <bar color="yellow" x="0.84375">0</bar>
+      <!--step: 27, left: 0.45659375, right: 0.465275-->
+      <bar color="yellow" x="0.875">0</bar>
+      <!--step: 28, left: 0.465275, right: 0.47395626-->
+      <bar color="yellow" x="0.90625">0</bar>
+      <!--step: 29, left: 0.47395626, right: 0.4826375-->
+      <bar color="yellow" x="0.9375">0</bar>
+      <!--step: 30, left: 0.4826375, right: 0.49131876-->
+      <bar color="yellow" x="0.96875">7</bar>
+      <!--step: 31, left: 0.49131876, right: 0.5-->
+   </bars>
+   <statistics>
+      <total>35</total>
+      <elements>12</elements>
+      <mean>0.4282416666666667</mean>
+      <sigma>0.09981165979260917</sigma>
+      <variance>0.009962367430555555</variance>
+      <defects>0.16666666666666666</defects>
+   </statistics>
+</metric>

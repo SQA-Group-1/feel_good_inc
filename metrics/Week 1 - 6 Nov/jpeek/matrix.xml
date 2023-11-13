@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<matrix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        date="2023-11-08T14:47:38.776586900Z"
+        version="0.32.0"
+        xsi:noNamespaceSchemaLocation="xsd/matrix.xsd">
+   <classes>
+      <class id="com.example.feelgoodinc.data.model.ActivityLoginBinding"
+             rank="0.8400"
+             short_id="c.e.f.d.m.ActivityLoginBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.ActivitySignupBinding"
+             rank="0.8400"
+             short_id="c.e.f.d.m.ActivitySignupBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.ActivityTutorialBinding"
+             rank="0.8400"
+             short_id="c.e.f.d.m.ActivityTutorialBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.CalendarUtility"
+             rank="1.0000"
+             short_id="c.e.f.d.m.CalendarUtility"
+             trust="1">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="green" name="LCOM5" rank="5"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.FragmentHomeBinding"
+             rank="0.8400"
+             short_id="c.e.f.d.m.FragmentHomeBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.FragmentMoodBinding"
+             rank="0.8400"
+             short_id="c.e.f.d.m.FragmentMoodBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.FragmentTutorial1Binding"
+             rank="0.8400"
+             short_id="c.e.f.d.m.FragmentTutorial1Binding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.FragmentTutorial2Binding"
+             rank="0.8400"
+             short_id="c.e.f.d.m.FragmentTutorial2Binding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.FragmentTutorial3Binding"
+             rank="0.8400"
+             short_id="c.e.f.d.m.FragmentTutorial3Binding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.FragmentTutorial4Binding"
+             rank="0.8400"
+             short_id="c.e.f.d.m.FragmentTutorial4Binding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.FragmentUserProfileBinding"
+             rank="0.8400"
+             short_id="c.e.f.d.m.FragmentUserProfileBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.HomeActivityBinding"
+             rank="0.8400"
+             short_id="c.e.f.d.m.HomeActivityBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.HomeFragment"
+             rank="0.4400"
+             short_id="c.e.f.d.m.HomeFragment"
+             trust="0.33333333333333337">
+         <metric color="yellow" name="CAMC" rank="3"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.HomePage"
+             rank="0.2800"
+             short_id="c.e.f.d.m.HomePage"
+             trust="0.5">
+         <metric color="yellow" name="CAMC" rank="3"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.Journal"
+             rank="0.3600"
+             short_id="c.e.f.d.m.Journal"
+             trust="0.5">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.JournalDatabaseHelper"
+             rank="0.3600"
+             short_id="c.e.f.d.m.JournalDatabaseHelper"
+             trust="0.5">
+         <metric color="yellow" name="CAMC" rank="3"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="yellow" name="SCOM" rank="3"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.LoggedInUser"
+             rank="0.6800"
+             short_id="c.e.f.d.m.LoggedInUser"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.Login"
+             rank="0.4400"
+             short_id="c.e.f.d.m.Login"
+             trust="0.33333333333333337">
+         <metric color="yellow" name="CAMC" rank="3"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.LoginDataSource"
+             rank="0.4400"
+             short_id="c.e.f.d.m.LoginDataSource"
+             trust="0.33333333333333337">
+         <metric color="yellow" name="CAMC" rank="3"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.LoginRepository"
+             rank="0.2800"
+             short_id="c.e.f.d.m.LoginRepository"
+             trust="0.5">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="yellow" name="SCOM" rank="3"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.Mood"
+             rank="0.5200"
+             short_id="c.e.f.d.m.Mood"
+             trust="0.33333333333333337">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="yellow" name="LCOM5" rank="3"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="yellow" name="NHD" rank="3"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.MoodDatabaseHelper"
+             rank="0.3600"
+             short_id="c.e.f.d.m.MoodDatabaseHelper"
+             trust="0.5">
+         <metric color="yellow" name="CAMC" rank="3"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="yellow" name="SCOM" rank="3"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.MoodFragment"
+             rank="0.8400"
+             short_id="c.e.f.d.m.MoodFragment"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.Result"
+             rank="0.8400"
+             short_id="c.e.f.d.m.Result"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.Result$Error"
+             rank="0.8400"
+             short_id="c.e.f.d.m.R..$Error"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.Result$Success"
+             rank="0.8400"
+             short_id="c.e.f.d.m.R..$Success"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.Signup"
+             rank="0.4400"
+             short_id="c.e.f.d.m.Signup"
+             trust="0.33333333333333337">
+         <metric color="yellow" name="CAMC" rank="3"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.TutorialActivity"
+             rank="0.8400"
+             short_id="c.e.f.d.m.TutorialActivity"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.TutorialFragment1"
+             rank="0.8400"
+             short_id="c.e.f.d.m.TutorialFragment1"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.TutorialFragment2"
+             rank="0.8400"
+             short_id="c.e.f.d.m.TutorialFragment2"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.TutorialFragment3"
+             rank="0.8400"
+             short_id="c.e.f.d.m.TutorialFragment3"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.TutorialFragment4"
+             rank="0.8400"
+             short_id="c.e.f.d.m.TutorialFragment4"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.TutorialPagerAdapter"
+             rank="0.6000"
+             short_id="c.e.f.d.m.TutorialPagerAdapter"
+             trust="0.33333333333333337">
+         <metric color="yellow" name="CAMC" rank="3"/>
+         <metric color="green" name="LCOM5" rank="5"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.User"
+             rank="0.2800"
+             short_id="c.e.f.d.m.User"
+             trust="0.5">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="yellow" name="NHD" rank="3"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.data.model.UserProfileFragment"
+             rank="0.4400"
+             short_id="c.e.f.d.m.UserProfileFragment"
+             trust="0.33333333333333337">
+         <metric color="yellow" name="CAMC" rank="3"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+   </classes>
+</matrix>

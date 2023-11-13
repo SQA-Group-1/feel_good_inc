@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       artifact="unknown"
+       date="2023-11-08T14:47:38.394146400Z"
+       defects="0.20222222222222222"
+       diff="0.6201815269620929"
+       score="1.7838"
+       version="0.32.0"
+       xsi:noNamespaceSchemaLocation="xsd/index.xsd">
+   <metric diff="0.12119594233849458" name="CAMC">
+      <html>CAMC.html</html>
+      <xml>CAMC.xml</xml>
+      <elements>12</elements>
+      <classes>35</classes>
+      <green>0</green>
+      <yellow>9</yellow>
+      <red>3</red>
+      <score>2.0</score>
+      <reverse>true</reverse>
+      <min>0.2222</min>
+      <max>0.5</max>
+      <bars xmlns:xs="http://www.w3.org/2001/XMLSchema">
+         <bar color="red" x="0">1</bar>
+         <bar color="yellow" x="0.03125">0</bar>
+         <bar color="yellow" x="0.0625">0</bar>
+         <bar color="red" x="0.09375">1</bar>
+         <bar color="yellow" x="0.125">0</bar>
+         <bar color="yellow" x="0.15625">0</bar>
+         <bar color="yellow" x="0.1875">0</bar>
+         <bar color="yellow" x="0.21875">0</bar>
+         <bar color="yellow" x="0.25">0</bar>
+         <bar color="yellow" x="0.28125">0</bar>
+         <bar color="yellow" x="0.3125">0</bar>
+         <bar color="yellow" x="0.34375">0</bar>
+         <bar color="red" x="0.375">1</bar>
+         <bar color="yellow" x="0.40625">0</bar>
+         <bar color="yellow" x="0.4375">0</bar>
+         <bar color="yellow" x="0.46875">0</bar>
+         <bar color="yellow" x="0.5">0</bar>
+         <bar color="yellow" x="0.53125">0</bar>
+         <bar color="yellow" x="0.5625">0</bar>
+         <bar color="yellow" x="0.59375">0</bar>
+         <bar color="yellow" x="0.625">0</bar>
+         <bar color="yellow" x="0.65625">0</bar>
+         <bar color="yellow" x="0.6875">2</bar>
+         <bar color="yellow" x="0.71875">0</bar>
+         <bar color="yellow" x="0.75">0</bar>
+         <bar color="yellow" x="0.78125">0</bar>
+         <bar color="yellow" x="0.8125">0</bar>
+         <bar color="yellow" x="0.84375">0</bar>
+         <bar color="yellow" x="0.875">0</bar>
+         <bar color="yellow" x="0.90625">0</bar>
+         <bar color="yellow" x="0.9375">0</bar>
+         <bar color="yellow" x="0.96875">7</bar>
+      </bars>
+      <defects>0.16666666666666666</defects>
+      <sigma>0.09981165979260917</sigma>
+      <mean>0.4282416666666667</mean>
+   </metric>
+   <metric diff="-0.5595301655098771" name="LCOM5">
+      <html>LCOM5.html</html>
+      <xml>LCOM5.xml</xml>
+      <elements>7</elements>
+      <classes>35</classes>
+      <green>0</green>
+      <yellow>1</yellow>
+      <red>6</red>
+      <score>0.7857142857142857</score>
+      <reverse>false</reverse>
+      <min>0.5</min>
+      <max>0.8333</max>
+      <bars xmlns:xs="http://www.w3.org/2001/XMLSchema">
+         <bar color="green" x="0">2</bar>
+         <bar color="yellow" x="0.03125">0</bar>
+         <bar color="yellow" x="0.0625">0</bar>
+         <bar color="yellow" x="0.09375">0</bar>
+         <bar color="yellow" x="0.125">0</bar>
+         <bar color="yellow" x="0.15625">0</bar>
+         <bar color="yellow" x="0.1875">0</bar>
+         <bar color="yellow" x="0.21875">0</bar>
+         <bar color="yellow" x="0.25">0</bar>
+         <bar color="yellow" x="0.28125">0</bar>
+         <bar color="yellow" x="0.3125">0</bar>
+         <bar color="yellow" x="0.34375">0</bar>
+         <bar color="yellow" x="0.375">0</bar>
+         <bar color="yellow" x="0.40625">0</bar>
+         <bar color="yellow" x="0.4375">0</bar>
+         <bar color="yellow" x="0.46875">0</bar>
+         <bar color="yellow" x="0.5">0</bar>
+         <bar color="yellow" x="0.53125">0</bar>
+         <bar color="yellow" x="0.5625">0</bar>
+         <bar color="yellow" x="0.59375">1</bar>
+         <bar color="yellow" x="0.625">0</bar>
+         <bar color="yellow" x="0.65625">0</bar>
+         <bar color="yellow" x="0.6875">0</bar>
+         <bar color="yellow" x="0.71875">0</bar>
+         <bar color="yellow" x="0.75">0</bar>
+         <bar color="red" x="0.78125">1</bar>
+         <bar color="yellow" x="0.8125">0</bar>
+         <bar color="yellow" x="0.84375">0</bar>
+         <bar color="red" x="0.875">3</bar>
+         <bar color="yellow" x="0.90625">0</bar>
+         <bar color="red" x="0.9375">1</bar>
+         <bar color="red" x="0.96875">1</bar>
+      </bars>
+      <defects>0.2222222222222222</defects>
+      <sigma>0.31318554473682014</sigma>
+      <mean>0.5611111111111111</mean>
+   </metric>
+   <metric diff="-0.7197010144153764" name="MMAC">
+      <html>MMAC.html</html>
+      <xml>MMAC.xml</xml>
+      <elements>2</elements>
+      <classes>35</classes>
+      <green>0</green>
+      <yellow>0</yellow>
+      <red>2</red>
+      <score>0.5</score>
+      <reverse>true</reverse>
+      <min>0.0278</min>
+      <max>0.0333</max>
+      <bars xmlns:xs="http://www.w3.org/2001/XMLSchema">
+         <bar color="red" x="0">1</bar>
+         <bar color="yellow" x="0.03125">0</bar>
+         <bar color="yellow" x="0.0625">0</bar>
+         <bar color="yellow" x="0.09375">0</bar>
+         <bar color="yellow" x="0.125">0</bar>
+         <bar color="yellow" x="0.15625">0</bar>
+         <bar color="yellow" x="0.1875">0</bar>
+         <bar color="yellow" x="0.21875">0</bar>
+         <bar color="yellow" x="0.25">0</bar>
+         <bar color="yellow" x="0.28125">0</bar>
+         <bar color="yellow" x="0.3125">0</bar>
+         <bar color="yellow" x="0.34375">0</bar>
+         <bar color="yellow" x="0.375">0</bar>
+         <bar color="yellow" x="0.40625">0</bar>
+         <bar color="yellow" x="0.4375">0</bar>
+         <bar color="yellow" x="0.46875">0</bar>
+         <bar color="yellow" x="0.5">0</bar>
+         <bar color="yellow" x="0.53125">0</bar>
+         <bar color="yellow" x="0.5625">0</bar>
+         <bar color="yellow" x="0.59375">0</bar>
+         <bar color="yellow" x="0.625">0</bar>
+         <bar color="yellow" x="0.65625">0</bar>
+         <bar color="yellow" x="0.6875">0</bar>
+         <bar color="yellow" x="0.71875">0</bar>
+         <bar color="yellow" x="0.75">0</bar>
+         <bar color="yellow" x="0.78125">0</bar>
+         <bar color="yellow" x="0.8125">0</bar>
+         <bar color="yellow" x="0.84375">0</bar>
+         <bar color="yellow" x="0.875">0</bar>
+         <bar color="yellow" x="0.90625">0</bar>
+         <bar color="yellow" x="0.9375">0</bar>
+         <bar color="red" x="0.96875">1</bar>
+      </bars>
+      <defects>0.0</defects>
+      <sigma>0.0027500000000000024</sigma>
+      <mean>0.03055</mean>
+   </metric>
+   <metric diff="-0.2712226374799785" name="NHD">
+      <html>NHD.html</html>
+      <xml>NHD.xml</xml>
+      <elements>5</elements>
+      <classes>35</classes>
+      <green>0</green>
+      <yellow>2</yellow>
+      <red>3</red>
+      <score>1.3</score>
+      <reverse>true</reverse>
+      <min>0.3333</min>
+      <max>0.6</max>
+      <bars xmlns:xs="http://www.w3.org/2001/XMLSchema">
+         <bar color="red" x="0">3</bar>
+         <bar color="yellow" x="0.03125">0</bar>
+         <bar color="yellow" x="0.0625">0</bar>
+         <bar color="yellow" x="0.09375">0</bar>
+         <bar color="yellow" x="0.125">0</bar>
+         <bar color="yellow" x="0.15625">0</bar>
+         <bar color="yellow" x="0.1875">0</bar>
+         <bar color="yellow" x="0.21875">0</bar>
+         <bar color="yellow" x="0.25">0</bar>
+         <bar color="yellow" x="0.28125">0</bar>
+         <bar color="yellow" x="0.3125">0</bar>
+         <bar color="yellow" x="0.34375">0</bar>
+         <bar color="yellow" x="0.375">0</bar>
+         <bar color="yellow" x="0.40625">0</bar>
+         <bar color="yellow" x="0.4375">0</bar>
+         <bar color="yellow" x="0.46875">0</bar>
+         <bar color="yellow" x="0.5">0</bar>
+         <bar color="yellow" x="0.53125">0</bar>
+         <bar color="yellow" x="0.5625">0</bar>
+         <bar color="yellow" x="0.59375">0</bar>
+         <bar color="yellow" x="0.625">0</bar>
+         <bar color="yellow" x="0.65625">0</bar>
+         <bar color="yellow" x="0.6875">0</bar>
+         <bar color="yellow" x="0.71875">0</bar>
+         <bar color="yellow" x="0.75">0</bar>
+         <bar color="yellow" x="0.78125">0</bar>
+         <bar color="yellow" x="0.8125">0</bar>
+         <bar color="yellow" x="0.84375">0</bar>
+         <bar color="yellow" x="0.875">1</bar>
+         <bar color="yellow" x="0.90625">0</bar>
+         <bar color="yellow" x="0.9375">0</bar>
+         <bar color="yellow" x="0.96875">1</bar>
+      </bars>
+      <defects>0.4</defects>
+      <sigma>0.12295076087605152</sigma>
+      <mean>0.43332</mean>
+   </metric>
+   <metric diff="1.4292578750667382" name="SCOM">
+      <html>SCOM.html</html>
+      <xml>SCOM.xml</xml>
+      <elements>9</elements>
+      <classes>35</classes>
+      <green>3</green>
+      <yellow>3</yellow>
+      <red>3</red>
+      <score>4.333333333333333</score>
+      <reverse>true</reverse>
+      <min>0.0667</min>
+      <max>0.9</max>
+      <bars xmlns:xs="http://www.w3.org/2001/XMLSchema">
+         <bar color="red" x="0">1</bar>
+         <bar color="yellow" x="0.03125">0</bar>
+         <bar color="yellow" x="0.0625">0</bar>
+         <bar color="yellow" x="0.09375">0</bar>
+         <bar color="yellow" x="0.125">0</bar>
+         <bar color="yellow" x="0.15625">0</bar>
+         <bar color="yellow" x="0.1875">0</bar>
+         <bar color="red" x="0.21875">1</bar>
+         <bar color="yellow" x="0.25">0</bar>
+         <bar color="yellow" x="0.28125">0</bar>
+         <bar color="yellow" x="0.3125">0</bar>
+         <bar color="red" x="0.34375">1</bar>
+         <bar color="yellow" x="0.375">2</bar>
+         <bar color="yellow" x="0.40625">0</bar>
+         <bar color="yellow" x="0.4375">0</bar>
+         <bar color="yellow" x="0.46875">0</bar>
+         <bar color="yellow" x="0.5">0</bar>
+         <bar color="yellow" x="0.53125">0</bar>
+         <bar color="yellow" x="0.5625">0</bar>
+         <bar color="yellow" x="0.59375">0</bar>
+         <bar color="yellow" x="0.625">1</bar>
+         <bar color="green" x="0.65625">2</bar>
+         <bar color="yellow" x="0.6875">0</bar>
+         <bar color="yellow" x="0.71875">0</bar>
+         <bar color="yellow" x="0.75">0</bar>
+         <bar color="yellow" x="0.78125">0</bar>
+         <bar color="yellow" x="0.8125">0</bar>
+         <bar color="yellow" x="0.84375">0</bar>
+         <bar color="yellow" x="0.875">0</bar>
+         <bar color="yellow" x="0.90625">0</bar>
+         <bar color="yellow" x="0.9375">0</bar>
+         <bar color="green" x="0.96875">1</bar>
+      </bars>
+      <defects>0.2222222222222222</defects>
+      <sigma>0.22939925140071812</sigma>
+      <mean>0.47078888888888887</mean>
+   </metric>
+</index>
