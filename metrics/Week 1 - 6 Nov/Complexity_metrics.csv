@@ -1,0 +1,101 @@
+Complexity metrics,,,,
+Method,CogC,ev(G),iv(G),v(G)
+"com.example.feelgoodinc.CalendarUtility.addDateColour(CompactCalendarView, String, int)",1,1,1,2
+"com.example.feelgoodinc.CalendarUtility.addDateColourWithData(CompactCalendarView, String, String, int)",1,1,1,2
+com.example.feelgoodinc.ExampleInstrumentedTest.useAppContext(),0,1,1,1
+com.example.feelgoodinc.ExampleUnitTest.addition_isCorrect(),0,1,1,1
+com.example.feelgoodinc.HomePage.onCreate(Bundle),0,1,1,1
+com.example.feelgoodinc.HomePage.onNavigationItemSelected(MenuItem),5,2,6,6
+com.example.feelgoodinc.TutorialActivity.onCreate(Bundle),0,1,1,1
+"com.example.feelgoodinc.adapters.TutorialPagerAdapter.TutorialPagerAdapter(FragmentActivity, List<Fragment>)",0,1,1,1
+com.example.feelgoodinc.adapters.TutorialPagerAdapter.createFragment(int),0,1,1,1
+com.example.feelgoodinc.adapters.TutorialPagerAdapter.getItemCount(),0,1,1,1
+com.example.feelgoodinc.database.JournalDatabaseHelper.JournalDatabaseHelper(),0,1,1,1
+"com.example.feelgoodinc.database.JournalDatabaseHelper.addNewJournal(Journal, Activity)",0,1,1,1
+com.example.feelgoodinc.database.JournalDatabaseHelper.getJournalsForMonth(Date),6,1,3,3
+com.example.feelgoodinc.database.MoodDatabaseHelper.MoodDatabaseHelper(),0,1,1,1
+"com.example.feelgoodinc.database.MoodDatabaseHelper.addNewMood(Mood, Activity)",0,1,1,1
+com.example.feelgoodinc.database.MoodDatabaseHelper.getMoodsForMonth(Date),6,1,3,3
+com.example.feelgoodinc.fragments.HomeFragment.account(View),0,1,1,1
+com.example.feelgoodinc.fragments.HomeFragment.eventAdder(View),0,1,1,1
+"com.example.feelgoodinc.fragments.HomeFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+"com.example.feelgoodinc.fragments.MoodFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",6,1,3,3
+com.example.feelgoodinc.fragments.PlaceHolderResources.PlaceHolderResources(),0,1,1,1
+"com.example.feelgoodinc.fragments.PlaceHolderResources.newInstance(String, String)",0,1,1,1
+com.example.feelgoodinc.fragments.PlaceHolderResources.onCreate(Bundle),1,1,2,2
+"com.example.feelgoodinc.fragments.PlaceHolderResources.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+com.example.feelgoodinc.fragments.ResourcesFragment.ResourcesFragment(),0,1,1,1
+"com.example.feelgoodinc.fragments.ResourcesFragment.newInstance(String, String)",0,1,1,1
+com.example.feelgoodinc.fragments.ResourcesFragment.onCreate(Bundle),1,1,2,2
+"com.example.feelgoodinc.fragments.ResourcesFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+"com.example.feelgoodinc.fragments.TutorialFragment1.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+"com.example.feelgoodinc.fragments.TutorialFragment2.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+"com.example.feelgoodinc.fragments.TutorialFragment3.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+"com.example.feelgoodinc.fragments.TutorialFragment4.onCreateView(LayoutInflater, ViewGroup, Bundle)",2,1,2,2
+com.example.feelgoodinc.fragments.UserProfileFragment.changePasswordClick(View),2,1,2,2
+"com.example.feelgoodinc.fragments.UserProfileFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+com.example.feelgoodinc.fragments.UserProfileFragment.submitNewPassword(View),0,1,1,1
+"com.example.feelgoodinc.models.Journal.Journal(String, Date, Date, String)",0,1,1,1
+"com.example.feelgoodinc.models.Journal.fromMap(Map<String, Object>)",0,1,1,1
+com.example.feelgoodinc.models.Journal.getContent(),0,1,1,1
+com.example.feelgoodinc.models.Journal.getCreatedWhen(),0,1,1,1
+com.example.feelgoodinc.models.Journal.getJournalName(),0,1,1,1
+com.example.feelgoodinc.models.Journal.getLastEditedWhen(),0,1,1,1
+com.example.feelgoodinc.models.Journal.setContent(String),0,1,1,1
+com.example.feelgoodinc.models.Journal.setCreatedWhen(Date),0,1,1,1
+com.example.feelgoodinc.models.Journal.setJournalName(String),0,1,1,1
+com.example.feelgoodinc.models.Journal.setLastEditedWhen(Date),0,1,1,1
+com.example.feelgoodinc.models.Journal.toMap(),0,1,1,1
+"com.example.feelgoodinc.models.Mood.Mood(MoodType, Date)",0,1,1,1
+"com.example.feelgoodinc.models.Mood.fromMap(Map<String, Object>)",0,1,1,1
+com.example.feelgoodinc.models.Mood.getMoodType(),0,1,1,1
+com.example.feelgoodinc.models.Mood.getMoodWhen(),0,1,1,1
+com.example.feelgoodinc.models.Mood.setMoodType(MoodType),0,1,1,1
+com.example.feelgoodinc.models.Mood.setMoodWhen(Date),0,1,1,1
+com.example.feelgoodinc.models.Mood.toMap(),0,1,1,1
+com.example.feelgoodinc.models.User.getCurrentUserKey(),0,1,1,1
+com.example.feelgoodinc.models.User.getLastLoginWhen(),0,1,1,1
+com.example.feelgoodinc.models.User.getPassword(),0,1,1,1
+com.example.feelgoodinc.models.User.getUsername(),0,1,1,1
+com.example.feelgoodinc.models.User.setLastLoginWhen(Date),0,1,1,1
+com.example.feelgoodinc.models.User.setPassword(String),0,1,1,1
+com.example.feelgoodinc.models.User.setUsername(String),0,1,1,1
+"onCheckedChanged(RadioGroup, int)",4,n/a,n/a,n/a
+,,,,
+Class,OCavg,OCmax,WMC,
+com.example.feelgoodinc.CalendarUtility,1,1,2,
+com.example.feelgoodinc.ExampleInstrumentedTest,1,1,1,
+com.example.feelgoodinc.ExampleUnitTest,1,1,1,
+com.example.feelgoodinc.HomePage,3.5,6,7,
+com.example.feelgoodinc.TutorialActivity,1,1,1,
+com.example.feelgoodinc.adapters.TutorialPagerAdapter,1,1,3,
+com.example.feelgoodinc.database.JournalDatabaseHelper,1.67,3,5,
+com.example.feelgoodinc.database.MoodDatabaseHelper,1.67,3,5,
+com.example.feelgoodinc.fragments.HomeFragment,1,1,3,
+com.example.feelgoodinc.fragments.MoodFragment,2,3,4,
+com.example.feelgoodinc.fragments.PlaceHolderResources,1.25,2,5,
+com.example.feelgoodinc.fragments.ResourcesFragment,1.25,2,5,
+com.example.feelgoodinc.fragments.TutorialFragment1,1,1,1,
+com.example.feelgoodinc.fragments.TutorialFragment2,1,1,1,
+com.example.feelgoodinc.fragments.TutorialFragment3,1,1,1,
+com.example.feelgoodinc.fragments.TutorialFragment4,2,2,2,
+com.example.feelgoodinc.fragments.UserProfileFragment,1.33,2,4,
+com.example.feelgoodinc.models.Journal,1,1,11,
+com.example.feelgoodinc.models.Mood,1,1,7,
+com.example.feelgoodinc.models.Mood.MoodType,n/a,n/a,0,
+com.example.feelgoodinc.models.User,1,1,7,
+,,,,
+Package,v(G)avg,v(G)tot,,
+com.example.feelgoodinc,2,14,,
+com.example.feelgoodinc.adapters,1,3,,
+com.example.feelgoodinc.database,1.67,10,,
+com.example.feelgoodinc.fragments,1.32,25,,
+com.example.feelgoodinc.models,1,25,,
+,,,,
+Module,v(G)avg,v(G)tot,,
+Feel_Good_Inc.app.androidTest,1,1,,
+Feel_Good_Inc.app.main,1.29,75,,
+Feel_Good_Inc.app.unitTest,1,1,,
+,,,,
+Project,v(G)avg,v(G)tot,,
+project,1.28,77,,

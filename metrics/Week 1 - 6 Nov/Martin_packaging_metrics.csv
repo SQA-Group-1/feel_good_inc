@@ -1,0 +1,7 @@
+Martin packaging metrics,,,,,
+Package,A,Ca,Ce,D,I
+com.example.feelgoodinc,0,4,12,0.25,0.75
+com.example.feelgoodinc.adapters,0,1,0,1,0
+com.example.feelgoodinc.database,0,0,20,0,1
+com.example.feelgoodinc.fragments,0,11,4,0.73,0.27
+com.example.feelgoodinc.models,0,20,0,1,0
