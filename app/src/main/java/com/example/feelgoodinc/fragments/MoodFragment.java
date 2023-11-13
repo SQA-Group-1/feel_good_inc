@@ -59,10 +59,12 @@ public class MoodFragment extends Fragment {
                 RadioButton moodButton = (RadioButton) view.findViewById(selectedId);
                 selectedMood = moodButton.getText().toString();
                 moodObj = new Mood(convertTextToMoodType(selectedMood), todayDate);
+                moodDatabaseHelper.addNewMood(moodObj,getActivity());
             }
 
-            moodDatabaseHelper.addNewMood(moodObj,getActivity());
             String journalText = String.valueOf(journalEntry.getText());
+            journalObj = new Journal("THIS IS TESTING ONLY", todayDate, todayDate, journalText);
+            journalDatabaseHelper.addNewJournal(journalObj,getActivity());
         });
 
 
