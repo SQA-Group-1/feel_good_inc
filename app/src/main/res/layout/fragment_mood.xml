@@ -53,6 +53,7 @@
         android:layout_height="74dp"
         android:layout_marginTop="140dp"
         android:layout_marginBottom="16dp"
+        android:checkedButton="@id/meh"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/journalEntry"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +85,6 @@
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
             android:button="@android:color/transparent"
-            android:checked="true"
             android:drawableTop="@drawable/face_smile_solid_1_"
             android:drawablePadding="3dp"
             android:fontFamily="@font/itim"
@@ -93,8 +93,7 @@
             android:text="@string/good"
             android:textColor="#808080"
             android:textSize="16sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/meh"
@@ -111,8 +110,7 @@
             android:text="@string/meh"
             android:textColor="#808080"
             android:textSize="16sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/sad"
@@ -120,7 +118,6 @@
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
             android:button="@android:color/transparent"
-            android:checked="true"
             android:drawableTop="@drawable/face_frown_solid"
             android:drawablePadding="3dp"
             android:fontFamily="@font/itim"
@@ -137,7 +134,6 @@
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
             android:button="@android:color/transparent"
-            android:checked="true"
             android:drawableTop="@drawable/face_grimace_solid"
             android:drawablePadding="3dp"
             android:fontFamily="@font/itim_font"
