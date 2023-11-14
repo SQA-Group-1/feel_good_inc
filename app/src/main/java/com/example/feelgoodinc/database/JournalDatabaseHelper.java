@@ -5,7 +5,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.feelgoodinc.models.Journal;
-import com.example.feelgoodinc.models.User;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -22,8 +21,6 @@ import java.util.List;
 /**
  * This handles how {@link Journal}s are stored/retrieving when communicating with
  * Firebase's cloud firestore
- *
- *
  * @see Journal
  */
 public class JournalDatabaseHelper {
@@ -32,7 +29,7 @@ public class JournalDatabaseHelper {
 
     public JournalDatabaseHelper() {
         firestore = FirebaseFirestore.getInstance();
-        journalsRef = firestore.collection("users").document(User.getCurrentUserKey()).collection("journals");
+        // journalsRef = firestore.collection("users").document(User.getCurrentUserKey()).collection("journals");
     }
 
     /**
