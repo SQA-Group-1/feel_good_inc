@@ -31,7 +31,7 @@ import org.junit.runner.RunWith;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class activityTest {
+public class moodTest {
 
     @Rule
     public ActivityScenarioRule<HomePage> mActivityScenarioRule =
