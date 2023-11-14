@@ -1,12 +1,11 @@
 package com.example.feelgoodinc.fragments;
 
 
+
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +29,8 @@ public class MoodFragment extends Fragment {
         RadioGroup moodsGroup = view.findViewById(R.id.moodsGroup);
         Button confirmButton = view.findViewById(R.id.moodComfirmButton);
         TextView dateText = view.findViewById(R.id.date);
-        SimpleDateFormat currentDate = new SimpleDateFormat("dd.MM.yyyy");
+        RadioButton moodButton;
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
         Date todayDate = new Date();
         String dateStr = currentDate.format(todayDate);
 
