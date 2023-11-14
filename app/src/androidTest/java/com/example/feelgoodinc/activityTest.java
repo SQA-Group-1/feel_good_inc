@@ -46,7 +46,7 @@ public class activityTest {
                                         withId(R.id.bottomNavigationView),
                                         0),
                                 2),
-                        isDisplayed()));
+                        isDisplayed())); //check button exists after fragment invoked
         bottomNavigationItemView.perform(click());
 
         ViewInteraction textView = onView(
@@ -54,13 +54,14 @@ public class activityTest {
                         withParent(allOf(withId(R.id.frameLayout2),
                                 withParent(withId(R.id.flFragment)))),
                         isDisplayed()));
-        textView.check(matches(withText("How are you feeling?")));
+        textView.check(matches(withText("How are you feeling?"))); //check default text exists
+
 
         ViewInteraction textView2 = onView(
-                allOf(withId(R.id.date), withText("14/11/2023"),
+                allOf(withId(R.id.date), withText("14/11/2023"), //need edit
                         withParent(allOf(withId(R.id.frameLayout2),
                                 withParent(withId(R.id.flFragment)))),
-                        isDisplayed()));
+                        isDisplayed())); //check date is displayed with correct date
         textView2.check(matches(isDisplayed()));
 
         ViewInteraction radioGroup = onView(
@@ -68,21 +69,21 @@ public class activityTest {
                         withParent(allOf(withId(R.id.frameLayout2),
                                 withParent(withId(R.id.flFragment)))),
                         isDisplayed()));
-        radioGroup.check(matches(isDisplayed()));
+        radioGroup.check(matches(isDisplayed())); //check moods are displayed to user
 
         ViewInteraction textView3 = onView(
                 allOf(withId(R.id.textView3), withText("Let's write about it"),
                         withParent(allOf(withId(R.id.frameLayout2),
                                 withParent(withId(R.id.flFragment)))),
                         isDisplayed()));
-        textView3.check(matches(withText("Let's write about it")));
+        textView3.check(matches(withText("Let's write about it"))); //check default message exists
 
         ViewInteraction button = onView(
                 allOf(withId(R.id.moodComfirmButton), withText("Log feeling"),
                         withParent(allOf(withId(R.id.frameLayout2),
                                 withParent(withId(R.id.flFragment)))),
                         isDisplayed()));
-        button.check(matches(isDisplayed()));
+        button.check(matches(isDisplayed())); //check button to log feelings exists
 
         ViewInteraction textInputEditText = onView(
                 allOf(withId(R.id.journalEntry),
@@ -93,7 +94,7 @@ public class activityTest {
                                                 0)),
                                 1),
                         isDisplayed()));
-        textInputEditText.perform(replaceText("good"), closeSoftKeyboard());
+        textInputEditText.perform(replaceText("good"), closeSoftKeyboard()); //edit text entry
 
         ViewInteraction materialButton = onView(
                 allOf(withId(R.id.moodComfirmButton), withText("Log feeling"),
@@ -104,14 +105,14 @@ public class activityTest {
                                                 0)),
                                 3),
                         isDisplayed()));
-        materialButton.perform(click());
+        materialButton.perform(click()); //click to log the current mood
 
         ViewInteraction editText = onView(
                 allOf(withId(R.id.journalEntry), withText("good"),
                         withParent(allOf(withId(R.id.frameLayout2),
                                 withParent(withId(R.id.flFragment)))),
                         isDisplayed()));
-        editText.check(matches(withText("good")));
+        editText.check(matches(withText("good"))); //check once a mood has been input, the message is not lost
     }
 
     private static Matcher<View> childAtPosition(

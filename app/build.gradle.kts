@@ -30,7 +30,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
-
 }
 
 dependencies {
@@ -52,3 +51,5 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     implementation("com.github.sundeepk:compact-calendar-view:3.0.0")
 }
+
+
