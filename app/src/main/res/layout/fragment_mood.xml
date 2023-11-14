@@ -35,16 +35,16 @@
         android:layout_width="307dp"
         android:layout_height="226dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/rectbox"
         android:fontFamily="@font/itim_font"
         android:hint="@string/how_s_going_today"
         android:textColor="#081042"
         app:layout_constraintBottom_toTopOf="@+id/moodComfirmButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
 
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/moodsGroup" />
 
     <RadioGroup
@@ -52,14 +52,14 @@
         android:layout_width="299dp"
         android:layout_height="74dp"
         android:layout_marginTop="140dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="80dp"
         android:checkedButton="@id/meh"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/journalEntry"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57">
+        app:layout_constraintVertical_bias="0.45">
 
 
         <RadioButton
@@ -150,7 +150,7 @@
         android:id="@+id/moodComfirmButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="90dp"
+        android:layout_marginBottom="70dp"
         android:backgroundTint="#8C7CE3"
         android:text="@string/log_feeling"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -169,21 +169,23 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:fontFamily="@font/poppins_medium"
         android:gravity="bottom"
         android:text="@string/let_s_write_about_it"
         android:textColor="#081042"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/journalEntry"
-        app:layout_constraintStart_toStartOf="@+id/journalEntry" />
+        app:layout_constraintBottom_toTopOf="@+id/journalName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.213"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/date"
         android:textSize="16sp"
@@ -192,5 +194,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MoodTitle" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/journalName"
+        android:layout_width="307dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rectbox"
+        android:fontFamily="@font/itim_font"
+        android:hint="@string/journalnamehint"
+        app:layout_constraintBottom_toTopOf="@+id/journalEntry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

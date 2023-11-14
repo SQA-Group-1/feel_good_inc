@@ -52,8 +52,9 @@ public class MoodFragment extends Fragment {
         RadioGroup moodsGroup = view.findViewById(R.id.moodsGroup);
         Button confirmButton = view.findViewById(R.id.moodComfirmButton);
         TextView dateText = view.findViewById(R.id.date);
+        TextInputEditText journalName = view.findViewById(R.id.journalName);
         TextInputEditText journalEntry = view.findViewById(R.id.journalEntry);
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat currentDate = new SimpleDateFormat("dd.MM.yyyy");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
         Date todayDate = new Date();
         String dateStr = currentDate.format(todayDate);
         dateText.setText(dateStr);
@@ -74,11 +75,12 @@ public class MoodFragment extends Fragment {
             }
 
             String journalText = String.valueOf(journalEntry.getText());
-            if(journalText.length() == 0) {
+            String journalTitle = String.valueOf(journalName.getText());
+            if(journalText.length() == 0 || journalTitle.length() == 0) {
                 Toast.makeText(getActivity(), "Don't forget to write something for your feeling!", Toast.LENGTH_SHORT).show();
             }
             else{
-                journalObj = new Journal("THIS IS TESTING ONLY", todayDate, todayDate, journalText);
+                journalObj = new Journal(journalTitle, todayDate, todayDate, journalText);
                 journalDatabaseHelper.addNewJournal(journalObj, getActivity());
                 moodDatabaseHelper.addNewMood(moodObj,getActivity());
             }
