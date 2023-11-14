@@ -1,15 +1,11 @@
 package com.example.feelgoodinc.fragments;
 
-import static android.content.ContentValues.TAG;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +31,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         ImageButton button = view.findViewById(R.id.tutorialButton);
-        button.setOnClickListener(l -> account(view));
+        button.setOnClickListener(l -> account());
         CompactCalendarView compactCalendarView = view.findViewById(R.id.calendar);
         //Example usage of adding event
         CalendarUtility.addDateColourWithData(compactCalendarView,"14/11/2023","Yippee",Color.BLUE);
@@ -59,7 +55,7 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-    public void account(View view){
+    public void account(){
         Intent intent = new Intent(getActivity(), TutorialActivity.class);
         startActivity(intent);
     }
