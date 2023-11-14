@@ -15,6 +15,27 @@ import java.util.Date;
 /***
  * Accesses the firebase database to receive and add user data
  * Used for log in, sign up and change password
+ * <br>
+ * Usage:
+ * <pre>
+ *     private final ServiceConnection serviceConnection = new ServiceConnection() {
+ *         //@Override
+ *         public void onServiceConnected(ComponentName name, IBinder service) {
+ *             UserService.LocalBinder binder = (UserService.LocalBinder) service;
+ *             userService = binder.getService();
+ *             isBound = true;
+ *         }
+ *
+ *         //@Override
+ *         public void onServiceDisconnected(ComponentName name) {
+ *             isBound = false;
+ *         }
+ *     };
+ *     <br>
+ *     // Bind to the service in onStart
+ *     Intent intent = new Intent(this, UserService.class);
+ *     bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
+ * </pre>
  */
 public class UserService extends Service {
     private FirebaseAuth mAuth;
