@@ -1,37 +1,19 @@
 package com.example.feelgoodinc.database;
-
 import android.app.Activity;
 import android.util.Log;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-
-import com.example.feelgoodinc.models.Journal;
 import com.example.feelgoodinc.models.Mood;
-import com.example.feelgoodinc.models.User;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.YearMonth;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Random;
 
 /**
  * This handles how {@link Mood}s are stored/retrieving when communicating with
@@ -47,7 +29,7 @@ public class MoodDatabaseHelper {
 
     public MoodDatabaseHelper() {
         firestore = FirebaseFirestore.getInstance();
-        moodsRef = firestore.collection("users").document(User.getCurrentUserKey()).collection("moods");
+        // moodsRef = firestore.collection("users").document(User.getCurrentUserKey()).collection("moods");
     }
 
     /**
