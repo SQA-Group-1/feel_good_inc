@@ -45,12 +45,13 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.firebase:firebase-firestore:24.9.1")
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.0-alpha01")
+
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.3.0")
     androidTestImplementation ("androidx.test:runner:1.5.2")
     androidTestImplementation ("androidx.test:rules:1.6.0-alpha01")
     androidTestImplementation("androidx.test.ext:junit:1.2.0-alpha01")
     implementation("com.github.sundeepk:compact-calendar-view:3.0.0")
-    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.6.0-alpha01")
 }
 
 
