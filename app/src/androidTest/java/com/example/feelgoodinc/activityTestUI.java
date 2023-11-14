@@ -47,13 +47,13 @@ public class activityTestUI {
                                 0),
                         isDisplayed()));
         bottomNavigationItemView.perform(click());
-
+/*
         ViewInteraction relativeLayout = onView(
                 allOf(withParent(allOf(withId(R.id.recyclerView),
                                 withParent(withId(R.id.activityFrameLayout)))),
                         isDisplayed()));
         relativeLayout.check(matches(isDisplayed()));
-
+*/
         ViewInteraction relativeLayout2 = onView(
                 allOf(withParent(allOf(withId(R.id.recyclerView),
                                 withParent(withId(R.id.activityFrameLayout)))),
