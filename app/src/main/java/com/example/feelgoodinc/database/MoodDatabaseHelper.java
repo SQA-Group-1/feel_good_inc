@@ -93,7 +93,6 @@ public class MoodDatabaseHelper {
      */
     public void addNewMood(Mood mood, Activity activity) {
         //TODO: determine what kind of error handling should go here
-        Log.d("HELLO","HIII");
         moodsRef.add(mood.toMap()).addOnSuccessListener(
                         documentReference -> Toast.makeText(activity.getApplicationContext(), "Success", Toast.LENGTH_LONG).show())
                 .addOnFailureListener(e ->
