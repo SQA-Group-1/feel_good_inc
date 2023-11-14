@@ -112,7 +112,7 @@ public class SignupActivity extends AppCompatActivity {
         }
 
         if (isBound){
-            userService.registerUser(email, password, new UserService.FirebaseCallback() {
+            userService.registerUser(email, password, new UserService.UserCallback() {
                 @Override
                 public void onSuccess(User user) {
                     Toast.makeText(getApplicationContext(),

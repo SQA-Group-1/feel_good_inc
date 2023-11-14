@@ -122,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         if (isBound){
-            userService.loginUser(email, password, new UserService.FirebaseCallback() {
+            userService.loginUser(email, password, new UserService.UserCallback() {
                 @Override
                 public void onSuccess(User user) {
                     // if task succeeds

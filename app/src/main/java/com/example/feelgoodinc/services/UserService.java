@@ -52,13 +52,13 @@ public class UserService extends Service {
     }
 
     /***
-     * sign in the user to firebase and return a mapped User object in the callback
+     * sign in the user to firebase and return a mapped {@link User} object in the callback
      * if the sign in fails, return the exception
      * @param email the email inputted by the user
      * @param password the password inputted by the user
      * @param callback interface to track success/error and send data back to activity
      */
-    public void loginUser(String email, String password, FirebaseCallback callback){
+    public void loginUser(String email, String password, UserCallback callback){
         // TODO: encrypt password
 
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
@@ -85,7 +85,7 @@ public class UserService extends Service {
      * @param password the password inputted by the user
      * @param callback interface to track success/error and send data back to activity
      */
-    public void registerUser(String email, String password, FirebaseCallback callback){
+    public void registerUser(String email, String password, UserCallback callback){
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 User user = getCurrentUser();
@@ -97,7 +97,7 @@ public class UserService extends Service {
     }
 
     /***
-     * map the firebaseUser to our User class
+     * convert the {@link FirebaseUser} to our {@link User} class
      * @param firebaseUser firebaseUser object
      * @return User object
      */
@@ -128,7 +128,7 @@ public class UserService extends Service {
     /***
      * callback interface for sending data back to the bound activity
      */
-    public interface FirebaseCallback {
+    public interface UserCallback {
         void onSuccess(User user);
         void onError(Exception e);
     }
