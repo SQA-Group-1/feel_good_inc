@@ -24,6 +24,8 @@ import java.util.Locale;
 
 @RunWith(AndroidJUnit4.class)
 public class CalendarUtilityTests {
+    
+    //Test covers the date the event is added on
     @Test
     public void isEventAdded(){
         new Handler(Looper.getMainLooper()).post(() -> {
@@ -45,6 +47,7 @@ public class CalendarUtilityTests {
 
     }
 
+    //This tests that the data for the event is stored correctly
     @Test
     public void isEventDataAdded(){
         new Handler(Looper.getMainLooper()).post(() -> {
@@ -65,6 +68,7 @@ public class CalendarUtilityTests {
         });
     }
 
+    //This tests that the colour for the event is stored correctly
     @Test
     public void isEventColourAdded(){
         new Handler(Looper.getMainLooper()).post(() -> {
