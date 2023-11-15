@@ -6,8 +6,7 @@ on:
 
 
 jobs:
-  build:
-
+  build_and_test:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,6 +25,10 @@ jobs:
     - name: Android Test Report
       uses: asadmansr/android-test-report-action@v1.2.0
       if: ${{ always() }} # IMPORTANT: run Android Test Report regardless
+
+#      # Run linter
+#    - name: Linter
+#      run: ./gradlew lint
 
     # - name: Unit tests
     #   run: bash ./gradlew test --stacktrace

@@ -7,19 +7,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.RadioButton;
 
 import com.example.feelgoodinc.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link PlaceHolderResources#newInstance} factory method to
+ * Use the {@link emergencyHotline#newInstance} factory method to
  * create an instance of this fragment.
- *
- * This is the fragment for the placeholder resources page
  */
-public class PlaceHolderResources extends Fragment {
+public class emergencyHotline extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,7 +26,7 @@ public class PlaceHolderResources extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public PlaceHolderResources() {
+    public emergencyHotline() {
         // Required empty public constructor
     }
 
@@ -40,11 +36,11 @@ public class PlaceHolderResources extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment PlaceHolderResources.
+     * @return A new instance of fragment emergencyHotline.
      */
     // TODO: Rename and change types and number of parameters
-    public static PlaceHolderResources newInstance(String param1, String param2) {
-        PlaceHolderResources fragment = new PlaceHolderResources();
+    public static emergencyHotline newInstance(String param1, String param2) {
+        emergencyHotline fragment = new emergencyHotline();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -65,8 +61,6 @@ public class PlaceHolderResources extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_place_holder_resources, container, false);
-        return view;
-
+        return inflater.inflate(R.layout.fragment_emergency_hotline, container, false);
     }
 }

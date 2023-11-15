@@ -87,27 +87,27 @@ public class ResourcesFragment extends Fragment {
 
         ResourcesFragment resourcesFragment = new ResourcesFragment();
         crisisHotline.setOnClickListener(view1 -> {
-            PlaceHolderResources placeHolderResources = new PlaceHolderResources();
+            emergencyHotline emergencyHotline = new emergencyHotline();
             FragmentManager fm = getActivity().getSupportFragmentManager();
-            fm.beginTransaction().replace(R.id.frameLayout2, placeHolderResources).commit();
+            fm.beginTransaction().replace(R.id.frameLayout2, emergencyHotline).commit();
         });
 
         selfHelp.setOnClickListener(view1 -> {
-            PlaceHolderResources placeHolderResources = new PlaceHolderResources();
+            SelfHelpStrat selfHelpStrat = new SelfHelpStrat();
             FragmentManager fm = getActivity().getSupportFragmentManager();
-            fm.beginTransaction().replace(R.id.frameLayout2, placeHolderResources).commit();
+            fm.beginTransaction().replace(R.id.frameLayout2, selfHelpStrat).commit();
         });
 
         educationMaterial.setOnClickListener(view1 -> {
-            PlaceHolderResources placeHolderResources = new PlaceHolderResources();
+            EducationResources educationResources = new EducationResources();
             FragmentManager fm = getActivity().getSupportFragmentManager();
-            fm.beginTransaction().replace(R.id.frameLayout2, placeHolderResources).commit();
+            fm.beginTransaction().replace(R.id.frameLayout2, educationResources).commit();
         });
 
         supportGroup.setOnClickListener(view1 -> {
-            PlaceHolderResources placeHolderResources = new PlaceHolderResources();
+            SupportGroup supportGroups = new SupportGroup();
             FragmentManager fm = getActivity().getSupportFragmentManager();
-            fm.beginTransaction().replace(R.id.frameLayout2, placeHolderResources).commit();
+            fm.beginTransaction().replace(R.id.frameLayout2, supportGroups).commit();
         });
         return view;
     }
