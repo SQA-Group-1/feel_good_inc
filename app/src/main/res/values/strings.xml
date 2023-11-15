@@ -66,19 +66,37 @@
     <!--Mood page strings-->
     <string name="how_are_you_feeling">How are you feeling?</string>
     <string name="how_s_going_today">How\'s going today?</string>
-    <string name="rad">rad</string>
-    <string name="good">good</string>
-    <string name="meh">meh</string>
-    <string name="sad">sad</string>
-    <string name="awful">awful</string>
+    <string name="rad">Rad</string>
+    <string name="good">Good</string>
+    <string name="meh">Meh</string>
+    <string name="sad">Sad</string>
+    <string name="awful">Awful</string>
     <string name="log_feeling">Log feeling</string>
     <string name="let_s_write_about_it">Let\'s write about it</string>
     <string name="date">DATE</string>
     <string name="animal_sounds">Animal Sounds</string>
     <string name="ocean_sounds">Ocean Sounds</string>
     <string name="rainforest_sounds">Rainforest Sounds</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="journalnamehint">Your journal name</string>
 
+
+
+    <!-- Log In/Sign Up Strings-->
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="email">Email</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in">Log In</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="title_activity_signup">SignupActivity</string>
 
 </resources>

@@ -10,8 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FeelGoodInc">
+        <service
+            android:name=".services.UserService"
+            android:enabled="true"
+            android:exported="false"/>
+
         <activity
-            android:name=".HomePage"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +25,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".SignupActivity"
+            android:exported="false" />
+        <activity
             android:name=".TutorialActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomePage"
             android:exported="false" />
 
         <meta-data

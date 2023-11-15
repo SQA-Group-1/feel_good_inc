@@ -1,12 +1,9 @@
 package com.example.feelgoodinc;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
-
 import android.os.Bundle;
-
 import com.example.feelgoodinc.adapters.TutorialPagerAdapter;
 import com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment1;
 import com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment2;
@@ -14,7 +11,6 @@ import com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment3;
 import com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment4;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-
 import java.util.ArrayList;
 import java.util.List;
 
