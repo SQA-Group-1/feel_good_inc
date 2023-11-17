@@ -51,6 +51,16 @@ public class UserService extends Service {
     }
 
     /***
+     * get the current user's key without initalizing the user.
+     *
+     * This is needed to determine which collection to access the cloud firestore.
+     * * @return
+     */
+    public static String getCurrentUserKey() {
+        return FirebaseAuth.getInstance().getCurrentUser().getUid();
+    }
+
+    /***
      * sets up firebase connection on create
      */
     @Override
