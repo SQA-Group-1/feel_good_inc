@@ -23,8 +23,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.feelgoodinc.R;
-import com.example.feelgoodinc.database.JournalDatabaseHelper;
-import com.example.feelgoodinc.database.MoodDatabaseHelper;
 import com.example.feelgoodinc.models.Journal;
 import com.example.feelgoodinc.models.Mood;
 import com.example.feelgoodinc.services.JournalService;
@@ -47,8 +45,6 @@ import java.util.Date;
  * MoodFragment also provides a method to convert the selected mood text to the corresponding MoodType.
  */
 public class MoodFragment extends Fragment {
-    JournalDatabaseHelper journalDatabaseHelper;
-    MoodDatabaseHelper moodDatabaseHelper;
     Journal journalObj;
     Mood moodObj;
     MoodService moodService;
@@ -130,9 +126,6 @@ public class MoodFragment extends Fragment {
         Date todayDate = new Date();
         String dateStr = currentDate.format(todayDate);
         dateText.setText(dateStr);
-
-        moodDatabaseHelper = new MoodDatabaseHelper();
-        journalDatabaseHelper = new JournalDatabaseHelper();
 
         RadioButton selectedRadioButton = view.findViewById(moodsGroup.getCheckedRadioButtonId());
         selectedRadioButton.setTextColor(Color.BLUE);
