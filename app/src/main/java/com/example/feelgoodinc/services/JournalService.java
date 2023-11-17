@@ -22,8 +22,55 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.example.feelgoodinc.models.User;
-
+/**
+ * <p>Accesses the firebase database to recieve and add user data </p>
+ * <br>
+ * <p>The firebase database has a collection of users, with each user having a seperate
+ * {@link Journal}, so that users cannot access each other's {@link Journal}s. </p>
+ *
+ * <p>This can be used to add/retrieve the Journals.</p>
+ * <br>
+ * Usage example:
+ *
+ * <pre>
+ *     // this is in an Activity/Fragment class
+ *    private final ServiceConnection serviceConnection = new ServiceConnection() {
+ *      //@Override
+ *      public void onServiceConnected(ComponentName name, IBinder binder {
+ *
+ *          JournalService.LocalBinder binder (JournalService.LocalBinder) service;
+ *          //journalService is a member variable of {@link JournalService}
+ *          journalService = binder.getService();
+ *          // isBound is a member variable, to make sure journalService isn't used before it's bound
+ *          isBound = true;
+ *
+ *      }
+ *
+ *       //@Override
+ *       public void onServiceDisconnected(ComponentName name) {
+ *            isBound = false;
+ *       }
+ *    }
+ *        <br>
+ *     // @Override
+ *     public void onStart() {
+ *         super.onStart();
+ *         Intent intent = new Intent(this, UserService.class);
+ *         bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
+ *     }
+ *
+ *     // @Override
+ *     public void onCreate() {
+ *     // add a new journal
+ *         journalService.addNewJournal(journal, this);
+ *
+ *     // get all the existing journals
+ *         journalService.getJournalsForMonth(new Date(2023, 11, 05));
+ *     }
+ *
+ * </pre>
+ *
+ */
 public class JournalService extends Service {
 
     public static final String TAG = "COMP3013";
@@ -33,7 +80,14 @@ public class JournalService extends Service {
     // Binder object that others connect to
     private final IBinder binder = new JournalService.LocalBinder();
 
+    /***
+     * inner class to bind this {@link Service} to an {@link Activity} (or multiple)
+     */
     public class LocalBinder extends Binder {
+        /***
+         *
+         * @return return the {@link JournalService} object.
+         */
         public JournalService getService() {
             return JournalService.this;
         }
