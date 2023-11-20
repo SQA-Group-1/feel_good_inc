@@ -76,25 +76,25 @@ public class ResourcesFragment extends Fragment {
         ResourcesFragment resourcesFragment = new ResourcesFragment();
         crisisHotline.setOnClickListener(view1 -> {
             PlaceHolderResources placeHolderResources = new PlaceHolderResources();
-            FragmentManager fm = getActivity().getSupportFragmentManager();
+            FragmentManager fm = requireActivity().getSupportFragmentManager();
             fm.beginTransaction().replace(R.id.frameLayout2, placeHolderResources).commit();
         });
 
         selfHelp.setOnClickListener(view1 -> {
             PlaceHolderResources placeHolderResources = new PlaceHolderResources();
-            FragmentManager fm = getActivity().getSupportFragmentManager();
+            FragmentManager fm = requireActivity().getSupportFragmentManager();
             fm.beginTransaction().replace(R.id.frameLayout2, placeHolderResources).commit();
         });
 
         educationMaterial.setOnClickListener(view1 -> {
             PlaceHolderResources placeHolderResources = new PlaceHolderResources();
-            FragmentManager fm = getActivity().getSupportFragmentManager();
+            FragmentManager fm = requireActivity().getSupportFragmentManager();
             fm.beginTransaction().replace(R.id.frameLayout2, placeHolderResources).commit();
         });
 
         supportGroup.setOnClickListener(view1 -> {
             PlaceHolderResources placeHolderResources = new PlaceHolderResources();
-            FragmentManager fm = getActivity().getSupportFragmentManager();
+            FragmentManager fm = requireActivity().getSupportFragmentManager();
             fm.beginTransaction().replace(R.id.frameLayout2, placeHolderResources).commit();
         });
         return view;
