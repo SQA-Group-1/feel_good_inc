@@ -15,6 +15,13 @@ import com.example.feelgoodinc.CalendarUtility;
 import com.example.feelgoodinc.R;
 import com.example.feelgoodinc.TutorialActivity;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
+import com.github.sundeepk.compactcalendarview.domain.Event;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Objects;
 
 import java.util.Calendar;
 
@@ -26,17 +33,30 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         ImageButton button = view.findViewById(R.id.tutorialButton);
-        button.setOnClickListener(l -> account(view));
+        button.setOnClickListener(l -> account());
+        CompactCalendarView compactCalendarView = view.findViewById(R.id.calendar);
+        //Example usage of adding event
+        compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
+            @Override
+            public void onDayClick(Date dateClicked) {
+                List<Event> events = compactCalendarView.getEvents(dateClicked);
+                if(!events.isEmpty()){
+                    View coordinatorLayout = view.findViewById(R.id.coordinator);
+                    String date = dateClicked.toString().substring(0,10);
+                    Snackbar snackbar = Snackbar.make(coordinatorLayout,date + ": "+Objects.requireNonNull(events.get(0).getData()).toString(), BaseTransientBottomBar.LENGTH_SHORT);
+                    snackbar.show();
+                }
+            }
+
+            @Override
+            public void onMonthScroll(Date firstDayOfNewMonth) {
+
+            }
+        });
         return view;
     }
-
-    //Example implementation of the calendar event add
-    public void eventAdder(View view) {
-        CompactCalendarView calendarView = view.findViewById(R.id.calendar);
-        CalendarUtility.addDateColourWithData(calendarView, Calendar.getInstance().getTime(),"This is an event", Color.GREEN);
-    }
-
-    public void account(View view){
+  
+    public void account(){
         Intent intent = new Intent(getActivity(), TutorialActivity.class);
         startActivity(intent);
     }
