@@ -1,22 +1,74 @@
 package com.example.feelgoodinc.fragments;
 
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.IBinder;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.feelgoodinc.R;
+import com.example.feelgoodinc.models.User;
+import com.example.feelgoodinc.services.UserService;
 
 public class UserProfileFragment extends Fragment {
+    private UserService userService;
+    private boolean isBound = false;
+
+    /***
+     * Create service connection for binding the service
+     */
+    private final ServiceConnection serviceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            UserService.LocalBinder binder = (UserService.LocalBinder) service;
+            userService = binder.getService();
+            isBound = true;
+
+            User currentUser = userService.getCurrentUser();
+            View v = getView();
+            // display user's email
+            if (v != null){
+                TextView userEmail = getView().findViewById(R.id.userEmail);
+                userEmail.setText(currentUser.getUsername());
+            }
+
+
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            isBound = false;
+        }
+    };
+
+    /***
+     * set up onclick listeners for form buttons
+     * @param inflater The LayoutInflater object that can be used to inflate
+     * any views in the fragment,
+     * @param container If non-null, this is the parent view that the fragment's
+     * UI should be attached to.  The fragment should not add the view itself,
+     * but this can be used to generate the LayoutParams of the view.
+     * @param savedInstanceState If non-null, this fragment is being re-constructed
+     * from a previous saved state as given here.
+     *
+     * @return view
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // TODO: fetch user info from backend to display email + possibly name
+
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_user_profile, container, false);
 
@@ -28,6 +80,40 @@ public class UserProfileFragment extends Fragment {
         submitButton.setOnClickListener(l -> submitNewPassword(v));
 
         return v;
+
+    }
+
+    /**
+     *  Binds the service on start
+     */
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // Bind to the service
+        Intent intent = new Intent(getContext(), UserService.class);
+        Context c = getContext();
+
+        if (c != null){
+            c.bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
+        }
+    }
+
+    /***
+     * Unbinds the service on stop
+     */
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // Unbind from the service
+        if (isBound){
+            Context c = getContext();
+            if (c != null){
+                getContext().unbindService(serviceConnection);
+                isBound = false;
+            }
+        }
     }
 
     /***
@@ -43,16 +129,42 @@ public class UserProfileFragment extends Fragment {
         }
     }
 
+    /***
+     * Get old and new passwords entered by the user and pass them to the UserService, which
+     * re-authenticates the user with the old password and if this passes, changes their password to
+     * the new one
+     * @param v view
+     */
     public void submitNewPassword(View v){
-        // TODO: Password requirements check
-        // TODO: Update user password in backend
+        EditText oldPassword = v.findViewById(R.id.oldPassword);
+        EditText newPassword = v.findViewById(R.id.newPassword);
 
-        Log.d("Feel Good Inc", "submit new password clicked");
+        if (isBound){
+            // change user's password
+            userService.assignNewPassword(oldPassword.getText().toString(), newPassword.getText().toString(),
+                    new UserService.UserCallback() {
+                @Override
+                public void onSuccess(User user) {
+                    // if task succeeds
+                    Toast.makeText(getContext(),
+                            "Password changed", Toast.LENGTH_LONG).show();
 
-        /* TODO: give user a popup saying password was either changed successfully or password didn't
-        meet requirements
-         */
+                    // hide form now that password has been changed
+                    View passwordForm = v.findViewById(R.id.passwordForm);
+                    passwordForm.setVisibility(View.INVISIBLE);
+                }
+
+                @Override
+                public void onError(Exception e) {
+                    Log.d("COMP3013", e.toString());
+                    Toast.makeText(getContext(),
+                            "Password could not be changed", Toast.LENGTH_LONG).show();
+                }
+            });
+
+            // clear fields
+            oldPassword.setText(null);
+            newPassword.setText(null);
+        }
     }
-
-
 }

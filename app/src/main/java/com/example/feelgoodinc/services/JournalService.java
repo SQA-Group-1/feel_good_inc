@@ -1,6 +1,10 @@
-package com.example.feelgoodinc.database;
+package com.example.feelgoodinc.services;
 
 import android.app.Activity;
+import android.app.Service;
+import android.content.Intent;
+import android.os.Binder;
+import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -19,29 +23,100 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * This handles how {@link Journal}s are stored/retrieving when communicating with
- * Firebase's cloud firestore
- * @see Journal
+ * <p>Accesses the firebase database to recieve and add user data </p>
+ * <br>
+ * <p>The firebase database has a collection of users, with each user having a seperate
+ * {@link Journal}, so that users cannot access each other's {@link Journal}s. </p>
+ *
+ * <p>This can be used to add/retrieve the Journals.</p>
+ * <br>
+ * Usage example:
+ *
+ * <pre>
+ *     // this is in an Activity/Fragment class
+ *    private final ServiceConnection serviceConnection = new ServiceConnection() {
+ *      //@Override
+ *      public void onServiceConnected(ComponentName name, IBinder binder {
+ *
+ *          JournalService.LocalBinder binder (JournalService.LocalBinder) service;
+ *          //journalService is a member variable of {@link JournalService}
+ *          journalService = binder.getService();
+ *          // isBound is a member variable, to make sure journalService isn't used before it's bound
+ *          isBound = true;
+ *
+ *      }
+ *
+ *       //@Override
+ *       public void onServiceDisconnected(ComponentName name) {
+ *            isBound = false;
+ *       }
+ *    }
+ *        <br>
+ *     // @Override
+ *     public void onStart() {
+ *         super.onStart();
+ *         Intent intent = new Intent(this, UserService.class);
+ *         bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
+ *     }
+ *
+ *     // @Override
+ *     public void onCreate() {
+ *     // add a new journal
+ *         journalService.addNewJournal(journal, this);
+ *
+ *     // get all the existing journals
+ *         journalService.getJournalsForMonth(new Date(2023, 11, 05));
+ *     }
+ *
+ * </pre>
+ *
  */
-public class JournalDatabaseHelper {
+public class JournalService extends Service {
+
+    public static final String TAG = "COMP3013";
     private FirebaseFirestore firestore;
     CollectionReference journalsRef;
 
-    public JournalDatabaseHelper() {
+    // Binder object that others connect to
+    private final IBinder binder = new JournalService.LocalBinder();
+
+    /***
+     * inner class to bind this {@link Service} to an {@link Activity} (or multiple)
+     */
+    public class LocalBinder extends Binder {
+        /***
+         *
+         * @return return the {@link JournalService} object.
+         */
+        public JournalService getService() {
+            return JournalService.this;
+        }
+    }
+
+    @Override
+    public void onCreate() {
+        Log.d(TAG, "Created");
+        super.onCreate();
         firestore = FirebaseFirestore.getInstance();
-        // journalsRef = firestore.collection("users").document(User.getCurrentUserKey()).collection("journals");
+
+        // point to which directory the journals should be placed in the cloud firestore
+        journalsRef = firestore.collection("users").document(UserService.getCurrentUserKey()).collection("journals");
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return binder;
     }
 
     /**
-     *
+     * reads in all the {@link} Journal for the input month
      * @param date should be a {@link Date} within the month you are trying to get the moods for
      * @return a list of {@link Journal} showing all user journals for the current month
      */
     public List<Journal> getJournalsForMonth(Date date) {
         ArrayList<Journal> results = new ArrayList<>();
 
-        // get the start of the month epoch
-        // get the end of the month epoch
+        // get epochs for start and end of month
         ZoneId zone = ZoneId.of("Europe/London"); //FIXME: might regret defaulting to London time
         ZonedDateTime dateTime = date.toInstant().atZone(zone);
         YearMonth yearMonth = YearMonth.of(dateTime.getYear(), dateTime.getMonth());
@@ -58,15 +133,13 @@ public class JournalDatabaseHelper {
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     Journal journal = Journal.fromMap(document.getData());
                     Log.d("Feel Good Inc", document.getId() + " => " + document.getData());
-                     results.add(journal);
+                    results.add(journal);
                 }
             } else {
                 Log.d("Feel Good Inc", "Error getting documents: ", task.getException());
             }
         });
-
         return results;
-
     }
 
     /**
@@ -80,6 +153,6 @@ public class JournalDatabaseHelper {
                         documentReference -> Toast.makeText(activity.getApplicationContext(), "Success", Toast.LENGTH_LONG).show())
                 .addOnFailureListener(e ->
                         Toast.makeText(activity.getApplicationContext(), "Failure", Toast.LENGTH_LONG).show()
-                );
+        );
     }
 }
