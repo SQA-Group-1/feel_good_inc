@@ -98,5 +98,6 @@
     <string name="log_in">Log In</string>
     <string name="create_an_account">Create an account</string>
     <string name="title_activity_signup">SignupActivity</string>
+    <string name="enter_old_password_tag">Enter Old Password</string>
 
 </resources>
