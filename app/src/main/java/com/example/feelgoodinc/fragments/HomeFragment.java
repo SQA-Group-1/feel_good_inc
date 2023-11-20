@@ -16,6 +16,8 @@ import com.example.feelgoodinc.R;
 import com.example.feelgoodinc.TutorialActivity;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 
+import java.util.Calendar;
+
 public class HomeFragment extends Fragment {
 
     @Override
@@ -31,7 +33,7 @@ public class HomeFragment extends Fragment {
     //Example implementation of the calendar event add
     public void eventAdder(View view) {
         CompactCalendarView calendarView = view.findViewById(R.id.calendar);
-        CalendarUtility.addDateColourWithData(calendarView,"27/10/2023","This is an event", Color.GREEN);
+        CalendarUtility.addDateColourWithData(calendarView, Calendar.getInstance().getTime(),"This is an event", Color.GREEN);
     }
 
     public void account(View view){

@@ -18,6 +18,7 @@ import org.junit.runner.RunWith;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -53,16 +54,10 @@ public class CalendarUtilityTests {
         new Handler(Looper.getMainLooper()).post(() -> {
             Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
             CompactCalendarView compactCalendarView = new CompactCalendarView(appContext);
-            CalendarUtility.addDateColourWithData(compactCalendarView,"15/11/2023", "Test", Color.BLUE);
+            CalendarUtility.addDateColourWithData(compactCalendarView, Calendar.getInstance().getTime(), "Test", Color.BLUE);
             SimpleDateFormat sdf =  new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
             //Create a date object
-            Date date;
-            try {
-                //Parse inputted date string and assign to date
-                date = sdf.parse("15/11/2023");
-            } catch (ParseException e) {
-                throw new RuntimeException(e);
-            }
+            Date date = Calendar.getInstance().getTime();
             List<Event> events =  compactCalendarView.getEvents(date);
             assertEquals(events.get(0).getData(),"Test");
         });
@@ -74,16 +69,8 @@ public class CalendarUtilityTests {
         new Handler(Looper.getMainLooper()).post(() -> {
             Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
             CompactCalendarView compactCalendarView = new CompactCalendarView(appContext);
-            CalendarUtility.addDateColourWithData(compactCalendarView,"15/11/2023", "Test", Color.BLUE);
-            SimpleDateFormat sdf =  new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
-            //Create a date object
-            Date date;
-            try {
-                //Parse inputted date string and assign to date
-                date = sdf.parse("15/11/2023");
-            } catch (ParseException e) {
-                throw new RuntimeException(e);
-            }
+            CalendarUtility.addDateColourWithData(compactCalendarView,Calendar.getInstance().getTime(), "Test", Color.BLUE);
+            Date date = Calendar.getInstance().getTime();
             List<Event> events =  compactCalendarView.getEvents(date);
             assertEquals(events.get(0).getColor(),Color.BLUE);
         });

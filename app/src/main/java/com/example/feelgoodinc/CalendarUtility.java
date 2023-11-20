@@ -54,22 +54,11 @@ public class CalendarUtility {
     /***
      * This function takes an additional data string to add data about the event on the calendar
      * @param c a calendar element on the XML layout
-     * @param stringDate is formatted dd/mm/yyyy
+     * @param date is the date added
      * @param eventDetails a string describing the event (i.e.
      * @param color using the {@link Color} enum to decide color (i.e. Color.GREEN)
      */
-    public static void addDateColourWithData(CompactCalendarView c, String stringDate, String eventDetails, int color){
-        //For the date format
-        SimpleDateFormat sdf =  new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
-        //Create a date object
-        Date date;
-        try {
-            //Parse inputted date string and assign to date
-            date = sdf.parse(stringDate);
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-        assert date != null;
+    public static void addDateColourWithData(CompactCalendarView c, Date date, String eventDetails, int color){
         //Create a new event with the color, date in miliseconds and extra data if needed
         Event ev1 = new Event(color, date.getTime(), eventDetails);
         //Add event
