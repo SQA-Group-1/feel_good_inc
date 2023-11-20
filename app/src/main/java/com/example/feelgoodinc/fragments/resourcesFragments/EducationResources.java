@@ -1,4 +1,4 @@
-package com.example.feelgoodinc.fragments;
+package com.example.feelgoodinc.fragments.resourcesFragments;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.feelgoodinc.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link emergencyHotline#newInstance} factory method to
+ * Use the {@link EducationResources#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class emergencyHotline extends Fragment {
+public class EducationResources extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class emergencyHotline extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public emergencyHotline() {
+    public EducationResources() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class emergencyHotline extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment emergencyHotline.
+     * @return A new instance of fragment EducationResources.
      */
     // TODO: Rename and change types and number of parameters
-    public static emergencyHotline newInstance(String param1, String param2) {
-        emergencyHotline fragment = new emergencyHotline();
+    public static EducationResources newInstance(String param1, String param2) {
+        EducationResources fragment = new EducationResources();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class emergencyHotline extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_emergency_hotline, container, false);
+        return inflater.inflate(R.layout.fragment_education_resources, container, false);
     }
 }

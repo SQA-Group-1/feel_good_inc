@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4EFFC"
-    tools:context=".fragments.SupportGroup">
+    tools:context=".fragments.resourcesFragments.SupportGroup">
 
     <TextView
         android:id="@+id/MoodTitle"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/TeenTalk"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginStart="48dp"
@@ -41,7 +41,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/StressLessZone"
         android:layout_width="250dp"
         android:layout_height="0dp"
         android:layout_marginStart="48dp"
@@ -53,7 +53,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView12"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginStart="48dp"
@@ -68,7 +67,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/DepressionFighters"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginStart="48dp"
@@ -83,7 +82,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/traumaSurvivors"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginStart="48dp"
@@ -98,7 +97,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/socialConnections"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginStart="48dp"
@@ -113,7 +112,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/crisisNumber"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -121,12 +120,12 @@
         android:text="www.teentalk.com"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/TeenTalk"
         app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
         app:layout_constraintVertical_bias="0.898" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/podcastLink"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -134,12 +133,12 @@
         android:text="www.stressless.com"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/TeenTalk"
         app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
         app:layout_constraintVertical_bias="0.941" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/workbookLink"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -147,12 +146,12 @@
         android:text="www.bipolarbuds.com"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/TeenTalk"
         app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/toolkitLinks"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -160,12 +159,12 @@
         android:text="www.depression.com"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/TeenTalk"
         app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/sleephygieneLinks"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -173,12 +172,12 @@
         android:text="www.trauma.com"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/TeenTalk"
         app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/onlineCoursesLinks"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -186,7 +185,7 @@
         android:text="www.socialanxiety.com"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/TeenTalk"
         app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -198,7 +197,7 @@
         android:layout_marginEnd="37dp"
         android:layout_marginBottom="24dp"
         android:src="@drawable/pair_of_people"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintBottom_toTopOf="@+id/TeenTalk"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

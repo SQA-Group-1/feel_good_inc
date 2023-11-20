@@ -1,4 +1,4 @@
-package com.example.feelgoodinc.fragments;
+package com.example.feelgoodinc.fragments.resourcesFragments;
 
 import android.os.Bundle;
 
@@ -80,10 +80,10 @@ public class ResourcesFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_resources_page, container, false);
 
-        Button crisisHotline = view.findViewById(R.id.button7);
-        Button selfHelp = view.findViewById(R.id.button8);
-        Button educationMaterial = view.findViewById(R.id.button9);
-        Button supportGroup = view.findViewById(R.id.button10);
+        Button crisisHotline = view.findViewById(R.id.emergencyContactsPage);
+        Button selfHelp = view.findViewById(R.id.selfHelp);
+        Button educationMaterial = view.findViewById(R.id.educationMaterial);
+        Button supportGroup = view.findViewById(R.id.SupportGroup);
 
         ResourcesFragment resourcesFragment = new ResourcesFragment();
         crisisHotline.setOnClickListener(view1 -> {
