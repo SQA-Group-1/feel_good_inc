@@ -16,12 +16,9 @@ import com.github.sundeepk.compactcalendarview.domain.Event;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 @RunWith(AndroidJUnit4.class)
 public class CalendarUtilityTests {
@@ -32,16 +29,8 @@ public class CalendarUtilityTests {
         new Handler(Looper.getMainLooper()).post(() -> {
             Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
             CompactCalendarView compactCalendarView = new CompactCalendarView(appContext);
-            CalendarUtility.addDateColour(compactCalendarView,"15/11/2023", Color.BLUE);
-            SimpleDateFormat sdf =  new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
-            //Create a date object
-            Date date;
-            try {
-                //Parse inputted date string and assign to date
-                date = sdf.parse("15/11/2023");
-            } catch (ParseException e) {
-                throw new RuntimeException(e);
-            }
+            CalendarUtility.addDateColour(compactCalendarView,Calendar.getInstance().getTime(), Color.BLUE);
+            Date date = Calendar.getInstance().getTime();
             List<Event> events =  compactCalendarView.getEvents(date);
             assertEquals(events.size(),1);
         });
@@ -55,8 +44,6 @@ public class CalendarUtilityTests {
             Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
             CompactCalendarView compactCalendarView = new CompactCalendarView(appContext);
             CalendarUtility.addDateColourWithData(compactCalendarView, Calendar.getInstance().getTime(), "Test", Color.BLUE);
-            SimpleDateFormat sdf =  new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
-            //Create a date object
             Date date = Calendar.getInstance().getTime();
             List<Event> events =  compactCalendarView.getEvents(date);
             assertEquals(events.get(0).getData(),"Test");
