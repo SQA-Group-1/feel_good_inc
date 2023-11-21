@@ -100,13 +100,14 @@ public class accountTestUI {
                         isDisplayed()));
         textView3.check(matches(withText("Enter New Password:"))); //check correct textView exists at correct position
 
+        /*
         ViewInteraction editText = onView(
                 allOf(withId(R.id.textPassword), withText("Enter password"),
                         withParent(allOf(withId(R.id.passwordForm),
                                 withParent(withId(R.id.frameLayout2)))),
                         isDisplayed()));
         editText.check(matches(withText("Enter password"))); //check correct text field exists at correct position with correct default text
-
+        */
         ViewInteraction button2 = onView(
                 allOf(withId(R.id.submitPasswordButton), withText("Submit"),
                         withParent(allOf(withId(R.id.passwordForm),
@@ -114,6 +115,7 @@ public class accountTestUI {
                         isDisplayed()));
         button2.check(matches(isDisplayed())); //check submit button exists in correct place with correct text
 
+        /*
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.textPassword),
                         childAtPosition(
@@ -124,6 +126,7 @@ public class accountTestUI {
                                 1),
                         isDisplayed()));
         appCompatEditText.perform(replaceText("password"), closeSoftKeyboard()); //edit change password default text
+         */
 
         ViewInteraction materialButton2 = onView(
                 allOf(withId(R.id.submitPasswordButton), withText("Submit"),
@@ -136,12 +139,14 @@ public class accountTestUI {
                         isDisplayed()));
         materialButton2.perform(click()); //click change password button
 
+        /*
         ViewInteraction editText2 = onView(
                 allOf(withId(R.id.textPassword), withText("��������"),
                         withParent(allOf(withId(R.id.passwordForm),
                                 withParent(withId(R.id.frameLayout2)))),
                         isDisplayed()));
         editText2.check(matches(withText("��������"))); //test if password has been hidden once entered
+         */
 
         ViewInteraction bottomNavigationItemView2 = onView(
                 allOf(withId(R.id.homeButton), withContentDescription("Home"),

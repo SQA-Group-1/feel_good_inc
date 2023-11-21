@@ -25,6 +25,10 @@ android {
                 "proguard-rules.pro"
             )
         }
+        debug{
+            enableUnitTestCoverage
+            enableAndroidTestCoverage
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -55,6 +59,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     testImplementation("junit:junit:4.13.2")
+
+    implementation("org.jacoco:org.jacoco.core:0.8.7")
 
     androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
     androidTestImplementation("androidx.test.espresso:espresso-contrib:3.3.0")
