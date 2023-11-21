@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * <p>Uses the {@link JournalService} and {@link MoodService} to retrieve the {@link Journal} and {@link Mood} of the month
+ * <p>Uses the {@link JournalService} and {@link MoodService} to retrieve the {@link Journal} and {@link Mood} of the month</p>
  *
  */
 public class CalendarService {
