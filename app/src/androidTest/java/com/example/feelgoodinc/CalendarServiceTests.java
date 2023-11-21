@@ -1,5 +1,7 @@
 package com.example.feelgoodinc;
 
+import static com.example.feelgoodinc.services.CalendarService.addDateColour;
+import static com.example.feelgoodinc.services.CalendarService.addDateColourWithData;
 import static org.junit.Assert.assertEquals;
 
 import android.content.Context;
@@ -21,7 +23,7 @@ import java.util.Date;
 import java.util.List;
 
 @RunWith(AndroidJUnit4.class)
-public class CalendarUtilityTests {
+public class CalendarServiceTests {
     
     //Test covers the date the event is added on
     @Test
@@ -29,7 +31,7 @@ public class CalendarUtilityTests {
         new Handler(Looper.getMainLooper()).post(() -> {
             Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
             CompactCalendarView compactCalendarView = new CompactCalendarView(appContext);
-            CalendarUtility.addDateColour(compactCalendarView,Calendar.getInstance().getTime(), Color.BLUE);
+            addDateColour(compactCalendarView,Calendar.getInstance().getTime(), Color.BLUE);
             Date date = Calendar.getInstance().getTime();
             List<Event> events =  compactCalendarView.getEvents(date);
             assertEquals(events.size(),1);
@@ -43,7 +45,7 @@ public class CalendarUtilityTests {
         new Handler(Looper.getMainLooper()).post(() -> {
             Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
             CompactCalendarView compactCalendarView = new CompactCalendarView(appContext);
-            CalendarUtility.addDateColourWithData(compactCalendarView, Calendar.getInstance().getTime(), "Test", Color.BLUE);
+            addDateColourWithData(compactCalendarView, Calendar.getInstance().getTime(), "Test", Color.BLUE);
             Date date = Calendar.getInstance().getTime();
             List<Event> events =  compactCalendarView.getEvents(date);
             assertEquals(events.get(0).getData(),"Test");
@@ -56,7 +58,7 @@ public class CalendarUtilityTests {
         new Handler(Looper.getMainLooper()).post(() -> {
             Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
             CompactCalendarView compactCalendarView = new CompactCalendarView(appContext);
-            CalendarUtility.addDateColourWithData(compactCalendarView,Calendar.getInstance().getTime(), "Test", Color.BLUE);
+            addDateColourWithData(compactCalendarView,Calendar.getInstance().getTime(), "Test", Color.BLUE);
             Date date = Calendar.getInstance().getTime();
             List<Event> events =  compactCalendarView.getEvents(date);
             assertEquals(events.get(0).getColor(),Color.BLUE);

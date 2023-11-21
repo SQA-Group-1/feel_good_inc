@@ -1,10 +1,11 @@
 package com.example.feelgoodinc.services;
 
-import com.example.feelgoodinc.CalendarUtility;
-import com.example.feelgoodinc.R;
+import android.graphics.Color;
+
 import com.example.feelgoodinc.models.Journal;
 import com.example.feelgoodinc.models.Mood;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
+import com.github.sundeepk.compactcalendarview.domain.Event;
 
 import java.util.Date;
 import java.util.List;
@@ -15,6 +16,33 @@ import java.util.stream.Collectors;
  *
  */
 public class CalendarService {
+
+    /***
+     * This function will create a coloured event on the calendar without event details,
+     * @param c a calendar element on the XML layout
+     * @param date is the date you want to add to
+     * @param color using the {@link Color} enum to decide color (i.e. Color.GREEN)
+     */
+    public static void addDateColour(CompactCalendarView c, Date date, int color){
+        //Create a new event with the color, date in miliseconds and extra data if needed
+        Event ev1 = new Event(color, date.getTime());
+        //Add event
+        c.addEvent(ev1);
+    }
+
+    /***
+     * This function takes an additional data string to add data about the event on the calendar
+     * @param c a calendar element on the XML layout
+     * @param date is the date added
+     * @param eventDetails a string describing the event (i.e.
+     * @param color using the {@link Color} enum to decide color (i.e. Color.GREEN)
+     */
+    public static void addDateColourWithData(CompactCalendarView c, Date date, String eventDetails, int color){
+        //Create a new event with the color, date in miliseconds and extra data if needed
+        Event ev1 = new Event(color, date.getTime(), eventDetails);
+        //Add event
+        c.addEvent(ev1);
+    }
 
     /**
      * Reads in all of the {@link Journal} and {@link Mood} for the month and adds them to a calendar
@@ -52,10 +80,16 @@ public class CalendarService {
                     //colour = R.color.awful;
                     break;
             }
-            CalendarUtility.addDateColourWithData(calendarView,mood.getMoodWhen(),journal.getContent(),colour);
+            addDateColourWithData(calendarView,mood.getMoodWhen(),journal.getContent(),colour);
         }
     }
 
+    /**
+     * Finds the journal in a list on a given date
+     * @param journals the list of journals
+     * @param date the date of creation
+     * @return {@link Journal} created on date
+     */
     private Journal findJournal(List<Journal> journals, Date date){
         Journal journal;
         journal = journals.stream()

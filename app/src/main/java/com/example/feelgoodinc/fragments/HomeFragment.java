@@ -1,7 +1,6 @@
 package com.example.feelgoodinc.fragments;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.example.feelgoodinc.CalendarUtility;
 import com.example.feelgoodinc.R;
 import com.example.feelgoodinc.TutorialActivity;
 import com.example.feelgoodinc.services.CalendarService;
@@ -24,8 +22,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
-
-import java.util.Calendar;
 
 public class HomeFragment extends Fragment {
 
