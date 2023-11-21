@@ -3,4 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#B77C63FF</color>
+    <color name="rad">#F59999</color>
+    <color name="good">#E9E197</color>
+    <color name="meh">#C1E9A1</color>
+    <color name="sad">#5B71BE</color>
+    <color name="awful">#2F2979</color>
 </resources>

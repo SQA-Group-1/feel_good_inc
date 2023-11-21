@@ -46,7 +46,7 @@ public class CalendarService {
                     //colour = R.color.awful;
                     break;
             }
-            CalendarUtility.addDateColourWithData(calendarView,"mood.getMoodWhen()",journal.getContent(),colour);
+            CalendarUtility.addDateColourWithData(calendarView,mood.getMoodWhen(),journal.getContent(),colour);
         }
     }
 
