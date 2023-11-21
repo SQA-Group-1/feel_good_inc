@@ -24,8 +24,14 @@ public class CalendarService {
     public void populateCalendarMonth(CompactCalendarView calendarView, Date date){
         JournalService journalDatabaseHelper = new JournalService();
         List<Journal> journals = journalDatabaseHelper.getJournalsForMonth(date);
+        if(journals.isEmpty()){
+            return;
+        }
         MoodService moodDatabaseHelper = new MoodService();
         List<Mood> moods = moodDatabaseHelper.getMoodsForMonth(date);
+        if(moods.isEmpty()){
+            return;
+        }
         for(Mood mood : moods){
             Journal journal = findJournal(journals,date);
             int colour = 0;
