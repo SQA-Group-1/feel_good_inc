@@ -14,11 +14,13 @@ import android.widget.ImageButton;
 import com.example.feelgoodinc.CalendarUtility;
 import com.example.feelgoodinc.R;
 import com.example.feelgoodinc.TutorialActivity;
+import com.example.feelgoodinc.services.CalendarService;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -36,6 +38,8 @@ public class HomeFragment extends Fragment {
         button.setOnClickListener(l -> account());
         CompactCalendarView compactCalendarView = view.findViewById(R.id.calendar);
         //Example usage of adding event
+        CalendarService calendarService = new CalendarService();
+        calendarService.populateCalendarMonth(compactCalendarView, Calendar.getInstance().getTime());
         compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
             public void onDayClick(Date dateClicked) {
@@ -50,7 +54,7 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onMonthScroll(Date firstDayOfNewMonth) {
-
+                calendarService.populateCalendarMonth(compactCalendarView,firstDayOfNewMonth);
             }
         });
         return view;

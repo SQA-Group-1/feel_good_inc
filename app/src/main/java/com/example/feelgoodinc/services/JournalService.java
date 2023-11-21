@@ -115,7 +115,9 @@ public class JournalService extends Service {
      */
     public List<Journal> getJournalsForMonth(Date date) {
         ArrayList<Journal> results = new ArrayList<>();
-
+        if(journalsRef == null){
+            return results;
+        }
         // get epochs for start and end of month
         ZoneId zone = ZoneId.of("Europe/London"); //FIXME: might regret defaulting to London time
         ZonedDateTime dateTime = date.toInstant().atZone(zone);
@@ -131,9 +133,11 @@ public class JournalService extends Service {
         journalsRef.whereGreaterThanOrEqualTo("createdWhen", start).whereLessThanOrEqualTo("createdWhen", end).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
-                    Journal journal = Journal.fromMap(document.getData());
-                    Log.d("Feel Good Inc", document.getId() + " => " + document.getData());
-                    results.add(journal);
+                    if(document.exists()) {
+                        Journal journal = Journal.fromMap(document.getData());
+                        Log.d("Feel Good Inc", document.getId() + " => " + document.getData());
+                        results.add(journal);
+                    }
                 }
             } else {
                 Log.d("Feel Good Inc", "Error getting documents: ", task.getException());
