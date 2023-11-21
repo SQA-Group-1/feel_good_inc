@@ -16,7 +16,7 @@ public class Mood {
         RAD,
         GOOD,
         MEH,
-        BAD,
+        SAD,
         AWFUL;
     }
 
