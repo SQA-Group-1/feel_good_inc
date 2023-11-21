@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metric xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        date="2023-11-21T10:56:41.611787500Z"
+        schema="xsd/skeleton.xsd"
+        version="0.32.0"
+        xsi:noNamespaceSchemaLocation="xsd/metric.xsd">
+   <title>SCOM</title>
+   <description>"Sensitive Class Cohesion Metric" (SCOM) notes some deficits
+          in the LCOM5 metric, particularly how it fails in some cases to
+          discriminate (ie. it assigns the same score) between classes where
+          one is clearly more cohesive than the other. In these cases, SCOM
+          is more "sensitive" than LCOM5 because it evaluates to different
+          values.
+          Like LCOM5, SCOM values lie in the range [0..1], but their meanings
+          are inverted: "0" indicates no cohesion at all (i.e. every method
+          deals with an independent set of attributes), whereas "1" indicates
+          full cohesion (ie. every method uses all the attributes of the class).
+          This inversion stems from SCOM measuring how much "agreement" there
+          is among the methods, unlike LCOM which measures how much
+          "disagreement" there is.
+          Another important distinction is that SCOM assigns "weights" to each
+          pair of methods computed equal to the proportion of total attributes
+          being used between the two. This contributes to the metric's
+          "sensitivity".
+          Finally, the authors provide a formula for the minimum value beyond
+          which "we can claim that [the class] has at least two clusters and
+          it must be subdivided into smaller, more cohesive classes".</description>
+   <app element="false"
+        id="D:\Uni\Resources\Year 3\git_projects\feel_good_inc\metrics"/>
+   <colors high="0.6" low="0.4">[0.4000 .. 0.6000]</colors>
+   <min>0</min>
+   <max>0</max>
+   <bars xmlns:xs="http://www.w3.org/2001/XMLSchema"><!--count: 0, steps: 32; all: 0; min: 0; max: 0; delta: 0-->
+      <bar color="yellow" x="0">0</bar>
+      <!--step: 0, left: 0, right: 0-->
+      <bar color="yellow" x="0.03125">0</bar>
+      <!--step: 1, left: 0, right: 0-->
+      <bar color="yellow" x="0.0625">0</bar>
+      <!--step: 2, left: 0, right: 0-->
+      <bar color="yellow" x="0.09375">0</bar>
+      <!--step: 3, left: 0, right: 0-->
+      <bar color="yellow" x="0.125">0</bar>
+      <!--step: 4, left: 0, right: 0-->
+      <bar color="yellow" x="0.15625">0</bar>
+      <!--step: 5, left: 0, right: 0-->
+      <bar color="yellow" x="0.1875">0</bar>
+      <!--step: 6, left: 0, right: 0-->
+      <bar color="yellow" x="0.21875">0</bar>
+      <!--step: 7, left: 0, right: 0-->
+      <bar color="yellow" x="0.25">0</bar>
+      <!--step: 8, left: 0, right: 0-->
+      <bar color="yellow" x="0.28125">0</bar>
+      <!--step: 9, left: 0, right: 0-->
+      <bar color="yellow" x="0.3125">0</bar>
+      <!--step: 10, left: 0, right: 0-->
+      <bar color="yellow" x="0.34375">0</bar>
+      <!--step: 11, left: 0, right: 0-->
+      <bar color="yellow" x="0.375">0</bar>
+      <!--step: 12, left: 0, right: 0-->
+      <bar color="yellow" x="0.40625">0</bar>
+      <!--step: 13, left: 0, right: 0-->
+      <bar color="yellow" x="0.4375">0</bar>
+      <!--step: 14, left: 0, right: 0-->
+      <bar color="yellow" x="0.46875">0</bar>
+      <!--step: 15, left: 0, right: 0-->
+      <bar color="yellow" x="0.5">0</bar>
+      <!--step: 16, left: 0, right: 0-->
+      <bar color="yellow" x="0.53125">0</bar>
+      <!--step: 17, left: 0, right: 0-->
+      <bar color="yellow" x="0.5625">0</bar>
+      <!--step: 18, left: 0, right: 0-->
+      <bar color="yellow" x="0.59375">0</bar>
+      <!--step: 19, left: 0, right: 0-->
+      <bar color="yellow" x="0.625">0</bar>
+      <!--step: 20, left: 0, right: 0-->
+      <bar color="yellow" x="0.65625">0</bar>
+      <!--step: 21, left: 0, right: 0-->
+      <bar color="yellow" x="0.6875">0</bar>
+      <!--step: 22, left: 0, right: 0-->
+      <bar color="yellow" x="0.71875">0</bar>
+      <!--step: 23, left: 0, right: 0-->
+      <bar color="yellow" x="0.75">0</bar>
+      <!--step: 24, left: 0, right: 0-->
+      <bar color="yellow" x="0.78125">0</bar>
+      <!--step: 25, left: 0, right: 0-->
+      <bar color="yellow" x="0.8125">0</bar>
+      <!--step: 26, left: 0, right: 0-->
+      <bar color="yellow" x="0.84375">0</bar>
+      <!--step: 27, left: 0, right: 0-->
+      <bar color="yellow" x="0.875">0</bar>
+      <!--step: 28, left: 0, right: 0-->
+      <bar color="yellow" x="0.90625">0</bar>
+      <!--step: 29, left: 0, right: 0-->
+      <bar color="yellow" x="0.9375">0</bar>
+      <!--step: 30, left: 0, right: 0-->
+      <bar color="yellow" x="0.96875">0</bar>
+      <!--step: 31, left: 0, right: 0-->
+   </bars>
+   <statistics>
+      <total>0</total>
+      <elements>0</elements>
+      <mean>NaN</mean>
+      <sigma>NaN</sigma>
+      <variance>NaN</variance>
+      <defects>NaN</defects>
+   </statistics>
+</metric>
