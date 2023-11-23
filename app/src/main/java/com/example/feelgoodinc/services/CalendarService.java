@@ -31,6 +31,10 @@ public class CalendarService {
     Context context;
     private boolean isBound = false;
 
+    /**
+     * Creates the calendar service object
+     * @param context the context of the app
+     */
     public CalendarService(Context context){
         this.context = context;
 
@@ -133,11 +137,20 @@ public class CalendarService {
         }
     }
 
+    /**
+     * Unbinds the {@link JournalService} and {@link MoodService} from the app
+     */
     public void unBindServices(){
         context.unbindService(serviceConnection1);
         context.unbindService(serviceConnection2);
     }
 
+    /**
+     * Checks if two dates are on the same day
+     * @param date1 the first {@link Date) object
+     * @param date2 the second {@link Date} object
+     * @return True if the dates are on the same day, false if otherwise
+     */
     public static boolean areDatesOnSameDay(Date date1, Date date2) {
         Calendar cal1 = Calendar.getInstance();
         cal1.setTime(date1);
@@ -165,7 +178,18 @@ public class CalendarService {
         return null;
     }
 
+    /**
+     * The service connection used to bind the {@link JournalService}
+     */
     final ServiceConnection serviceConnection1 = new ServiceConnection() {
+        /**
+         * This binds the {@link JournalService} to the app
+         * @param componentName The concrete component name of the service that has
+         * been connected.
+         *
+         * @param iBinder The IBinder of the Service's communication channel,
+         * which you can now make calls on.
+         */
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             JournalService.LocalBinder binder =  (JournalService.LocalBinder) iBinder;
@@ -173,6 +197,11 @@ public class CalendarService {
             isBound = true;
         }
 
+        /**
+         * This stops the {@link JournalService} when unbound
+         * @param componentName The concrete component name of the service whose
+         * connection has been lost.
+         */
         @Override
         public void onServiceDisconnected(ComponentName componentName) {
             Intent journalIntent = new Intent(context, JournalService.class);
@@ -182,6 +211,14 @@ public class CalendarService {
     };
 
     final ServiceConnection serviceConnection2 = new ServiceConnection() {
+        /**
+         * This binds the {@link MoodService} to the app
+         * @param componentName The concrete component name of the service that has
+         * been connected.
+         *
+         * @param iBinder The IBinder of the Service's communication channel,
+         * which you can now make calls on.
+         */
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             MoodService.LocalBinder binder =  (MoodService.LocalBinder) iBinder;
@@ -189,6 +226,11 @@ public class CalendarService {
             isBound = true;
         }
 
+        /**
+         * This stops the {@link MoodService} when unbound
+         * @param componentName The concrete component name of the service whose
+         * connection has been lost.
+         */
         @Override
         public void onServiceDisconnected(ComponentName componentName) {
             Intent moodIntent = new Intent(context, MoodService.class);
