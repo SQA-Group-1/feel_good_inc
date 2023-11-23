@@ -1,21 +1,46 @@
 package com.example.feelgoodinc.services;
 
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.graphics.Color;
+import android.os.IBinder;
+import android.util.Log;
 
+import androidx.core.content.ContextCompat;
+
+import com.example.feelgoodinc.R;
 import com.example.feelgoodinc.models.Journal;
 import com.example.feelgoodinc.models.Mood;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * <p>Uses the {@link JournalService} and {@link MoodService} to retrieve the {@link Journal} and {@link Mood} of the month</p>
  *
  */
 public class CalendarService {
+    public MoodService moodService;
+    public JournalService journalService;
+    Context context;
+    private boolean isBound = false;
+
+    public CalendarService(Context context){
+        this.context = context;
+
+        Intent journalIntent = new Intent(context, JournalService.class);
+        context.startService(journalIntent);
+        context.bindService(journalIntent, serviceConnection1, Context.BIND_AUTO_CREATE);
+        Intent moodIntent = new Intent(context, MoodService.class);
+        context.startService(moodIntent);
+        context.bindService(moodIntent, serviceConnection2, Context.BIND_AUTO_CREATE);
+    }
 
     /***
      * This function will create a coloured event on the calendar without event details,
@@ -50,38 +75,79 @@ public class CalendarService {
      * @param date the date containing the month you wish to use
      */
     public void populateCalendarMonth(CompactCalendarView calendarView, Date date){
-        JournalService journalDatabaseHelper = new JournalService();
-        List<Journal> journals = journalDatabaseHelper.getJournalsForMonth(date);
-        if(journals.isEmpty()){
-            return;
+        AtomicReference<List<Journal>> journals = new AtomicReference<>();
+        AtomicReference<List<Mood>> moods = new AtomicReference<>();
+        if(isBound) {
+            journalService.getJournalsForMonth(date, journals1 -> {
+                journals.set(journals1);
+
+                // Fetch moods asynchronously
+                moodService.getMoodsForMonth(date, moods1 -> {
+                    moods.set(moods1);
+
+                    for(Mood mood : moods.get()){
+                        Log.d("Test", mood.getMoodType().getClass().getName());
+                        Journal journal = findJournal(journals.get(),mood.getMoodWhen());
+                        if(journal != null) {
+                            if (mood.getMoodType().equals(Mood.MoodType.RAD)) {
+                                int colour = ContextCompat.getColor(context, R.color.rad);
+                                addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
+                                if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
+                                    calendarView.setCurrentDayBackgroundColor(colour);
+                                }
+                            }
+                            if (mood.getMoodType().equals(Mood.MoodType.GOOD)) {
+                                int colour = ContextCompat.getColor(context, R.color.good);
+                                addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
+                                if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
+                                    calendarView.setCurrentDayBackgroundColor(colour);
+                                }
+                            }
+                            if (mood.getMoodType().equals(Mood.MoodType.MEH)) {
+                                int colour = ContextCompat.getColor(context, R.color.meh);
+                                addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
+                                if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
+                                    calendarView.setCurrentDayBackgroundColor(colour);
+                                }
+                            }
+                            if (mood.getMoodType().equals(Mood.MoodType.SAD)) {
+                                int colour = ContextCompat.getColor(context, R.color.sad);
+                                addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
+                                if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
+                                    calendarView.setCurrentDayBackgroundColor(colour);
+                                }
+                            }
+                            if (mood.getMoodType().equals(Mood.MoodType.AWFUL)) {
+                                int colour = ContextCompat.getColor(context, R.color.awful);
+                                addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
+                                if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
+                                    calendarView.setCurrentDayBackgroundColor(colour);
+                                }
+                            }
+
+                        }
+                    }
+                });
+            });
+
         }
-        MoodService moodDatabaseHelper = new MoodService();
-        List<Mood> moods = moodDatabaseHelper.getMoodsForMonth(date);
-        if(moods.isEmpty()){
-            return;
-        }
-        for(Mood mood : moods){
-            Journal journal = findJournal(journals,date);
-            int colour = 0;
-            switch(mood.getMoodType()){
-                case RAD:
-                    //colour = R.color.rad;
-                    break;
-                case GOOD:
-                    //colour = R.color.good;
-                    break;
-                case MEH:
-                    //colour = R.color.meh;
-                    break;
-                case SAD:
-                    //colour = R.color.sad;
-                    break;
-                case AWFUL:
-                    //colour = R.color.awful;
-                    break;
-            }
-            addDateColourWithData(calendarView,mood.getMoodWhen(),journal.getContent(),colour);
-        }
+    }
+
+    public void unBindServices(){
+        context.unbindService(serviceConnection1);
+        context.unbindService(serviceConnection2);
+    }
+
+    public static boolean areDatesOnSameDay(Date date1, Date date2) {
+        Calendar cal1 = Calendar.getInstance();
+        cal1.setTime(date1);
+
+        Calendar cal2 = Calendar.getInstance();
+        cal2.setTime(date2);
+
+        return cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
+                cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH) &&
+                cal1.get(Calendar.DAY_OF_MONTH) == cal2.get(Calendar.DAY_OF_MONTH);
     }
 
     /**
@@ -91,10 +157,43 @@ public class CalendarService {
      * @return {@link Journal} created on date
      */
     private Journal findJournal(List<Journal> journals, Date date){
-        Journal journal;
-        journal = journals.stream()
-                .filter(s -> s.getCreatedWhen().equals(date))
-                .collect(Collectors.toList()).get(0);
-        return journal;
+        for(Journal journal : journals) {
+            if(areDatesOnSameDay(journal.getCreatedWhen(),date)) {
+                return journal;
+            }
+        }
+        return null;
     }
+
+    final ServiceConnection serviceConnection1 = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+            JournalService.LocalBinder binder =  (JournalService.LocalBinder) iBinder;
+            journalService = binder.getService();
+            isBound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            Intent journalIntent = new Intent(context, JournalService.class);
+            context.stopService(journalIntent);
+            isBound = false;
+        }
+    };
+
+    final ServiceConnection serviceConnection2 = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+            MoodService.LocalBinder binder =  (MoodService.LocalBinder) iBinder;
+            moodService = binder.getService();
+            isBound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            Intent moodIntent = new Intent(context, MoodService.class);
+            context.stopService(moodIntent);
+            isBound = false;
+        }
+    };
 }

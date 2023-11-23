@@ -57,12 +57,12 @@ public class MoodFragment extends Fragment {
         super.onStop();
 
         // Unbind from the Mood service
-        getContext().stopService(new Intent(getContext(), MoodService.class));
-        getContext().unbindService(moodConnection);
+        requireContext().stopService(new Intent(getContext(), MoodService.class));
+        requireContext().unbindService(moodConnection);
 
         // Unbind from the Journal Service
-        getContext().stopService(new Intent(getContext(), JournalService.class));
-        getContext().unbindService(journalConnection);
+        requireContext().stopService(new Intent(getContext(), JournalService.class));
+        requireContext().unbindService(journalConnection);
     }
 
     @Override
@@ -71,11 +71,11 @@ public class MoodFragment extends Fragment {
 
         // Bind activity to service
         Intent intent = new Intent(this.getActivity(), MoodService.class);
-        getActivity().bindService(intent, moodConnection, Context.BIND_AUTO_CREATE);
+        requireActivity().bindService(intent, moodConnection, Context.BIND_AUTO_CREATE);
 
         //  Bind activity to Journal service
         Intent moodIntent = new Intent(this.getActivity(), JournalService.class);
-        getActivity().bindService(moodIntent, journalConnection, Context.BIND_AUTO_CREATE);
+        requireActivity().bindService(moodIntent, journalConnection, Context.BIND_AUTO_CREATE);
     }
 
 
@@ -134,7 +134,7 @@ public class MoodFragment extends Fragment {
             String selectedMood = "";
             int selectedId = moodsGroup.getCheckedRadioButtonId();
             if (selectedId != -1) {
-                RadioButton moodButton = (RadioButton) view.findViewById(selectedId);
+                RadioButton moodButton = view.findViewById(selectedId);
                 selectedMood = moodButton.getText().toString();
                 moodObj = new Mood(convertTextToMoodType(selectedMood), todayDate);
             }
