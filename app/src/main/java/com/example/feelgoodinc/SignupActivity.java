@@ -96,7 +96,7 @@ public class SignupActivity extends AppCompatActivity {
      *  A User object is returned
      *  Displays Toast messages to inform user of success/failure
      */
-    private void registerNewUser() {
+    void registerNewUser() {
         String email, password;
         email = emailTextView.getText().toString();
         password = passwordTextView.getText().toString();
