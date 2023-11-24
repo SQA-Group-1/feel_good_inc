@@ -138,6 +138,7 @@ public class UserProfileFragment extends Fragment {
     public void submitNewPassword(View v){
         EditText oldPassword = v.findViewById(R.id.oldPassword);
         EditText newPassword = v.findViewById(R.id.newPassword);
+        TextView passwordRequirements = v.findViewById(R.id.passwordRequirements);
 
         if (isBound){
             // change user's password
@@ -146,25 +147,35 @@ public class UserProfileFragment extends Fragment {
                 @Override
                 public void onSuccess(User user) {
                     // if task succeeds
-                    Toast.makeText(getContext(),
-                            "Password changed", Toast.LENGTH_LONG).show();
-
                     // hide form now that password has been changed
                     View passwordForm = v.findViewById(R.id.passwordForm);
                     passwordForm.setVisibility(View.INVISIBLE);
+                    passwordRequirements.setVisibility(View.INVISIBLE);
+
+                    Toast.makeText(getContext(),
+                            "Password changed", Toast.LENGTH_LONG).show();
                 }
 
                 @Override
                 public void onError(Exception e) {
-                    Log.d("COMP3013", e.toString());
-                    Toast.makeText(getContext(),
-                            "Password could not be changed", Toast.LENGTH_LONG).show();
+                    if (e instanceof IllegalArgumentException && e.getMessage() != null) {
+                        // Password does not meet requirements
+                        Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                        // show requirements
+                        passwordRequirements.setVisibility(View.VISIBLE);
+
+                    } else {
+                        // Other errors
+                        Log.d("COMP3013", "Error: " + e.toString());
+                        Toast.makeText(getContext(), "Password could not be changed", Toast.LENGTH_LONG).show();
+                    }
                 }
             });
 
             // clear fields
             oldPassword.setText(null);
             newPassword.setText(null);
+
         }
     }
 }

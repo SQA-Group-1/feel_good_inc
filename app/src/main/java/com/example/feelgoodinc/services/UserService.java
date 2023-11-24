@@ -98,8 +98,6 @@ public class UserService extends Service {
      * @param callback interface to track success/error and send data back to activity
      */
     public void loginUser(String email, String password, UserCallback callback){
-        // TODO: encrypt password
-
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 User user = getCurrentUser();
@@ -125,14 +123,19 @@ public class UserService extends Service {
      * @param callback interface to track success/error and send data back to activity
      */
     public void registerUser(String email, String password, UserCallback callback){
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                User user = getCurrentUser();
-                callback.onSuccess(user);
-            } else {
-                callback.onError(task.getException());
-            }
-        });
+        if (validatePassword(password)){
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    User user = getCurrentUser();
+                    callback.onSuccess(user);
+                } else {
+                    callback.onError(task.getException());
+                }
+            });
+        }
+
+        // give a specific error if the password is invalid
+        callback.onError(new IllegalArgumentException("Password does not meet the required criteria."));
     }
 
     /***
@@ -143,23 +146,26 @@ public class UserService extends Service {
      * @param callback interface to track success/error and send data back to activity
      */
     public void assignNewPassword(String oldPassword, String newPassword, UserCallback callback){
+        if (validatePassword(newPassword)){
+            FirebaseUser firebaseUser = mAuth.getCurrentUser();
+            if(firebaseUser != null){
+                firebaseUser.reload();
 
-        FirebaseUser firebaseUser = mAuth.getCurrentUser();
-        if(firebaseUser != null){
-            firebaseUser.reload();
+                AuthCredential credential = EmailAuthProvider.getCredential(Objects.requireNonNull(firebaseUser.getEmail()), oldPassword);
 
-            AuthCredential credential = EmailAuthProvider.getCredential(Objects.requireNonNull(firebaseUser.getEmail()), oldPassword);
-
-            firebaseUser.reauthenticate(credential)
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful()){
-                            changePassword(newPassword, firebaseUser, callback);
-                        } else {
-                            // password check failed
-                            callback.onError(task.getException());
-                        }
-                    });
+                firebaseUser.reauthenticate(credential).addOnCompleteListener(task -> {
+                    if (task.isSuccessful()){
+                        changePassword(newPassword, firebaseUser, callback);
+                    } else {
+                        // password check failed
+                        callback.onError(task.getException());
+                    }
+                });
+            }
         }
+
+        // give a specific error if the password is invalid
+        callback.onError(new IllegalArgumentException("Password does not meet the required criteria."));
     }
 
     /***
@@ -181,6 +187,21 @@ public class UserService extends Service {
             });
     }
 
+    /***
+     * takes string input and compares it with regex to make sure that the entered password contains:
+     * at least 1 uppercase character
+     * at least 1 lowercase character
+     * at least 1 number
+     * at least 1 special character
+     * and is 8 or more characters long
+     * @param password user entered password
+     * @return true if password is valid
+     */
+    private boolean validatePassword(String password){
+        // check if password meets requirements
+        String regex = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$!%^&+=])(?=\\S+$).{8,}";
+        return password.matches(regex);
+    }
 
     /***
      * convert the {@link FirebaseUser} to our {@link User} class
