@@ -102,7 +102,9 @@ public class MoodService extends Service {
      */
     public List<Mood> getMoodsForMonth(Date date) {
         ArrayList<Mood> results = new ArrayList<>();
-
+        if(moodsRef == null){
+            return results;
+        }
         // get the start of the month epoch
         // get the end of the month epoch
         ZoneId zone = ZoneId.of("Europe/London"); //FIXME: might regret defaulting to London time
@@ -119,9 +121,11 @@ public class MoodService extends Service {
         moodsRef.whereGreaterThanOrEqualTo("moodWhen", start).whereLessThanOrEqualTo("moodWhen", end).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
-                    Mood mood = Mood.fromMap(document.getData());
-                    Log.d("Feel Good Inc", document.getId() + " => " + document.getData());
-                    results.add(mood);
+                    if(document.exists()){
+                        Mood mood = Mood.fromMap(document.getData());
+                        Log.d("Feel Good Inc", document.getId() + " => " + document.getData());
+                        results.add(mood);
+                    }
                 }
             } else {
                 Log.d("COMP3013", "Error getting documents");

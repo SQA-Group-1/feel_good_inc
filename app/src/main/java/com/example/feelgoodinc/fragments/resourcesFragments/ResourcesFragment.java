@@ -108,6 +108,7 @@ public class ResourcesFragment extends Fragment {
             SupportGroup supportGroups = new SupportGroup();
             FragmentManager fm = getActivity().getSupportFragmentManager();
             fm.beginTransaction().replace(R.id.frameLayout2, supportGroups).commit();
+
         });
         return view;
     }
