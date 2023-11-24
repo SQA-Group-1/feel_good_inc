@@ -2,6 +2,7 @@ package com.example.feelgoodinc.fragments.calmingActivities;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,7 @@ public class BreathingFragment extends Fragment {
         ProgressBar progressBar = view.findViewById(R.id.progress_bar);
         TextView progressText = view.findViewById(R.id.progress_text);
         TextView instructions = view.findViewById(R.id.breathInstruction);
-        final Handler handler = new Handler();
+        final Handler handler = new Handler(Looper.getMainLooper());
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
