@@ -6,9 +6,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.graphics.Color;
 import android.os.IBinder;
-
 import androidx.core.content.ContextCompat;
-
 import com.example.feelgoodinc.R;
 import com.example.feelgoodinc.models.Journal;
 import com.example.feelgoodinc.models.Mood;
@@ -93,6 +91,7 @@ public class CalendarService {
     public interface CalendarServiceCallback {
         void onServicesBound();
     }
+
 
     /**
      * Reads in all of the {@link Journal} and {@link Mood} for the month and adds them to a calendar

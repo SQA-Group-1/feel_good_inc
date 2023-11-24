@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4EFFC"
-    tools:context=".fragments.ResourcesFragment">
+    tools:context=".fragments.resourcesFragments.ResourcesFragment">
 
 
     <TextView
@@ -23,14 +23,14 @@
         android:textAllCaps="false"
         android:textColor="#081042"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
+        app:layout_constraintBottom_toTopOf="@+id/emergencyContactsPage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/emergencyContactsPage"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginStart="28dp"
@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/MoodTitle" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/selfHelp"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginStart="28dp"
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/MoodTitle" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/educationMaterial"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginStart="28dp"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/MoodTitle" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/SupportGroup"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginStart="28dp"

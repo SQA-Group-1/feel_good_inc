@@ -109,7 +109,6 @@ public class MoodService extends Service {
         ArrayList<Mood> results = new ArrayList<>();
         if (moodsRef == null) {
             listener.onMoodsFetched(results);
-            return results;
         }
         // get the start of the month epoch
         // get the end of the month epoch

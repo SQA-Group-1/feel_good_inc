@@ -122,7 +122,6 @@ public class JournalService extends Service {
         ArrayList<Journal> results = new ArrayList<>();
         if (journalsRef == null) {
             listener.onJournalsFetched(results);
-            return results;
         }
         // get epochs for start and end of month
         ZonedDateTime dateTime = date.toInstant().atZone(TimeZone.getDefault().toZoneId());
