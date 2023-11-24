@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.graphics.Color;
 import android.os.IBinder;
-import android.util.Log;
 
 import androidx.core.content.ContextCompat;
 
@@ -26,21 +25,36 @@ import java.util.concurrent.atomic.AtomicReference;
  *
  */
 public class CalendarService {
+    private final CalendarServiceCallback callback;
     public MoodService moodService;
     public JournalService journalService;
     Context context;
-    private boolean isBound = false;
+    public boolean journalBound;
+    public boolean moodBound;
 
     /**
      * Creates the calendar service object
      * @param context the context of the app
      */
-    public CalendarService(Context context){
+    public CalendarService(Context context,CalendarServiceCallback callback){
+        this.callback = callback;
         this.context = context;
+        bindToJournalService();
+    }
 
+    /**
+     * Binds the {@link JournalService} to the {@link CalendarService}
+     */
+    public void bindToJournalService(){
         Intent journalIntent = new Intent(context, JournalService.class);
         context.startService(journalIntent);
         context.bindService(journalIntent, serviceConnection1, Context.BIND_AUTO_CREATE);
+    }
+
+    /**
+     * Binds the {@link MoodService} to the {@link CalendarService}
+     */
+    public void bindToMoodService(){
         Intent moodIntent = new Intent(context, MoodService.class);
         context.startService(moodIntent);
         context.bindService(moodIntent, serviceConnection2, Context.BIND_AUTO_CREATE);
@@ -74,6 +88,13 @@ public class CalendarService {
     }
 
     /**
+     * Alerts when the {@link CalendarService} is bound to the services
+     */
+    public interface CalendarServiceCallback {
+        void onServicesBound();
+    }
+
+    /**
      * Reads in all of the {@link Journal} and {@link Mood} for the month and adds them to a calendar
      * @param calendarView the calendar you want to display the moods and journals
      * @param date the date containing the month you wish to use
@@ -81,18 +102,16 @@ public class CalendarService {
     public void populateCalendarMonth(CompactCalendarView calendarView, Date date){
         AtomicReference<List<Journal>> journals = new AtomicReference<>();
         AtomicReference<List<Mood>> moods = new AtomicReference<>();
-        if(isBound) {
+        if(moodBound && journalBound) {
             journalService.getJournalsForMonth(date, journals1 -> {
                 journals.set(journals1);
-
                 // Fetch moods asynchronously
                 moodService.getMoodsForMonth(date, moods1 -> {
                     moods.set(moods1);
-
                     for(Mood mood : moods.get()){
-                        Log.d("Test", mood.getMoodType().getClass().getName());
                         Journal journal = findJournal(journals.get(),mood.getMoodWhen());
                         if(journal != null) {
+                            //Add event with colour
                             if (mood.getMoodType().equals(Mood.MoodType.RAD)) {
                                 int colour = ContextCompat.getColor(context, R.color.rad);
                                 addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
@@ -127,6 +146,7 @@ public class CalendarService {
                                 if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
                                     calendarView.setCurrentDayBackgroundColor(colour);
                                 }
+
                             }
 
                         }
@@ -183,7 +203,7 @@ public class CalendarService {
      */
     final ServiceConnection serviceConnection1 = new ServiceConnection() {
         /**
-         * This binds the {@link JournalService} to the app
+         * This binds the {@link JournalService} to the app and starts the binding to the {@link MoodService} on success
          * @param componentName The concrete component name of the service that has
          * been connected.
          *
@@ -194,7 +214,8 @@ public class CalendarService {
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             JournalService.LocalBinder binder =  (JournalService.LocalBinder) iBinder;
             journalService = binder.getService();
-            isBound = true;
+            journalBound = true;
+            bindToMoodService();
         }
 
         /**
@@ -206,13 +227,13 @@ public class CalendarService {
         public void onServiceDisconnected(ComponentName componentName) {
             Intent journalIntent = new Intent(context, JournalService.class);
             context.stopService(journalIntent);
-            isBound = false;
+            journalBound = false;
         }
     };
 
     final ServiceConnection serviceConnection2 = new ServiceConnection() {
         /**
-         * This binds the {@link MoodService} to the app
+         * This binds the {@link MoodService} to the app and alerts callback that the services are bound
          * @param componentName The concrete component name of the service that has
          * been connected.
          *
@@ -223,7 +244,10 @@ public class CalendarService {
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             MoodService.LocalBinder binder =  (MoodService.LocalBinder) iBinder;
             moodService = binder.getService();
-            isBound = true;
+            moodBound = true;
+            if (callback != null) {
+                callback.onServicesBound();
+            }
         }
 
         /**
@@ -235,7 +259,7 @@ public class CalendarService {
         public void onServiceDisconnected(ComponentName componentName) {
             Intent moodIntent = new Intent(context, MoodService.class);
             context.stopService(moodIntent);
-            isBound = false;
+            moodBound = false;
         }
     };
 }

@@ -21,8 +21,8 @@ public class HomePage extends AppCompatActivity implements NavigationBarView.OnI
         setContentView(R.layout.home_activity);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(this);
-        getSupportFragmentManager().beginTransaction().replace(R.id.flFragment,homeFragment).commit();
         bottomNavigationView.setSelectedItemId(R.id.homeButton);
+        selectFragment(bottomNavigationView.getSelectedItemId());
     }
 
     @Override
