@@ -47,6 +47,7 @@ import java.util.Date;
 public class MoodFragment extends Fragment {
     Journal journalObj;
     Mood moodObj;
+    boolean isClicked;
     MoodService moodService;
     JournalService journalService;
     boolean moodBound = false, journalBound = false;
@@ -57,12 +58,12 @@ public class MoodFragment extends Fragment {
         super.onStop();
 
         // Unbind from the Mood service
-        getContext().stopService(new Intent(getContext(), MoodService.class));
-        getContext().unbindService(moodConnection);
+        requireContext().stopService(new Intent(getContext(), MoodService.class));
+        requireContext().unbindService(moodConnection);
 
         // Unbind from the Journal Service
-        getContext().stopService(new Intent(getContext(), JournalService.class));
-        getContext().unbindService(journalConnection);
+        requireContext().stopService(new Intent(getContext(), JournalService.class));
+        requireContext().unbindService(journalConnection);
     }
 
     @Override
@@ -71,11 +72,11 @@ public class MoodFragment extends Fragment {
 
         // Bind activity to service
         Intent intent = new Intent(this.getActivity(), MoodService.class);
-        getActivity().bindService(intent, moodConnection, Context.BIND_AUTO_CREATE);
+        requireActivity().bindService(intent, moodConnection, Context.BIND_AUTO_CREATE);
 
         //  Bind activity to Journal service
         Intent moodIntent = new Intent(this.getActivity(), JournalService.class);
-        getActivity().bindService(moodIntent, journalConnection, Context.BIND_AUTO_CREATE);
+        requireActivity().bindService(moodIntent, journalConnection, Context.BIND_AUTO_CREATE);
     }
 
 
@@ -113,9 +114,11 @@ public class MoodFragment extends Fragment {
     };
     //endregion
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        isClicked = false;
         View view = inflater.inflate(R.layout.fragment_mood, container, false);
         RadioGroup moodsGroup = view.findViewById(R.id.moodsGroup);
         Button confirmButton = view.findViewById(R.id.moodComfirmButton);
@@ -134,7 +137,7 @@ public class MoodFragment extends Fragment {
             String selectedMood = "";
             int selectedId = moodsGroup.getCheckedRadioButtonId();
             if (selectedId != -1) {
-                RadioButton moodButton = (RadioButton) view.findViewById(selectedId);
+                RadioButton moodButton = view.findViewById(selectedId);
                 selectedMood = moodButton.getText().toString();
                 moodObj = new Mood(convertTextToMoodType(selectedMood), todayDate);
             }
@@ -145,6 +148,7 @@ public class MoodFragment extends Fragment {
                 Toast.makeText(getActivity(), "Don't forget to write something for your feeling!", Toast.LENGTH_SHORT).show();
             } else {
                 journalObj = new Journal(journalTitle, todayDate, todayDate, journalText);
+
                 if (moodBound) {
                     moodService.addNewMood(moodObj, getActivity());
                 }
