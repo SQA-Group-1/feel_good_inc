@@ -47,6 +47,7 @@ import java.util.Date;
 public class MoodFragment extends Fragment {
     Journal journalObj;
     Mood moodObj;
+    boolean isClicked;
     MoodService moodService;
     JournalService journalService;
     boolean moodBound = false, journalBound = false;
@@ -113,9 +114,11 @@ public class MoodFragment extends Fragment {
     };
     //endregion
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        isClicked = false;
         View view = inflater.inflate(R.layout.fragment_mood, container, false);
         RadioGroup moodsGroup = view.findViewById(R.id.moodsGroup);
         Button confirmButton = view.findViewById(R.id.moodComfirmButton);
@@ -145,6 +148,7 @@ public class MoodFragment extends Fragment {
                 Toast.makeText(getActivity(), "Don't forget to write something for your feeling!", Toast.LENGTH_SHORT).show();
             } else {
                 journalObj = new Journal(journalTitle, todayDate, todayDate, journalText);
+
                 if (moodBound) {
                     moodService.addNewMood(moodObj, getActivity());
                 }
