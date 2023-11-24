@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.feelgoodinc.fragments.calmingActivities.ActivityFragment;
 import com.example.feelgoodinc.fragments.HomeFragment;
-import com.example.feelgoodinc.fragments.ResourcesFragment;
+import com.example.feelgoodinc.fragments.resourcesFragments.ResourcesFragment;
 import com.example.feelgoodinc.fragments.UserProfileFragment;
 import com.example.feelgoodinc.fragments.MoodFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
