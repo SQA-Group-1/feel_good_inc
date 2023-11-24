@@ -21,6 +21,7 @@ import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 /**
  * <p>Accesses the firebase database to recieve and add user data </p>
@@ -108,19 +109,22 @@ public class JournalService extends Service {
         return binder;
     }
 
+    public interface OnJournalsFetchedListener {
+        void onJournalsFetched(List<Journal> journals);
+    }
+
     /**
      * reads in all the {@link} Journal for the input month
      * @param date should be a {@link Date} within the month you are trying to get the moods for
      * @return a list of {@link Journal} showing all user journals for the current month
      */
-    public List<Journal> getJournalsForMonth(Date date) {
+    public List<Journal> getJournalsForMonth(Date date, OnJournalsFetchedListener listener) {
         ArrayList<Journal> results = new ArrayList<>();
-        if(journalsRef == null){
-            return results;
+        if (journalsRef == null) {
+            listener.onJournalsFetched(results);
         }
         // get epochs for start and end of month
-        ZoneId zone = ZoneId.of("Europe/London"); //FIXME: might regret defaulting to London time
-        ZonedDateTime dateTime = date.toInstant().atZone(zone);
+        ZonedDateTime dateTime = date.toInstant().atZone(TimeZone.getDefault().toZoneId());
         YearMonth yearMonth = YearMonth.of(dateTime.getYear(), dateTime.getMonth());
 
         LocalDate startOfMonth = yearMonth.atDay(1);
@@ -139,8 +143,10 @@ public class JournalService extends Service {
                         results.add(journal);
                     }
                 }
+                listener.onJournalsFetched(results);
             } else {
                 Log.d("Feel Good Inc", "Error getting documents: ", task.getException());
+                listener.onJournalsFetched(results);
             }
         });
         return results;
