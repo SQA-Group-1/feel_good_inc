@@ -5,11 +5,11 @@
     <color name="primary">#B77C63FF</color>
     <color name="purplebackground">#F4EFFC</color>
     <color name="grey">#696969</color>
-    <color name="radcolor">#F59999</color>
-    <color name="goodcolor">#E9E197</color>
-    <color name="mehcolor">#C1E9A1</color>
-    <color name="sadcolor">#5B71BE</color>
-    <color name="awfulcolor">#2f2979</color>
+    <color name="rad">#F59999</color>
+    <color name="good">#E9E197</color>
+    <color name="meh">#C1E9A1</color>
+    <color name="sad">#5B71BE</color>
+    <color name="awful">#2F2979</color>
     <color name="buttoncolor">#8C7CE3</color>
     <color name="textcolor">#081042</color>
     <color name="editboxcolor">#B7D9D2FF</color>
