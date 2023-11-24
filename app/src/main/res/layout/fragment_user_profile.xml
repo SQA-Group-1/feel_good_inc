@@ -50,13 +50,31 @@
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingLeft="30dp"
-        android:paddingTop="60dp"
+        android:paddingTop="30dp"
         android:paddingRight="30dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/changePassword">
+
+        <TextView
+            android:id="@+id/crisisNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_old_password_tag"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/oldPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/enter_password"
+            android:inputType="textPassword"
+            android:textSize="20sp"
+            android:autofillHints="@string/enter_password"
+            android:layout_marginBottom="20dp"/>
 
         <TextView
             android:id="@+id/textView7"
@@ -66,20 +84,20 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/textPassword"
+            android:id="@+id/newPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/enter_password"
             android:inputType="textPassword"
             android:textSize="20sp"
-            android:autofillHints="@string/enter_password" />
+            android:autofillHints="@string/enter_password"
+            android:layout_marginBottom="20dp"/>
 
         <Button
             android:id="@+id/submitPasswordButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
             android:text="@string/submit" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

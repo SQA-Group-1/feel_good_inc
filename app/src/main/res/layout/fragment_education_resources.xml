@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/placeholderResources"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4EFFC"
+    tools:context=".fragments.resourcesFragments.emergencyHotline">
+
+    <TextView
+        android:id="@+id/MoodTitle"
+        android:layout_width="342dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/poppins_medium"
+        android:includeFontPadding="true"
+        android:text="Education"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#081042"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TeenTalk"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="520dp"
+        android:text="Articles"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/StressLessZone"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="480dp"
+        android:text="Podcasts"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/bipolarBud"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="400dp"
+        android:text="Workbooks"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
+        app:layout_constraintVertical_bias="0.899" />
+
+    <TextView
+        android:id="@+id/DepressionFighters"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="320dp"
+        android:text="Toolkits"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/traumaSurvivors"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="250dp"
+        android:text="Sleep Hygiene Tips"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/socialConnections"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="180dp"
+        android:text="Online Courses"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/crisisNumber"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="540dp"
+        android:text="www.articles.com"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/TeenTalk"
+        app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
+        app:layout_constraintVertical_bias="0.759" />
+
+    <TextView
+        android:id="@+id/podcastLink"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="450dp"
+        android:text="www.podcast.com"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/TeenTalk"
+        app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
+        app:layout_constraintVertical_bias="0.822" />
+
+    <TextView
+        android:id="@+id/workbookLink"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="380dp"
+        android:text="www.workbook.com"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/TeenTalk"
+        app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
+        app:layout_constraintVertical_bias="0.983" />
+
+    <TextView
+        android:id="@+id/toolkitLinks"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="300dp"
+        android:text="www.toolkits.com"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/TeenTalk"
+        app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/sleephygieneLinks"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="230dp"
+        android:text="www.selfhygiene.com"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/TeenTalk"
+        app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/onlineCoursesLinks"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="160dp"
+        android:text="www.onlinecourses.com"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/TeenTalk"
+        app:layout_constraintTop_toBottomOf="@+id/MoodTitle"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="102dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="105dp"
+        android:src="@drawable/books"
+        app:layout_constraintBottom_toTopOf="@+id/StressLessZone"
+        app:layout_constraintEnd_toEndOf="@+id/MoodTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

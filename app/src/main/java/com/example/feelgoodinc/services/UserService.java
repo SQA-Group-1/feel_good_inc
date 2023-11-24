@@ -5,12 +5,15 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import com.example.feelgoodinc.models.User;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.Objects;
 
 /***
  * Accesses the firebase database to receive and add user data
@@ -51,6 +54,21 @@ public class UserService extends Service {
     }
 
     /***
+     * get the current user's key without initializing the user.
+     * This is needed to determine which collection to access the cloud fire store.
+     * * @return
+     */
+    public static String getCurrentUserKey() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (user != null){
+            return user.getUid();
+        }
+
+        return null;
+    }
+
+    /***
      * sets up firebase connection on create
      */
     @Override
@@ -87,8 +105,8 @@ public class UserService extends Service {
                 User user = getCurrentUser();
 
                 // get date to set last user login
-                LocalDate ldate = LocalDate.now();
-                Instant instant = Instant.from(ldate.atStartOfDay(ZoneId.of("GMT")));
+                LocalDate lDate = LocalDate.now();
+                Instant instant = Instant.from(lDate.atStartOfDay(ZoneId.of("GMT")));
                 Date date = Date.from(instant);
                 user.setLastLoginWhen(date);
 
@@ -116,6 +134,53 @@ public class UserService extends Service {
             }
         });
     }
+
+    /***
+     * re-authenticates the user with their email and old password.  If this succeeds, calls
+     * changePassword()
+     * @param oldPassword user's old password input
+     * @param newPassword password the user wants to change to
+     * @param callback interface to track success/error and send data back to activity
+     */
+    public void assignNewPassword(String oldPassword, String newPassword, UserCallback callback){
+
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+        if(firebaseUser != null){
+            firebaseUser.reload();
+
+            AuthCredential credential = EmailAuthProvider.getCredential(Objects.requireNonNull(firebaseUser.getEmail()), oldPassword);
+
+            firebaseUser.reauthenticate(credential)
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()){
+                            changePassword(newPassword, firebaseUser, callback);
+                        } else {
+                            // password check failed
+                            callback.onError(task.getException());
+                        }
+                    });
+        }
+    }
+
+    /***
+     * changes the user's password the the new password input.  If this succeeds, a user object
+     * for the current user is returned.
+     * @param newPassword new password given by assignNewPassword() from the user input
+     * @param firebaseUser current user
+     * @param callback interface to track success/error and send data back to activity
+     */
+    private void changePassword(String newPassword, FirebaseUser firebaseUser, UserCallback callback){
+        firebaseUser.updatePassword(newPassword)
+            .addOnCompleteListener(task -> {
+                if (task.isSuccessful()){
+                    User user = getCurrentUser();
+                    callback.onSuccess(user);
+                } else {
+                    callback.onError(task.getException());
+                }
+            });
+    }
+
 
     /***
      * convert the {@link FirebaseUser} to our {@link User} class
