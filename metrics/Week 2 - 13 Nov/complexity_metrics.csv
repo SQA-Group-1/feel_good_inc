@@ -1,0 +1,194 @@
+Complexity metrics,Tue, 21 Nov 2023 09:23:50 GMT
+Method,CogC,ev(G),iv(G),v(G)
+click(int),1,n/a,n/a,n/a
+"com.example.feelgoodinc.CalendarUtility.addDateColour(CompactCalendarView, String, int)",1,1,1,2
+"com.example.feelgoodinc.CalendarUtility.addDateColourWithData(CompactCalendarView, String, String, int)",1,1,1,2
+com.example.feelgoodinc.ExampleInstrumentedTest.useAppContext(),0,1,1,1
+com.example.feelgoodinc.ExampleUnitTest.addition_isCorrect(),0,1,1,1
+com.example.feelgoodinc.HomePage.onCreate(Bundle),0,1,1,1
+com.example.feelgoodinc.HomePage.onNavigationItemSelected(MenuItem),1,1,2,2
+com.example.feelgoodinc.HomePage.onResume(),0,1,1,1
+com.example.feelgoodinc.HomePage.selectFragment(int),6,1,7,7
+com.example.feelgoodinc.LoginActivity.loginUserAccount(),3,3,4,4
+com.example.feelgoodinc.LoginActivity.onCreate(Bundle),0,1,1,1
+com.example.feelgoodinc.LoginActivity.onStart(),0,1,1,1
+com.example.feelgoodinc.LoginActivity.onStop(),1,1,2,2
+com.example.feelgoodinc.LoginActivityTest.loginUserFailed(),0,1,1,1
+com.example.feelgoodinc.LoginActivityTest.loginUserSuccessful(),0,1,1,1
+com.example.feelgoodinc.LoginActivityTest.onCreate(),0,1,1,1
+com.example.feelgoodinc.LoginActivityTest.onStart(),0,1,1,1
+com.example.feelgoodinc.LoginActivityTest.onStop(),0,1,1,1
+com.example.feelgoodinc.LoginActivityTest.setUp(),0,1,1,1
+com.example.feelgoodinc.LoginActivityTest.tearDown(),0,1,1,1
+com.example.feelgoodinc.SignupActivity.onCreate(Bundle),0,1,1,1
+com.example.feelgoodinc.SignupActivity.onStart(),0,1,1,1
+com.example.feelgoodinc.SignupActivity.onStop(),1,1,2,2
+com.example.feelgoodinc.SignupActivity.registerNewUser(),3,3,4,4
+com.example.feelgoodinc.SignupActivityTest.onCreate(),0,1,1,1
+com.example.feelgoodinc.SignupActivityTest.onStop(),0,1,1,1
+com.example.feelgoodinc.SignupActivityTest.registerNewUser(),0,1,1,1
+com.example.feelgoodinc.SignupActivityTest.setUp(),0,1,1,1
+com.example.feelgoodinc.SignupActivityTest.tearDown(),0,1,1,1
+com.example.feelgoodinc.TutorialActivity.onCreate(Bundle),0,1,1,1
+com.example.feelgoodinc.activityRecyclerView.ActivityViewHolder.ActivityViewHolder(View),0,1,1,1
+com.example.feelgoodinc.activityRecyclerView.ClickListener.click(int),0,1,1,1
+"com.example.feelgoodinc.adapters.ActivityGalleryAdapter.ActivityGalleryAdapter(List<Activity>, Context, ClickListener)",0,1,1,1
+com.example.feelgoodinc.adapters.ActivityGalleryAdapter.getItemCount(),0,1,1,1
+com.example.feelgoodinc.adapters.ActivityGalleryAdapter.onAttachedToRecyclerView(RecyclerView),0,1,1,1
+"com.example.feelgoodinc.adapters.ActivityGalleryAdapter.onBindViewHolder(ActivityViewHolder, int)",0,1,1,1
+"com.example.feelgoodinc.adapters.ActivityGalleryAdapter.onCreateViewHolder(ViewGroup, int)",0,1,1,1
+"com.example.feelgoodinc.adapters.TutorialPagerAdapter.TutorialPagerAdapter(FragmentActivity, List<Fragment>)",0,1,1,1
+com.example.feelgoodinc.adapters.TutorialPagerAdapter.createFragment(int),0,1,1,1
+com.example.feelgoodinc.adapters.TutorialPagerAdapter.getItemCount(),0,1,1,1
+com.example.feelgoodinc.fragments.HomeFragment.account(),0,1,1,1
+"com.example.feelgoodinc.fragments.HomeFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",2,1,2,2
+com.example.feelgoodinc.fragments.MoodFragment.convertTextToMoodType(String),1,6,1,6
+"com.example.feelgoodinc.fragments.MoodFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",18,1,8,8
+com.example.feelgoodinc.fragments.MoodFragment.onStart(),0,1,1,1
+com.example.feelgoodinc.fragments.MoodFragment.onStop(),0,1,1,1
+com.example.feelgoodinc.fragments.PlaceHolderResources.PlaceHolderResources(),0,1,1,1
+"com.example.feelgoodinc.fragments.PlaceHolderResources.newInstance(String, String)",0,1,1,1
+com.example.feelgoodinc.fragments.PlaceHolderResources.onCreate(Bundle),1,1,2,2
+"com.example.feelgoodinc.fragments.PlaceHolderResources.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+com.example.feelgoodinc.fragments.ResourcesFragment.ResourcesFragment(),0,1,1,1
+"com.example.feelgoodinc.fragments.ResourcesFragment.newInstance(String, String)",0,1,1,1
+com.example.feelgoodinc.fragments.ResourcesFragment.onCreate(Bundle),1,1,2,2
+"com.example.feelgoodinc.fragments.ResourcesFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+com.example.feelgoodinc.fragments.UserProfileFragment.changePasswordClick(View),2,1,2,2
+"com.example.feelgoodinc.fragments.UserProfileFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+com.example.feelgoodinc.fragments.UserProfileFragment.onStart(),1,1,2,2
+com.example.feelgoodinc.fragments.UserProfileFragment.onStop(),3,1,3,3
+com.example.feelgoodinc.fragments.UserProfileFragment.submitNewPassword(View),1,1,2,2
+"com.example.feelgoodinc.fragments.calmingActivities.ActivityFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+"com.example.feelgoodinc.fragments.calmingActivities.ActivityFragment.onViewCreated(View, Bundle)",2,1,1,4
+com.example.feelgoodinc.fragments.calmingActivities.ActivityFragment.populateList(),0,1,1,1
+com.example.feelgoodinc.fragments.calmingActivities.BreathingFragment.closeActivity(),0,1,1,1
+"com.example.feelgoodinc.fragments.calmingActivities.BreathingFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",7,1,3,3
+"com.example.feelgoodinc.fragments.calmingActivities.GroundingFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+com.example.feelgoodinc.fragments.calmingActivities.GroundingFragment.submitGrounding(View),7,1,4,5
+com.example.feelgoodinc.fragments.calmingActivities.SleepFragment.closeSoundActivity(),0,1,1,1
+"com.example.feelgoodinc.fragments.calmingActivities.SleepFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+com.example.feelgoodinc.fragments.calmingActivities.SleepFragment.play(int),3,1,3,3
+"com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment1.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+"com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment2.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+"com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment3.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,1,1,1
+"com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment4.onCreateView(LayoutInflater, ViewGroup, Bundle)",2,1,2,2
+"com.example.feelgoodinc.models.Activity.Activity(String, String, int, int)",0,1,1,1
+"com.example.feelgoodinc.models.Journal.Journal(String, Date, Date, String)",0,1,1,1
+"com.example.feelgoodinc.models.Journal.fromMap(Map<String, Object>)",0,1,1,1
+com.example.feelgoodinc.models.Journal.getContent(),0,1,1,1
+com.example.feelgoodinc.models.Journal.getCreatedWhen(),0,1,1,1
+com.example.feelgoodinc.models.Journal.getJournalName(),0,1,1,1
+com.example.feelgoodinc.models.Journal.getLastEditedWhen(),0,1,1,1
+com.example.feelgoodinc.models.Journal.setContent(String),0,1,1,1
+com.example.feelgoodinc.models.Journal.setCreatedWhen(Date),0,1,1,1
+com.example.feelgoodinc.models.Journal.setJournalName(String),0,1,1,1
+com.example.feelgoodinc.models.Journal.setLastEditedWhen(Date),0,1,1,1
+com.example.feelgoodinc.models.Journal.toMap(),0,1,1,1
+"com.example.feelgoodinc.models.Mood.Mood(MoodType, Date)",0,1,1,1
+"com.example.feelgoodinc.models.Mood.fromMap(Map<String, Object>)",0,1,1,1
+com.example.feelgoodinc.models.Mood.getMoodType(),0,1,1,1
+com.example.feelgoodinc.models.Mood.getMoodWhen(),0,1,1,1
+com.example.feelgoodinc.models.Mood.setMoodType(MoodType),0,1,1,1
+com.example.feelgoodinc.models.Mood.setMoodWhen(Date),0,1,1,1
+com.example.feelgoodinc.models.Mood.toMap(),0,1,1,1
+com.example.feelgoodinc.models.User.getCurrentUserKey(),0,1,1,1
+com.example.feelgoodinc.models.User.getLastLoginWhen(),0,1,1,1
+com.example.feelgoodinc.models.User.getUsername(),0,1,1,1
+com.example.feelgoodinc.models.User.setCurrentUserKey(String),0,1,1,1
+com.example.feelgoodinc.models.User.setLastLoginWhen(Date),0,1,1,1
+com.example.feelgoodinc.models.User.setUsername(String),0,1,1,1
+com.example.feelgoodinc.services.JournalService.LocalBinder.getService(),0,1,1,1
+"com.example.feelgoodinc.services.JournalService.addNewJournal(Journal, Activity)",0,1,1,1
+com.example.feelgoodinc.services.JournalService.getJournalsForMonth(Date),6,1,3,3
+com.example.feelgoodinc.services.JournalService.onBind(Intent),0,1,1,1
+com.example.feelgoodinc.services.JournalService.onCreate(),0,1,1,1
+com.example.feelgoodinc.services.MoodService.LocalBinder.getService(),0,1,1,1
+com.example.feelgoodinc.services.MoodService.MoodService(),0,1,1,1
+"com.example.feelgoodinc.services.MoodService.addNewMood(Mood, Activity)",0,1,1,1
+com.example.feelgoodinc.services.MoodService.getMoodsForMonth(Date),6,1,3,3
+com.example.feelgoodinc.services.MoodService.onBind(Intent),0,1,1,1
+com.example.feelgoodinc.services.UserService.LocalBinder.getService(),0,1,1,1
+"com.example.feelgoodinc.services.UserService.assignNewPassword(String, String, UserCallback)",5,1,3,3
+"com.example.feelgoodinc.services.UserService.changePassword(String, FirebaseUser, UserCallback)",3,1,2,2
+com.example.feelgoodinc.services.UserService.getCurrentUser(),1,1,2,2
+com.example.feelgoodinc.services.UserService.getCurrentUserKey(),1,2,2,2
+"com.example.feelgoodinc.services.UserService.loginUser(String, String, UserCallback)",3,1,2,2
+com.example.feelgoodinc.services.UserService.mapUser(FirebaseUser),1,1,2,2
+com.example.feelgoodinc.services.UserService.onBind(Intent),0,1,1,1
+com.example.feelgoodinc.services.UserService.onCreate(),0,1,1,1
+"com.example.feelgoodinc.services.UserService.registerUser(String, String, UserCallback)",3,1,2,2
+com.example.feelgoodinc.services.UserServiceTest.getCurrentUser(),0,1,1,1
+com.example.feelgoodinc.services.UserServiceTest.getCurrentUserKey(),0,1,1,1
+com.example.feelgoodinc.services.UserServiceTest.loginUserFailed(),0,1,1,1
+com.example.feelgoodinc.services.UserServiceTest.loginUserSuccessful(),0,1,1,1
+com.example.feelgoodinc.services.UserServiceTest.onBind(),0,1,1,1
+com.example.feelgoodinc.services.UserServiceTest.registerUserFailed(),0,1,1,1
+com.example.feelgoodinc.services.UserServiceTest.registerUserSuccessful(),0,1,1,1
+com.example.feelgoodinc.services.UserServiceTest.setup(),0,1,1,1
+onDayClick(Date),1,n/a,n/a,n/a
+onError(Exception),0,n/a,n/a,n/a
+onMonthScroll(Date),0,n/a,n/a,n/a
+"onServiceConnected(ComponentName, IBinder)",0,1,1,1
+onServiceDisconnected(ComponentName),0,1,1,1
+onSuccess(User),0,n/a,n/a,n/a
+run(),5,n/a,n/a,n/a
+
+Class,OCavg,OCmax,WMC
+com.example.feelgoodinc.CalendarUtility,1.00,1,2
+com.example.feelgoodinc.ExampleInstrumentedTest,1.00,1,1
+com.example.feelgoodinc.ExampleUnitTest,1.00,1,1
+com.example.feelgoodinc.HomePage,2.75,7,11
+com.example.feelgoodinc.LoginActivity,1.50,2,12
+com.example.feelgoodinc.LoginActivityTest,1.00,1,7
+com.example.feelgoodinc.SignupActivity,1.50,2,12
+com.example.feelgoodinc.SignupActivityTest,1.00,1,5
+com.example.feelgoodinc.TutorialActivity,1.00,1,1
+com.example.feelgoodinc.activityRecyclerView.ActivityViewHolder,1.00,1,1
+com.example.feelgoodinc.activityRecyclerView.ClickListener,1.00,1,1
+com.example.feelgoodinc.adapters.ActivityGalleryAdapter,1.00,1,5
+com.example.feelgoodinc.adapters.TutorialPagerAdapter,1.00,1,3
+com.example.feelgoodinc.fragments.HomeFragment,1.25,2,5
+com.example.feelgoodinc.fragments.MoodFragment,2.50,7,20
+com.example.feelgoodinc.fragments.PlaceHolderResources,1.25,2,5
+com.example.feelgoodinc.fragments.ResourcesFragment,1.25,2,5
+com.example.feelgoodinc.fragments.UserProfileFragment,1.67,3,15
+com.example.feelgoodinc.fragments.calmingActivities.ActivityFragment,1.75,4,7
+com.example.feelgoodinc.fragments.calmingActivities.BreathingFragment,1.67,3,5
+com.example.feelgoodinc.fragments.calmingActivities.GroundingFragment,3.00,5,6
+com.example.feelgoodinc.fragments.calmingActivities.SleepFragment,1.67,3,5
+com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment1,1.00,1,1
+com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment2,1.00,1,1
+com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment3,1.00,1,1
+com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment4,2.00,2,2
+com.example.feelgoodinc.models.Activity,1.00,1,1
+com.example.feelgoodinc.models.Journal,1.00,1,11
+com.example.feelgoodinc.models.Mood,1.00,1,7
+com.example.feelgoodinc.models.Mood.MoodType,n/a,n/a,0
+com.example.feelgoodinc.models.User,1.00,1,6
+com.example.feelgoodinc.services.JournalService,1.50,3,6
+com.example.feelgoodinc.services.JournalService.LocalBinder,1.00,1,1
+com.example.feelgoodinc.services.MoodService,1.50,3,6
+com.example.feelgoodinc.services.MoodService.LocalBinder,1.00,1,1
+com.example.feelgoodinc.services.UserService,1.89,3,17
+com.example.feelgoodinc.services.UserService.LocalBinder,1.00,1,1
+com.example.feelgoodinc.services.UserServiceTest,1.00,1,8
+
+Package,v(G)avg,v(G)tot
+com.example.feelgoodinc,1.52,50
+com.example.feelgoodinc.activityRecyclerView,1.00,2
+com.example.feelgoodinc.adapters,1.00,8
+com.example.feelgoodinc.fragments,1.84,46
+com.example.feelgoodinc.fragments.calmingActivities,2.10,21
+com.example.feelgoodinc.fragments.tutorialFragments,1.25,5
+com.example.feelgoodinc.models,1.00,25
+com.example.feelgoodinc.services,1.43,40
+
+Module,v(G)avg,v(G)tot
+Feel_Good_Inc.app.androidTest,1.00,1
+Feel_Good_Inc.app.main,1.55,175
+Feel_Good_Inc.app.unitTest,1.00,21
+
+Project,v(G)avg,v(G)tot
+project,1.46,197
+

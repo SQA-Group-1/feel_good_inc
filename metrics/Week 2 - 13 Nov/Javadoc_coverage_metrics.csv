@@ -1,0 +1,191 @@
+Javadoc coverage metrics,Tue, 21 Nov 2023 09:26:04 GMT
+Method,JLOC
+"com.example.feelgoodinc.CalendarUtility.addDateColour(CompactCalendarView, String, int)",6
+"com.example.feelgoodinc.CalendarUtility.addDateColourWithData(CompactCalendarView, String, String, int)",7
+com.example.feelgoodinc.ExampleInstrumentedTest.useAppContext(),0
+com.example.feelgoodinc.ExampleUnitTest.addition_isCorrect(),0
+com.example.feelgoodinc.HomePage.onCreate(Bundle),0
+com.example.feelgoodinc.HomePage.onNavigationItemSelected(MenuItem),0
+com.example.feelgoodinc.HomePage.onResume(),0
+com.example.feelgoodinc.HomePage.selectFragment(int),0
+com.example.feelgoodinc.LoginActivity.loginUserAccount(),6
+com.example.feelgoodinc.LoginActivity.onCreate(Bundle),8
+com.example.feelgoodinc.LoginActivity.onStart(),3
+com.example.feelgoodinc.LoginActivity.onStop(),3
+com.example.feelgoodinc.LoginActivityTest.loginUserFailed(),0
+com.example.feelgoodinc.LoginActivityTest.loginUserSuccessful(),0
+com.example.feelgoodinc.LoginActivityTest.onCreate(),0
+com.example.feelgoodinc.LoginActivityTest.onStart(),0
+com.example.feelgoodinc.LoginActivityTest.onStop(),0
+com.example.feelgoodinc.LoginActivityTest.setUp(),0
+com.example.feelgoodinc.LoginActivityTest.tearDown(),0
+com.example.feelgoodinc.SignupActivity.onCreate(Bundle),8
+com.example.feelgoodinc.SignupActivity.onStart(),3
+com.example.feelgoodinc.SignupActivity.onStop(),3
+com.example.feelgoodinc.SignupActivity.registerNewUser(),6
+com.example.feelgoodinc.SignupActivityTest.onCreate(),0
+com.example.feelgoodinc.SignupActivityTest.onStop(),0
+com.example.feelgoodinc.SignupActivityTest.registerNewUser(),0
+com.example.feelgoodinc.SignupActivityTest.setUp(),0
+com.example.feelgoodinc.SignupActivityTest.tearDown(),0
+com.example.feelgoodinc.TutorialActivity.onCreate(Bundle),0
+com.example.feelgoodinc.activityRecyclerView.ActivityViewHolder.ActivityViewHolder(View),0
+com.example.feelgoodinc.activityRecyclerView.ClickListener.click(int),4
+"com.example.feelgoodinc.adapters.ActivityGalleryAdapter.ActivityGalleryAdapter(List<Activity>, Context, ClickListener)",0
+com.example.feelgoodinc.adapters.ActivityGalleryAdapter.getItemCount(),0
+com.example.feelgoodinc.adapters.ActivityGalleryAdapter.onAttachedToRecyclerView(RecyclerView),0
+"com.example.feelgoodinc.adapters.ActivityGalleryAdapter.onBindViewHolder(ActivityViewHolder, int)",0
+"com.example.feelgoodinc.adapters.ActivityGalleryAdapter.onCreateViewHolder(ViewGroup, int)",0
+"com.example.feelgoodinc.adapters.TutorialPagerAdapter.TutorialPagerAdapter(FragmentActivity, List<Fragment>)",5
+com.example.feelgoodinc.adapters.TutorialPagerAdapter.createFragment(int),5
+com.example.feelgoodinc.adapters.TutorialPagerAdapter.getItemCount(),4
+com.example.feelgoodinc.fragments.HomeFragment.account(),0
+"com.example.feelgoodinc.fragments.HomeFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0
+com.example.feelgoodinc.fragments.MoodFragment.convertTextToMoodType(String),0
+"com.example.feelgoodinc.fragments.MoodFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0
+com.example.feelgoodinc.fragments.MoodFragment.onStart(),0
+com.example.feelgoodinc.fragments.MoodFragment.onStop(),0
+com.example.feelgoodinc.fragments.PlaceHolderResources.PlaceHolderResources(),0
+"com.example.feelgoodinc.fragments.PlaceHolderResources.newInstance(String, String)",8
+com.example.feelgoodinc.fragments.PlaceHolderResources.onCreate(Bundle),0
+"com.example.feelgoodinc.fragments.PlaceHolderResources.onCreateView(LayoutInflater, ViewGroup, Bundle)",0
+com.example.feelgoodinc.fragments.ResourcesFragment.ResourcesFragment(),0
+"com.example.feelgoodinc.fragments.ResourcesFragment.newInstance(String, String)",8
+com.example.feelgoodinc.fragments.ResourcesFragment.onCreate(Bundle),0
+"com.example.feelgoodinc.fragments.ResourcesFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0
+com.example.feelgoodinc.fragments.UserProfileFragment.changePasswordClick(View),4
+"com.example.feelgoodinc.fragments.UserProfileFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",12
+com.example.feelgoodinc.fragments.UserProfileFragment.onStart(),3
+com.example.feelgoodinc.fragments.UserProfileFragment.onStop(),3
+com.example.feelgoodinc.fragments.UserProfileFragment.submitNewPassword(View),6
+"com.example.feelgoodinc.fragments.calmingActivities.ActivityFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0
+"com.example.feelgoodinc.fragments.calmingActivities.ActivityFragment.onViewCreated(View, Bundle)",0
+com.example.feelgoodinc.fragments.calmingActivities.ActivityFragment.populateList(),0
+com.example.feelgoodinc.fragments.calmingActivities.BreathingFragment.closeActivity(),0
+"com.example.feelgoodinc.fragments.calmingActivities.BreathingFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0
+"com.example.feelgoodinc.fragments.calmingActivities.GroundingFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0
+com.example.feelgoodinc.fragments.calmingActivities.GroundingFragment.submitGrounding(View),0
+com.example.feelgoodinc.fragments.calmingActivities.SleepFragment.closeSoundActivity(),0
+"com.example.feelgoodinc.fragments.calmingActivities.SleepFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0
+com.example.feelgoodinc.fragments.calmingActivities.SleepFragment.play(int),0
+"com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment1.onCreateView(LayoutInflater, ViewGroup, Bundle)",0
+"com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment2.onCreateView(LayoutInflater, ViewGroup, Bundle)",0
+"com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment3.onCreateView(LayoutInflater, ViewGroup, Bundle)",0
+"com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment4.onCreateView(LayoutInflater, ViewGroup, Bundle)",0
+"com.example.feelgoodinc.models.Activity.Activity(String, String, int, int)",7
+"com.example.feelgoodinc.models.Journal.Journal(String, Date, Date, String)",0
+"com.example.feelgoodinc.models.Journal.fromMap(Map<String, Object>)",0
+com.example.feelgoodinc.models.Journal.getContent(),0
+com.example.feelgoodinc.models.Journal.getCreatedWhen(),0
+com.example.feelgoodinc.models.Journal.getJournalName(),0
+com.example.feelgoodinc.models.Journal.getLastEditedWhen(),0
+com.example.feelgoodinc.models.Journal.setContent(String),0
+com.example.feelgoodinc.models.Journal.setCreatedWhen(Date),0
+com.example.feelgoodinc.models.Journal.setJournalName(String),0
+com.example.feelgoodinc.models.Journal.setLastEditedWhen(Date),0
+com.example.feelgoodinc.models.Journal.toMap(),0
+"com.example.feelgoodinc.models.Mood.Mood(MoodType, Date)",0
+"com.example.feelgoodinc.models.Mood.fromMap(Map<String, Object>)",0
+com.example.feelgoodinc.models.Mood.getMoodType(),0
+com.example.feelgoodinc.models.Mood.getMoodWhen(),0
+com.example.feelgoodinc.models.Mood.setMoodType(MoodType),0
+com.example.feelgoodinc.models.Mood.setMoodWhen(Date),0
+com.example.feelgoodinc.models.Mood.toMap(),0
+com.example.feelgoodinc.models.User.getCurrentUserKey(),4
+com.example.feelgoodinc.models.User.getLastLoginWhen(),0
+com.example.feelgoodinc.models.User.getUsername(),0
+com.example.feelgoodinc.models.User.setCurrentUserKey(String),0
+com.example.feelgoodinc.models.User.setLastLoginWhen(Date),0
+com.example.feelgoodinc.models.User.setUsername(String),0
+com.example.feelgoodinc.services.JournalService.LocalBinder.getService(),4
+"com.example.feelgoodinc.services.JournalService.addNewJournal(Journal, Activity)",5
+com.example.feelgoodinc.services.JournalService.getJournalsForMonth(Date),5
+com.example.feelgoodinc.services.JournalService.onBind(Intent),0
+com.example.feelgoodinc.services.JournalService.onCreate(),0
+com.example.feelgoodinc.services.MoodService.LocalBinder.getService(),0
+com.example.feelgoodinc.services.MoodService.MoodService(),0
+"com.example.feelgoodinc.services.MoodService.addNewMood(Mood, Activity)",5
+com.example.feelgoodinc.services.MoodService.getMoodsForMonth(Date),5
+com.example.feelgoodinc.services.MoodService.onBind(Intent),0
+com.example.feelgoodinc.services.UserService.LocalBinder.getService(),0
+"com.example.feelgoodinc.services.UserService.assignNewPassword(String, String, UserCallback)",7
+"com.example.feelgoodinc.services.UserService.changePassword(String, FirebaseUser, UserCallback)",7
+com.example.feelgoodinc.services.UserService.getCurrentUser(),4
+com.example.feelgoodinc.services.UserService.getCurrentUserKey(),5
+"com.example.feelgoodinc.services.UserService.loginUser(String, String, UserCallback)",7
+com.example.feelgoodinc.services.UserService.mapUser(FirebaseUser),5
+com.example.feelgoodinc.services.UserService.onBind(Intent),9
+com.example.feelgoodinc.services.UserService.onCreate(),3
+"com.example.feelgoodinc.services.UserService.registerUser(String, String, UserCallback)",7
+com.example.feelgoodinc.services.UserServiceTest.getCurrentUser(),0
+com.example.feelgoodinc.services.UserServiceTest.getCurrentUserKey(),0
+com.example.feelgoodinc.services.UserServiceTest.loginUserFailed(),0
+com.example.feelgoodinc.services.UserServiceTest.loginUserSuccessful(),0
+com.example.feelgoodinc.services.UserServiceTest.onBind(),0
+com.example.feelgoodinc.services.UserServiceTest.registerUserFailed(),0
+com.example.feelgoodinc.services.UserServiceTest.registerUserSuccessful(),0
+com.example.feelgoodinc.services.UserServiceTest.setup(),0
+"onServiceConnected(ComponentName, IBinder)",0
+onServiceDisconnected(ComponentName),0
+
+Class,Jf,JLOC,Jm
+com.example.feelgoodinc.CalendarUtility,100.00%,28,100.00%
+com.example.feelgoodinc.ExampleInstrumentedTest,100.00%,5,0.00%
+com.example.feelgoodinc.ExampleUnitTest,100.00%,5,0.00%
+com.example.feelgoodinc.HomePage,0.00%,0,0.00%
+com.example.feelgoodinc.LoginActivity,20.00%,26,100.00%
+com.example.feelgoodinc.LoginActivityTest,0.00%,0,0.00%
+com.example.feelgoodinc.SignupActivity,20.00%,26,100.00%
+com.example.feelgoodinc.SignupActivityTest,0.00%,0,0.00%
+com.example.feelgoodinc.TutorialActivity,100.00%,0,0.00%
+com.example.feelgoodinc.activityRecyclerView.ActivityViewHolder,0.00%,0,0.00%
+com.example.feelgoodinc.activityRecyclerView.ClickListener,100.00%,4,100.00%
+com.example.feelgoodinc.adapters.ActivityGalleryAdapter,0.00%,3,0.00%
+com.example.feelgoodinc.adapters.TutorialPagerAdapter,0.00%,23,100.00%
+com.example.feelgoodinc.fragments.HomeFragment,100.00%,0,0.00%
+com.example.feelgoodinc.fragments.MoodFragment,0.00%,11,0.00%
+com.example.feelgoodinc.fragments.PlaceHolderResources,0.00%,13,25.00%
+com.example.feelgoodinc.fragments.ResourcesFragment,0.00%,13,25.00%
+com.example.feelgoodinc.fragments.UserProfileFragment,33.33%,31,100.00%
+com.example.feelgoodinc.fragments.calmingActivities.ActivityFragment,0.00%,0,0.00%
+com.example.feelgoodinc.fragments.calmingActivities.BreathingFragment,0.00%,0,0.00%
+com.example.feelgoodinc.fragments.calmingActivities.GroundingFragment,100.00%,0,0.00%
+com.example.feelgoodinc.fragments.calmingActivities.SleepFragment,100.00%,0,0.00%
+com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment1,100.00%,0,0.00%
+com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment2,100.00%,0,0.00%
+com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment3,100.00%,0,0.00%
+com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment4,100.00%,0,0.00%
+com.example.feelgoodinc.models.Activity,0.00%,7,100.00%
+com.example.feelgoodinc.models.Journal,0.00%,12,0.00%
+com.example.feelgoodinc.models.Mood,0.00%,4,0.00%
+com.example.feelgoodinc.models.Mood.MoodType,0.00%,0,0.00%
+com.example.feelgoodinc.models.User,0.00%,7,16.67%
+com.example.feelgoodinc.services.JournalService,0.00%,59,50.00%
+com.example.feelgoodinc.services.JournalService.LocalBinder,100.00%,7,100.00%
+com.example.feelgoodinc.services.MoodService,0.00%,59,50.00%
+com.example.feelgoodinc.services.MoodService.LocalBinder,100.00%,3,0.00%
+com.example.feelgoodinc.services.UserService,0.00%,79,100.00%
+com.example.feelgoodinc.services.UserService.LocalBinder,100.00%,3,0.00%
+com.example.feelgoodinc.services.UserServiceTest,0.00%,0,0.00%
+
+Interface,Jf,JLOC,Jm
+com.example.feelgoodinc.services.UserService.UserCallback,100.00%,3,0.00%
+
+Package,Jc,Jf,JLOC,Jm
+com.example.feelgoodinc,55.56%,8.70%,90,34.48%
+com.example.feelgoodinc.activityRecyclerView,0.00%,0.00%,4,50.00%
+com.example.feelgoodinc.adapters,100.00%,0.00%,26,37.50%
+com.example.feelgoodinc.fragments,60.00%,5.26%,68,36.84%
+com.example.feelgoodinc.fragments.calmingActivities,0.00%,0.00%,0,0.00%
+com.example.feelgoodinc.fragments.tutorialFragments,0.00%,n/a,0,0.00%
+com.example.feelgoodinc.models,60.00%,0.00%,30,8.00%
+com.example.feelgoodinc.services,87.50%,0.00%,213,46.67%
+
+Module,Jc,Jf,JLOC,Jm
+Feel_Good_Inc.app.androidTest,100.00%,0.00%,5,0.00%
+Feel_Good_Inc.app.main,52.94%,4.05%,421,35.24%
+Feel_Good_Inc.app.unitTest,25.00%,0.00%,5,0.00%
+
+Project,Jc,Jf,JLOC,Jm
+project,47.06%,3.53%,431,29.13%
+

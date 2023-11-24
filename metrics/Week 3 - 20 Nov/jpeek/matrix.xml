@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<matrix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        date="2023-11-24T19:15:50.097795400Z"
+        version="0.32.0"
+        xsi:noNamespaceSchemaLocation="xsd/matrix.xsd">
+   <classes>
+      <class id="com.example.feelgoodinc.fragments.Activity"
+             rank="1.0000"
+             short_id="c.e.f.f.Activity"
+             trust="1">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="green" name="LCOM5" rank="5"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.ActivityCardBinding"
+             rank="0.8400"
+             short_id="c.e.f.f.ActivityCardBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.ActivityFragment"
+             rank="0.2800"
+             short_id="c.e.f.f.ActivityFragment"
+             trust="0.5">
+         <metric color="yellow" name="CAMC" rank="3"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.ActivityGalleryAdapter"
+             rank="0.2800"
+             short_id="c.e.f.f.ActivityGalleryAdapter"
+             trust="0.5">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="yellow" name="NHD" rank="3"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.ActivityLoginBinding"
+             rank="0.8400"
+             short_id="c.e.f.f.ActivityLoginBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.ActivitySignupBinding"
+             rank="0.8400"
+             short_id="c.e.f.f.ActivitySignupBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.ActivityTutorialBinding"
+             rank="0.8400"
+             short_id="c.e.f.f.ActivityTutorialBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.ActivityViewHolder"
+             rank="1.0000"
+             short_id="c.e.f.f.ActivityViewHolder"
+             trust="1">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="green" name="LCOM5" rank="5"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.BreathingFragment"
+             rank="0.2800"
+             short_id="c.e.f.f.BreathingFragment"
+             trust="0.5">
+         <metric color="yellow" name="CAMC" rank="3"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.CalendarUtility"
+             rank="1.0000"
+             short_id="c.e.f.f.CalendarUtility"
+             trust="1">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="green" name="LCOM5" rank="5"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.ClickListener"
+             rank="0.8400"
+             short_id="c.e.f.f.ClickListener"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.FragmentActivityBinding"
+             rank="0.8400"
+             short_id="c.e.f.f.FragmentActivityBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.FragmentBreathingBinding"
+             rank="0.8400"
+             short_id="c.e.f.f.FragmentBreathingBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.FragmentGroundingBinding"
+             rank="0.8400"
+             short_id="c.e.f.f.FragmentGroundingBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.FragmentHomeBinding"
+             rank="0.8400"
+             short_id="c.e.f.f.FragmentHomeBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.FragmentMoodBinding"
+             rank="0.8400"
+             short_id="c.e.f.f.FragmentMoodBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.FragmentPlaceHolderResourcesBinding"
+             rank="0.8400"
+             short_id="c.e.f.f.FragmentPlaceHolderResourcesBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.FragmentResourcesPageBinding"
+             rank="0.8400"
+             short_id="c.e.f.f.FragmentResourcesPageBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.FragmentSleepBinding"
+             rank="0.8400"
+             short_id="c.e.f.f.FragmentSleepBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.FragmentTutorial1Binding"
+             rank="0.8400"
+             short_id="c.e.f.f.FragmentTutorial1Binding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.FragmentTutorial2Binding"
+             rank="0.8400"
+             short_id="c.e.f.f.FragmentTutorial2Binding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.FragmentTutorial3Binding"
+             rank="0.8400"
+             short_id="c.e.f.f.FragmentTutorial3Binding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.FragmentTutorial4Binding"
+             rank="0.8400"
+             short_id="c.e.f.f.FragmentTutorial4Binding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.FragmentUserProfileBinding"
+             rank="0.8400"
+             short_id="c.e.f.f.FragmentUserProfileBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.GroundingFragment"
+             rank="0.4400"
+             short_id="c.e.f.f.GroundingFragment"
+             trust="0.33333333333333337">
+         <metric color="yellow" name="CAMC" rank="3"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.HomeActivityBinding"
+             rank="0.8400"
+             short_id="c.e.f.f.HomeActivityBinding"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.HomeFragment"
+             rank="0.4400"
+             short_id="c.e.f.f.HomeFragment"
+             trust="0.33333333333333337">
+         <metric color="yellow" name="CAMC" rank="3"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.HomePage"
+             rank="0.2800"
+             short_id="c.e.f.f.HomePage"
+             trust="0.5">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="yellow" name="NHD" rank="3"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.Journal"
+             rank="0.3600"
+             short_id="c.e.f.f.Journal"
+             trust="0.5">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.JournalService"
+             rank="0.2800"
+             short_id="c.e.f.f.JournalService"
+             trust="0.5">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="yellow" name="NHD" rank="3"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.JournalService$LocalBinder"
+             rank="0.8400"
+             short_id="c.e.f.f.J..$LocalBinder"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.LoginActivity"
+             rank="0.2800"
+             short_id="c.e.f.f.LoginActivity"
+             trust="0.5">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="yellow" name="NHD" rank="3"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.LoginActivityTest"
+             rank="1.0000"
+             short_id="c.e.f.f.LoginActivityTest"
+             trust="1">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="green" name="LCOM5" rank="5"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.Mood"
+             rank="0.5200"
+             short_id="c.e.f.f.Mood"
+             trust="0.33333333333333337">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="yellow" name="LCOM5" rank="3"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="yellow" name="NHD" rank="3"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.MoodFragment"
+             rank="0.2800"
+             short_id="c.e.f.f.MoodFragment"
+             trust="0.5">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="yellow" name="NHD" rank="3"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.MoodService"
+             rank="0.2000"
+             short_id="c.e.f.f.MoodService"
+             trust="1">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.MoodService$LocalBinder"
+             rank="0.8400"
+             short_id="c.e.f.f.M..$LocalBinder"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.PlaceHolderResources"
+             rank="0.3600"
+             short_id="c.e.f.f.PlaceHolderResources"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.ResourcesFragment"
+             rank="0.3600"
+             short_id="c.e.f.f.ResourcesFragment"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.SignupActivity"
+             rank="0.2800"
+             short_id="c.e.f.f.SignupActivity"
+             trust="0.5">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="yellow" name="NHD" rank="3"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.SignupActivityTest"
+             rank="1.0000"
+             short_id="c.e.f.f.SignupActivityTest"
+             trust="1">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="green" name="LCOM5" rank="5"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.SleepFragment"
+             rank="0.3600"
+             short_id="c.e.f.f.SleepFragment"
+             trust="0.5">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.TutorialActivity"
+             rank="0.8400"
+             short_id="c.e.f.f.TutorialActivity"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.TutorialFragment1"
+             rank="0.8400"
+             short_id="c.e.f.f.TutorialFragment1"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.TutorialFragment2"
+             rank="0.8400"
+             short_id="c.e.f.f.TutorialFragment2"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.TutorialFragment3"
+             rank="0.8400"
+             short_id="c.e.f.f.TutorialFragment3"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.TutorialFragment4"
+             rank="0.8400"
+             short_id="c.e.f.f.TutorialFragment4"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.TutorialPagerAdapter"
+             rank="0.6000"
+             short_id="c.e.f.f.TutorialPagerAdapter"
+             trust="0.33333333333333337">
+         <metric color="yellow" name="CAMC" rank="3"/>
+         <metric color="green" name="LCOM5" rank="5"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.User"
+             rank="0.2800"
+             short_id="c.e.f.f.User"
+             trust="0.5">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="yellow" name="NHD" rank="3"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.UserProfileFragment"
+             rank="0.4400"
+             short_id="c.e.f.f.UserProfileFragment"
+             trust="0.33333333333333337">
+         <metric color="yellow" name="CAMC" rank="3"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="red" name="NHD" rank="1"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.UserService"
+             rank="0.2800"
+             short_id="c.e.f.f.UserService"
+             trust="0.5">
+         <metric color="red" name="CAMC" rank="1"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="red" name="MMAC" rank="1"/>
+         <metric color="yellow" name="NHD" rank="3"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.UserService$LocalBinder"
+             rank="0.8400"
+             short_id="c.e.f.f.U..$LocalBinder"
+             trust="0.5">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="red" name="LCOM5" rank="1"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="green" name="SCOM" rank="5"/>
+      </class>
+      <class id="com.example.feelgoodinc.fragments.UserServiceTest"
+             rank="0.7600"
+             short_id="c.e.f.f.UserServiceTest"
+             trust="0.33333333333333337">
+         <metric color="green" name="CAMC" rank="5"/>
+         <metric color="yellow" name="LCOM5" rank="3"/>
+         <metric color="green" name="MMAC" rank="5"/>
+         <metric color="green" name="NHD" rank="5"/>
+         <metric color="red" name="SCOM" rank="1"/>
+      </class>
+   </classes>
+</matrix>

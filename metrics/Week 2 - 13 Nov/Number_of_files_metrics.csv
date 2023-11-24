@@ -1,0 +1,34 @@
+Number of files metrics,Tue, 21 Nov 2023 09:29:48 GMT
+Module,FILES,Groovy,HTML,J,KT,XML
+Feel_Good_Inc,"7,489",1,37,0,2,17
+Feel_Good_Inc.app,4,0,0,0,1,0
+Feel_Good_Inc.app.androidTest,1,0,0,1,0,0
+Feel_Good_Inc.app.main,103,0,0,29,0,74
+Feel_Good_Inc.app.unitTest,4,0,0,4,0,0
+
+FileType,FILES
+.gitignore (GitIgnore),2
+C/C++,5
+CSS,7
+Definitions file for Kotlin/Native C interoperability,5
+File containing settings for editor,4
+Files supported via TextMate bundles,"1,602"
+Groovy,1
+HTML,37
+JSON,397
+Java,34
+JavaScript,"4,611"
+Kotlin,3
+Markdown,385
+Patch,1
+Properties,3
+Scalable Vector Graphics,8
+Shell script,17
+Shrinker Config,1
+Text,356
+XML,91
+YAML,31
+
+Project,FILES,Groovy,HTML,J,KT,MOD,XML
+project,"7,601",1,37,34,3,5,91
+

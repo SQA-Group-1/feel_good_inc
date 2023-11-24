@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metric xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        date="2023-11-24T19:15:47.304537500Z"
+        schema="xsd/skeleton.xsd"
+        version="0.32.0"
+        xsi:noNamespaceSchemaLocation="xsd/metric.xsd">
+   <title>SCOM</title>
+   <description>"Sensitive Class Cohesion Metric" (SCOM) notes some deficits
+          in the LCOM5 metric, particularly how it fails in some cases to
+          discriminate (ie. it assigns the same score) between classes where
+          one is clearly more cohesive than the other. In these cases, SCOM
+          is more "sensitive" than LCOM5 because it evaluates to different
+          values.
+          Like LCOM5, SCOM values lie in the range [0..1], but their meanings
+          are inverted: "0" indicates no cohesion at all (i.e. every method
+          deals with an independent set of attributes), whereas "1" indicates
+          full cohesion (ie. every method uses all the attributes of the class).
+          This inversion stems from SCOM measuring how much "agreement" there
+          is among the methods, unlike LCOM which measures how much
+          "disagreement" there is.
+          Another important distinction is that SCOM assigns "weights" to each
+          pair of methods computed equal to the proportion of total attributes
+          being used between the two. This contributes to the metric's
+          "sensitivity".
+          Finally, the authors provide a formula for the minimum value beyond
+          which "we can claim that [the class] has at least two clusters and
+          it must be subdivided into smaller, more cohesive classes".</description>
+   <app element="false" id="D:\Uni\Resources\Year 3\git_projects\feel_good_inc">
+      <package element="false" id="com.example.feelgoodinc.fragments">
+         <class color="red" element="false" id="PlaceHolderResources" value="0">
+            <vars>
+               <var id="m">2</var>
+               <var id="pairs">1</var>
+               <var id="a">4</var>
+               <var id="SCOM_minK">0.15625</var>
+            </vars>
+         </class>
+         <class color="green" element="false" id="HomeFragment" value="NaN">
+            <vars>
+               <var id="m">2</var>
+               <var id="pairs">1</var>
+               <var id="a">0</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="red" element="true" id="MoodFragment" value="0.0278">
+            <vars>
+               <var id="m">4</var>
+               <var id="pairs">6</var>
+               <var id="a">8</var>
+               <var id="SCOM_minK">0.0351562499999999994375</var>
+            </vars>
+         </class>
+         <class color="red" element="false" id="ResourcesFragment" value="0">
+            <vars>
+               <var id="m">2</var>
+               <var id="pairs">1</var>
+               <var id="a">4</var>
+               <var id="SCOM_minK">0.15625</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="UserProfileFragment"
+                value="NaN">
+            <vars>
+               <var id="m">3</var>
+               <var id="pairs">3</var>
+               <var id="a">0</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false"
+               id="com.example.feelgoodinc.fragments.calmingActivities">
+         <class color="red" element="false" id="ActivityFragment" value="0">
+            <vars>
+               <var id="m">3</var>
+               <var id="pairs">3</var>
+               <var id="a">2</var>
+               <var id="SCOM_minK">0.333333333333333334</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="GroundingFragment"
+                value="NaN">
+            <vars>
+               <var id="m">2</var>
+               <var id="pairs">1</var>
+               <var id="a">0</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="red" element="false" id="BreathingFragment" value="0">
+            <vars>
+               <var id="m">2</var>
+               <var id="pairs">1</var>
+               <var id="a">2</var>
+               <var id="SCOM_minK">0.375</var>
+            </vars>
+         </class>
+         <class color="green" element="false" id="SleepFragment" value="NaN">
+            <vars>
+               <var id="m">3</var>
+               <var id="pairs">3</var>
+               <var id="a">0</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false" id="com.example.feelgoodinc.services">
+         <class color="green"
+                element="false"
+                id="JournalService$LocalBinder"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">1</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="UserService$LocalBinder"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">1</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="MoodService$LocalBinder"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">1</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="red" element="true" id="JournalService" value="0.0898">
+            <vars>
+               <var id="m">4</var>
+               <var id="pairs">6</var>
+               <var id="a">4</var>
+               <var id="SCOM_minK">0.078125000000000000625</var>
+            </vars>
+         </class>
+         <class color="red" element="true" id="UserServiceTest" value="0.1616">
+            <vars>
+               <var id="m">8</var>
+               <var id="pairs">28</var>
+               <var id="a">4</var>
+               <var id="SCOM_minK">0.06919642857142857475</var>
+            </vars>
+         </class>
+         <class color="red" element="true" id="MoodService" value="0.0889">
+            <vars>
+               <var id="m">3</var>
+               <var id="pairs">3</var>
+               <var id="a">3</var>
+               <var id="SCOM_minK">0.1481481481481481480185185185185185185</var>
+            </vars>
+         </class>
+         <class color="red" element="true" id="UserService" value="0.3">
+            <vars>
+               <var id="m">5</var>
+               <var id="pairs">10</var>
+               <var id="a">2</var>
+               <var id="SCOM_minK">0.3</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false" id="com.example.feelgoodinc">
+         <class color="green" element="false" id="TutorialActivity" value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">0</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="red" element="true" id="SignupActivity" value="0.1528">
+            <vars>
+               <var id="m">4</var>
+               <var id="pairs">6</var>
+               <var id="a">5</var>
+               <var id="SCOM_minK">0.0599999999999999994</var>
+            </vars>
+         </class>
+         <class color="red" element="true" id="HomePage" value="0.18">
+            <vars>
+               <var id="m">4</var>
+               <var id="pairs">6</var>
+               <var id="a">5</var>
+               <var id="SCOM_minK">0.0599999999999999994</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="true"
+                id="LoginActivityTest"
+                value="0.7271">
+            <vars>
+               <var id="m">6</var>
+               <var id="pairs">15</var>
+               <var id="a">2</var>
+               <var id="SCOM_minK">0.27499999999999999725</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="true"
+                id="SignupActivityTest"
+                value="0.7245">
+            <vars>
+               <var id="m">5</var>
+               <var id="pairs">10</var>
+               <var id="a">2</var>
+               <var id="SCOM_minK">0.3</var>
+            </vars>
+         </class>
+         <class color="red" element="true" id="LoginActivity" value="0.1528">
+            <vars>
+               <var id="m">4</var>
+               <var id="pairs">6</var>
+               <var id="a">5</var>
+               <var id="SCOM_minK">0.0599999999999999994</var>
+            </vars>
+         </class>
+         <class color="green" element="false" id="CalendarUtility" value="NaN">
+            <vars>
+               <var id="m">0</var>
+               <var id="pairs">0</var>
+               <var id="a">1</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false" id="com.example.feelgoodinc.activityRecyclerView">
+         <class color="green" element="false" id="ClickListener" value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">0</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="ActivityViewHolder"
+                value="NaN">
+            <vars>
+               <var id="m">0</var>
+               <var id="pairs">0</var>
+               <var id="a">5</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false" id="com.example.feelgoodinc.models">
+         <class color="green" element="false" id="Activity" value="NaN">
+            <vars>
+               <var id="m">0</var>
+               <var id="pairs">0</var>
+               <var id="a">4</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="red" element="true" id="User" value="0.0667">
+            <vars>
+               <var id="m">6</var>
+               <var id="pairs">15</var>
+               <var id="a">3</var>
+               <var id="SCOM_minK">0.125925925925925924674074074074074074</var>
+            </vars>
+         </class>
+         <class color="green" element="true" id="Mood" value="0.9">
+            <vars>
+               <var id="m">5</var>
+               <var id="pairs">10</var>
+               <var id="a">2</var>
+               <var id="SCOM_minK">0.3</var>
+            </vars>
+         </class>
+         <class color="red" element="true" id="Journal" value="0.3611">
+            <vars>
+               <var id="m">9</var>
+               <var id="pairs">36</var>
+               <var id="a">4</var>
+               <var id="SCOM_minK">0.083333333333333328</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false" id="com.example.feelgoodinc.databinding">
+         <class color="green"
+                element="false"
+                id="ActivityTutorialBinding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">4</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentTutorial2Binding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">4</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentTutorial1Binding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">4</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentHomeBinding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">4</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="ActivityCardBinding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">5</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentTutorial4Binding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">5</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="ActivitySignupBinding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">8</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentActivityBinding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">3</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentUserProfileBinding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">9</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="HomeActivityBinding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">3</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentResourcesPageBinding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">7</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentSleepBinding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">5</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentBreathingBinding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">6</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentPlaceHolderResourcesBinding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">11</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentGroundingBinding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">19</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentTutorial3Binding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">4</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="ActivityLoginBinding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">8</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="FragmentMoodBinding"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">15</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false" id="com.example.feelgoodinc.adapters">
+         <class color="green"
+                element="false"
+                id="TutorialPagerAdapter"
+                value="1.5">
+            <vars>
+               <var id="m">2</var>
+               <var id="pairs">1</var>
+               <var id="a">1</var>
+               <var id="SCOM_minK">1</var>
+            </vars>
+         </class>
+         <class color="red"
+                element="true"
+                id="ActivityGalleryAdapter"
+                value="0.2778">
+            <vars>
+               <var id="m">4</var>
+               <var id="pairs">6</var>
+               <var id="a">3</var>
+               <var id="SCOM_minK">0.166666666666666668</var>
+            </vars>
+         </class>
+      </package>
+      <package element="false"
+               id="com.example.feelgoodinc.fragments.tutorialFragments">
+         <class color="green"
+                element="false"
+                id="TutorialFragment3"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">0</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="TutorialFragment2"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">0</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="TutorialFragment1"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">0</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+         <class color="green"
+                element="false"
+                id="TutorialFragment4"
+                value="NaN">
+            <vars>
+               <var id="m">1</var>
+               <var id="pairs">0</var>
+               <var id="a">0</var>
+               <var id="SCOM_minK">NaN</var>
+            </vars>
+         </class>
+      </package>
+   </app>
+   <colors high="0.6" low="0.4">[0.4000 .. 0.6000]</colors>
+   <min>0.0278</min>
+   <max>0.9</max>
+   <bars xmlns:xs="http://www.w3.org/2001/XMLSchema"><!--count: 53, steps: 32; all: 14; min: 0.0278; max: 0.9; delta: 0.027256249-->
+      <bar color="red" x="0">1</bar>
+      <!--step: 0, left: 0.0278, right: 0.055056248-->
+      <bar color="red" x="0.03125">1</bar>
+      <!--step: 1, left: 0.055056248, right: 0.082312495-->
+      <bar color="red" x="0.0625">2</bar>
+      <!--step: 2, left: 0.082312495, right: 0.109568745-->
+      <bar color="yellow" x="0.09375">0</bar>
+      <!--step: 3, left: 0.109568745, right: 0.136825-->
+      <bar color="red" x="0.125">3</bar>
+      <!--step: 4, left: 0.136825, right: 0.16408123-->
+      <bar color="red" x="0.15625">1</bar>
+      <!--step: 5, left: 0.16408123, right: 0.19133748-->
+      <bar color="yellow" x="0.1875">0</bar>
+      <!--step: 6, left: 0.19133748, right: 0.21859373-->
+      <bar color="yellow" x="0.21875">0</bar>
+      <!--step: 7, left: 0.21859373, right: 0.24584998-->
+      <bar color="yellow" x="0.25">0</bar>
+      <!--step: 8, left: 0.24584998, right: 0.27310625-->
+      <bar color="red" x="0.28125">2</bar>
+      <!--step: 9, left: 0.27310625, right: 0.30036247-->
+      <bar color="yellow" x="0.3125">0</bar>
+      <!--step: 10, left: 0.30036247, right: 0.32761872-->
+      <bar color="yellow" x="0.34375">0</bar>
+      <!--step: 11, left: 0.32761872, right: 0.35487497-->
+      <bar color="red" x="0.375">1</bar>
+      <!--step: 12, left: 0.35487497, right: 0.38213122-->
+      <bar color="yellow" x="0.40625">0</bar>
+      <!--step: 13, left: 0.38213122, right: 0.40938747-->
+      <bar color="yellow" x="0.4375">0</bar>
+      <!--step: 14, left: 0.40938747, right: 0.43664372-->
+      <bar color="yellow" x="0.46875">0</bar>
+      <!--step: 15, left: 0.43664372, right: 0.46389997-->
+      <bar color="yellow" x="0.5">0</bar>
+      <!--step: 16, left: 0.46389997, right: 0.49115622-->
+      <bar color="yellow" x="0.53125">0</bar>
+      <!--step: 17, left: 0.49115622, right: 0.5184125-->
+      <bar color="yellow" x="0.5625">0</bar>
+      <!--step: 18, left: 0.5184125, right: 0.5456687-->
+      <bar color="yellow" x="0.59375">0</bar>
+      <!--step: 19, left: 0.5456687, right: 0.572925-->
+      <bar color="yellow" x="0.625">0</bar>
+      <!--step: 20, left: 0.572925, right: 0.6001812-->
+      <bar color="yellow" x="0.65625">0</bar>
+      <!--step: 21, left: 0.6001812, right: 0.6274375-->
+      <bar color="yellow" x="0.6875">0</bar>
+      <!--step: 22, left: 0.6274375, right: 0.6546937-->
+      <bar color="yellow" x="0.71875">0</bar>
+      <!--step: 23, left: 0.6546937, right: 0.68195-->
+      <bar color="yellow" x="0.75">0</bar>
+      <!--step: 24, left: 0.68195, right: 0.7092062-->
+      <bar color="green" x="0.78125">2</bar>
+      <!--step: 25, left: 0.7092062, right: 0.7364625-->
+      <bar color="yellow" x="0.8125">0</bar>
+      <!--step: 26, left: 0.7364625, right: 0.7637187-->
+      <bar color="yellow" x="0.84375">0</bar>
+      <!--step: 27, left: 0.7637187, right: 0.790975-->
+      <bar color="yellow" x="0.875">0</bar>
+      <!--step: 28, left: 0.790975, right: 0.8182312-->
+      <bar color="yellow" x="0.90625">0</bar>
+      <!--step: 29, left: 0.8182312, right: 0.8454875-->
+      <bar color="yellow" x="0.9375">0</bar>
+      <!--step: 30, left: 0.8454875, right: 0.8727437-->
+      <bar color="green" x="0.96875">1</bar>
+      <!--step: 31, left: 0.8727437, right: 0.9-->
+   </bars>
+   <statistics>
+      <total>53</total>
+      <elements>14</elements>
+      <mean>0.3007785714285714</mean>
+      <sigma>0.27005177328634977</sigma>
+      <variance>0.07292796025510205</variance>
+      <defects>0.2857142857142857</defects>
+   </statistics>
+</metric>

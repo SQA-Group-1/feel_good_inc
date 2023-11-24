@@ -1,0 +1,229 @@
+Lines of code metrics,Fri, 24 Nov 2023 19:10:53 GMT
+Method,CLOC,JLOC,LOC,NCLOC,RLOC
+com.example.feelgoodinc.CalendarServiceTests.isEventAdded(),1,0,12,11,30.77%
+com.example.feelgoodinc.CalendarServiceTests.isEventColourAdded(),1,0,12,11,30.77%
+com.example.feelgoodinc.CalendarServiceTests.isEventDataAdded(),1,0,12,11,30.77%
+com.example.feelgoodinc.ExampleInstrumentedTest.useAppContext(),1,0,6,5,42.86%
+com.example.feelgoodinc.ExampleUnitTest.addition_isCorrect(),0,0,4,4,36.36%
+com.example.feelgoodinc.HomePage.onCreate(Bundle),0,0,9,9,13.85%
+com.example.feelgoodinc.HomePage.onNavigationItemSelected(MenuItem),0,0,8,8,12.31%
+com.example.feelgoodinc.HomePage.onResume(),0,0,6,6,9.23%
+com.example.feelgoodinc.HomePage.selectFragment(int),0,0,35,35,53.85%
+com.example.feelgoodinc.LoginActivity.loginUserAccount(),8,6,41,33,37.27%
+com.example.feelgoodinc.LoginActivity.onCreate(Bundle),6,8,24,14,21.82%
+com.example.feelgoodinc.LoginActivity.onStart(),4,3,10,6,9.09%
+com.example.feelgoodinc.LoginActivity.onStop(),4,3,12,8,10.91%
+com.example.feelgoodinc.SignupActivity.onCreate(Bundle),5,8,23,14,21.50%
+com.example.feelgoodinc.SignupActivity.onStart(),3,3,9,6,8.41%
+com.example.feelgoodinc.SignupActivity.onStop(),4,3,12,8,11.21%
+com.example.feelgoodinc.SignupActivity.registerNewUser(),8,6,40,32,37.38%
+com.example.feelgoodinc.TutorialActivity.onCreate(Bundle),3,0,20,17,90.91%
+com.example.feelgoodinc.activityRecyclerView.ActivityViewHolder.ActivityViewHolder(View),0,0,8,8,53.33%
+com.example.feelgoodinc.activityRecyclerView.ClickListener.click(int),3,4,6,2,75.00%
+"com.example.feelgoodinc.adapters.ActivityGalleryAdapter.ActivityGalleryAdapter(List<Activity>, Context, ClickListener)",0,0,5,5,12.50%
+com.example.feelgoodinc.adapters.ActivityGalleryAdapter.getItemCount(),0,0,4,4,10.00%
+com.example.feelgoodinc.adapters.ActivityGalleryAdapter.onAttachedToRecyclerView(RecyclerView),0,0,4,4,10.00%
+"com.example.feelgoodinc.adapters.ActivityGalleryAdapter.onBindViewHolder(ActivityViewHolder, int)",0,0,11,11,27.50%
+"com.example.feelgoodinc.adapters.ActivityGalleryAdapter.onCreateViewHolder(ViewGroup, int)",0,0,8,8,20.00%
+"com.example.feelgoodinc.adapters.TutorialPagerAdapter.TutorialPagerAdapter(FragmentActivity, List<Fragment>)",3,5,9,4,23.08%
+com.example.feelgoodinc.adapters.TutorialPagerAdapter.createFragment(int),3,5,10,5,25.64%
+com.example.feelgoodinc.adapters.TutorialPagerAdapter.getItemCount(),3,4,8,4,20.51%
+com.example.feelgoodinc.fragments.HomeFragment.account(),3,3,7,4,8.75%
+"com.example.feelgoodinc.fragments.HomeFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",11,20,51,29,63.75%
+com.example.feelgoodinc.fragments.HomeFragment.onDestroy(),3,3,8,5,10.00%
+com.example.feelgoodinc.fragments.HomeFragment.onServicesBound(),3,3,8,5,10.00%
+com.example.feelgoodinc.fragments.MoodFragment.convertTextToMoodType(String),0,0,16,16,11.94%
+"com.example.feelgoodinc.fragments.MoodFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",2,0,51,51,38.06%
+com.example.feelgoodinc.fragments.MoodFragment.onStart(),2,0,10,8,7.46%
+com.example.feelgoodinc.fragments.MoodFragment.onStop(),3,0,11,8,8.21%
+com.example.feelgoodinc.fragments.UserProfileFragment.changePasswordClick(View),3,4,12,8,9.68%
+"com.example.feelgoodinc.fragments.UserProfileFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",5,12,24,10,19.35%
+com.example.feelgoodinc.fragments.UserProfileFragment.onStart(),4,3,13,9,10.48%
+com.example.feelgoodinc.fragments.UserProfileFragment.onStop(),4,3,15,11,12.10%
+com.example.feelgoodinc.fragments.UserProfileFragment.submitNewPassword(View),9,6,34,24,27.42%
+"com.example.feelgoodinc.fragments.calmingActivities.ActivityFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,0,5,5,9.09%
+"com.example.feelgoodinc.fragments.calmingActivities.ActivityFragment.onViewCreated(View, Bundle)",1,0,36,35,65.45%
+com.example.feelgoodinc.fragments.calmingActivities.ActivityFragment.populateList(),0,0,10,10,18.18%
+com.example.feelgoodinc.fragments.calmingActivities.BreathingFragment.closeActivity(),0,0,7,7,13.46%
+"com.example.feelgoodinc.fragments.calmingActivities.BreathingFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",3,0,41,38,78.85%
+"com.example.feelgoodinc.fragments.calmingActivities.GroundingFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",1,0,9,8,19.57%
+com.example.feelgoodinc.fragments.calmingActivities.GroundingFragment.submitGrounding(View),0,0,35,35,76.09%
+com.example.feelgoodinc.fragments.calmingActivities.SleepFragment.closeSoundActivity(),0,0,2,2,7.41%
+"com.example.feelgoodinc.fragments.calmingActivities.SleepFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",0,0,14,14,51.85%
+com.example.feelgoodinc.fragments.calmingActivities.SleepFragment.play(int),0,0,9,9,33.33%
+com.example.feelgoodinc.fragments.resourcesFragments.EducationResources.onCreate(Bundle),0,0,4,4,26.67%
+"com.example.feelgoodinc.fragments.resourcesFragments.EducationResources.onCreateView(LayoutInflater, ViewGroup, Bundle)",1,0,6,5,40.00%
+com.example.feelgoodinc.fragments.resourcesFragments.ResourcesFragment.ResourcesFragment(),0,0,2,2,3.51%
+com.example.feelgoodinc.fragments.resourcesFragments.ResourcesFragment.onCreate(Bundle),0,0,4,4,7.02%
+"com.example.feelgoodinc.fragments.resourcesFragments.ResourcesFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)",4,13,45,31,78.95%
+com.example.feelgoodinc.fragments.resourcesFragments.SelfHelpStrat.onCreate(Bundle),0,0,4,4,26.67%
+"com.example.feelgoodinc.fragments.resourcesFragments.SelfHelpStrat.onCreateView(LayoutInflater, ViewGroup, Bundle)",1,0,6,5,40.00%
+com.example.feelgoodinc.fragments.resourcesFragments.SupportGroup.onCreate(Bundle),0,0,4,4,26.67%
+"com.example.feelgoodinc.fragments.resourcesFragments.SupportGroup.onCreateView(LayoutInflater, ViewGroup, Bundle)",1,0,6,5,40.00%
+com.example.feelgoodinc.fragments.resourcesFragments.emergencyHotline.onCreate(Bundle),0,0,4,4,23.53%
+"com.example.feelgoodinc.fragments.resourcesFragments.emergencyHotline.onCreateView(LayoutInflater, ViewGroup, Bundle)",1,0,6,5,35.29%
+"com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment1.onCreateView(LayoutInflater, ViewGroup, Bundle)",1,0,6,5,75.00%
+"com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment2.onCreateView(LayoutInflater, ViewGroup, Bundle)",1,0,6,5,75.00%
+"com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment3.onCreateView(LayoutInflater, ViewGroup, Bundle)",1,0,6,5,75.00%
+"com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment4.onCreateView(LayoutInflater, ViewGroup, Bundle)",2,0,17,15,89.47%
+"com.example.feelgoodinc.models.Activity.Activity(String, String, int, int)",3,7,13,6,68.42%
+"com.example.feelgoodinc.models.Journal.Journal(String, Date, Date, String)",1,0,7,6,11.67%
+"com.example.feelgoodinc.models.Journal.fromMap(Map<String, Object>)",0,0,3,3,5.00%
+com.example.feelgoodinc.models.Journal.getContent(),0,0,3,3,5.00%
+com.example.feelgoodinc.models.Journal.getCreatedWhen(),0,0,3,3,5.00%
+com.example.feelgoodinc.models.Journal.getJournalName(),0,0,3,3,5.00%
+com.example.feelgoodinc.models.Journal.getLastEditedWhen(),0,0,3,3,5.00%
+com.example.feelgoodinc.models.Journal.setContent(String),0,0,3,3,5.00%
+com.example.feelgoodinc.models.Journal.setCreatedWhen(Date),0,0,3,3,5.00%
+com.example.feelgoodinc.models.Journal.setJournalName(String),0,0,3,3,5.00%
+com.example.feelgoodinc.models.Journal.setLastEditedWhen(Date),0,0,3,3,5.00%
+com.example.feelgoodinc.models.Journal.toMap(),0,0,8,8,13.33%
+"com.example.feelgoodinc.models.Mood.Mood(MoodType, Date)",0,0,4,4,9.76%
+"com.example.feelgoodinc.models.Mood.fromMap(Map<String, Object>)",0,0,3,3,7.32%
+com.example.feelgoodinc.models.Mood.getMoodType(),0,0,3,3,7.32%
+com.example.feelgoodinc.models.Mood.getMoodWhen(),0,0,3,3,7.32%
+com.example.feelgoodinc.models.Mood.setMoodType(MoodType),0,0,3,3,7.32%
+com.example.feelgoodinc.models.Mood.setMoodWhen(Date),0,0,3,3,7.32%
+com.example.feelgoodinc.models.Mood.toMap(),0,0,6,6,14.63%
+com.example.feelgoodinc.models.User.getCurrentUserKey(),3,4,7,3,22.58%
+com.example.feelgoodinc.models.User.getLastLoginWhen(),0,0,3,3,9.68%
+com.example.feelgoodinc.models.User.getUsername(),0,0,3,3,9.68%
+com.example.feelgoodinc.models.User.setCurrentUserKey(String),0,0,3,3,9.68%
+com.example.feelgoodinc.models.User.setLastLoginWhen(Date),0,0,3,3,9.68%
+com.example.feelgoodinc.models.User.setUsername(String),0,0,3,3,9.68%
+"com.example.feelgoodinc.services.CalendarService.CalendarService(Context, CalendarServiceCallback)",3,4,9,5,4.02%
+com.example.feelgoodinc.services.CalendarService.CalendarServiceCallback.onServicesBound(),0,n/a,n/a,1,16.67%
+"com.example.feelgoodinc.services.CalendarService.addDateColour(CompactCalendarView, Date, int)",5,6,12,4,5.36%
+"com.example.feelgoodinc.services.CalendarService.addDateColourWithData(CompactCalendarView, Date, String, int)",5,7,13,4,5.80%
+"com.example.feelgoodinc.services.CalendarService.areDatesOnSameDay(Date, Date)",3,6,15,9,6.70%
+com.example.feelgoodinc.services.CalendarService.bindToJournalService(),3,3,8,5,3.57%
+com.example.feelgoodinc.services.CalendarService.bindToMoodService(),3,3,8,5,3.57%
+"com.example.feelgoodinc.services.CalendarService.findJournal(List<Journal>, Date)",3,6,14,8,6.25%
+"com.example.feelgoodinc.services.CalendarService.populateCalendarMonth(CompactCalendarView, Date)",5,5,59,52,26.34%
+com.example.feelgoodinc.services.CalendarService.unBindServices(),3,3,7,4,3.12%
+com.example.feelgoodinc.services.JournalService.LocalBinder.getService(),3,4,7,3,58.33%
+com.example.feelgoodinc.services.JournalService.OnJournalsFetchedListener.onJournalsFetched(List<Journal>),0,n/a,n/a,1,33.33%
+"com.example.feelgoodinc.services.JournalService.addNewJournal(Journal, Activity)",4,5,13,7,9.92%
+"com.example.feelgoodinc.services.JournalService.getJournalsForMonth(Date, OnJournalsFetchedListener)",5,5,35,28,26.72%
+com.example.feelgoodinc.services.JournalService.onBind(Intent),0,0,4,4,3.05%
+com.example.feelgoodinc.services.JournalService.onCreate(),1,0,8,7,6.11%
+com.example.feelgoodinc.services.MoodService.LocalBinder.getService(),0,0,3,3,37.50%
+com.example.feelgoodinc.services.MoodService.MoodService(),0,0,4,4,3.17%
+com.example.feelgoodinc.services.MoodService.OnMoodsFetchedListener.onMoodsFetched(List<Mood>),0,n/a,n/a,1,33.33%
+"com.example.feelgoodinc.services.MoodService.addNewMood(Mood, Activity)",4,5,13,7,10.32%
+"com.example.feelgoodinc.services.MoodService.getMoodsForMonth(Date, OnMoodsFetchedListener)",8,5,37,29,29.37%
+com.example.feelgoodinc.services.MoodService.onBind(Intent),0,0,4,4,3.17%
+com.example.feelgoodinc.services.UserService.LocalBinder.getService(),0,0,3,3,37.50%
+com.example.feelgoodinc.services.UserService.UserCallback.onError(Exception),0,n/a,n/a,1,14.29%
+com.example.feelgoodinc.services.UserService.UserCallback.onSuccess(User),0,n/a,n/a,1,14.29%
+"com.example.feelgoodinc.services.UserService.assignNewPassword(String, String, UserCallback)",5,7,23,15,12.64%
+"com.example.feelgoodinc.services.UserService.changePassword(String, FirebaseUser, UserCallback)",4,7,18,11,9.89%
+com.example.feelgoodinc.services.UserService.getCurrentUser(),3,4,11,7,6.04%
+com.example.feelgoodinc.services.UserService.getCurrentUserKey(),5,5,12,7,6.59%
+"com.example.feelgoodinc.services.UserService.loginUser(String, String, UserCallback)",6,7,23,14,12.64%
+com.example.feelgoodinc.services.UserService.mapUser(FirebaseUser),3,5,13,8,7.14%
+com.example.feelgoodinc.services.UserService.onBind(Intent),3,9,13,4,7.14%
+com.example.feelgoodinc.services.UserService.onCreate(),3,3,8,5,4.40%
+"com.example.feelgoodinc.services.UserService.registerUser(String, String, UserCallback)",4,7,17,10,9.34%
+"onServiceConnected(ComponentName, IBinder)",0,0,6,6,50.00%
+onServiceDisconnected(ComponentName),0,0,4,4,33.33%
+
+Class,CLOC,JLOC,LOC
+com.example.feelgoodinc.CalendarServiceTests,3,0,39
+com.example.feelgoodinc.ExampleInstrumentedTest,6,5,14
+com.example.feelgoodinc.ExampleUnitTest,5,5,11
+com.example.feelgoodinc.HomePage,0,0,65
+com.example.feelgoodinc.LoginActivity,32,26,110
+com.example.feelgoodinc.SignupActivity,30,26,107
+com.example.feelgoodinc.TutorialActivity,3,0,22
+com.example.feelgoodinc.activityRecyclerView.ActivityViewHolder,0,0,15
+com.example.feelgoodinc.activityRecyclerView.ClickListener,4,4,8
+com.example.feelgoodinc.adapters.ActivityGalleryAdapter,3,3,40
+com.example.feelgoodinc.adapters.TutorialPagerAdapter,23,23,39
+com.example.feelgoodinc.fragments.HomeFragment,34,32,80
+com.example.feelgoodinc.fragments.MoodFragment,19,11,134
+com.example.feelgoodinc.fragments.UserProfileFragment,40,31,124
+com.example.feelgoodinc.fragments.calmingActivities.ActivityFragment,1,0,55
+com.example.feelgoodinc.fragments.calmingActivities.BreathingFragment,3,0,52
+com.example.feelgoodinc.fragments.calmingActivities.GroundingFragment,1,0,46
+com.example.feelgoodinc.fragments.calmingActivities.SleepFragment,0,0,27
+com.example.feelgoodinc.fragments.resourcesFragments.EducationResources,4,3,15
+com.example.feelgoodinc.fragments.resourcesFragments.ResourcesFragment,18,17,57
+com.example.feelgoodinc.fragments.resourcesFragments.SelfHelpStrat,4,3,15
+com.example.feelgoodinc.fragments.resourcesFragments.SupportGroup,4,3,15
+com.example.feelgoodinc.fragments.resourcesFragments.emergencyHotline,6,5,17
+com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment1,1,0,8
+com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment2,1,0,8
+com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment3,1,0,8
+com.example.feelgoodinc.fragments.tutorialFragments.TutorialFragment4,2,0,19
+com.example.feelgoodinc.models.Activity,7,7,19
+com.example.feelgoodinc.models.Journal,13,12,60
+com.example.feelgoodinc.models.Mood,4,4,33
+com.example.feelgoodinc.models.Mood.MoodType,1,0,8
+com.example.feelgoodinc.models.User,8,7,31
+com.example.feelgoodinc.services.CalendarService,82,76,218
+com.example.feelgoodinc.services.JournalService,64,59,116
+com.example.feelgoodinc.services.JournalService.LocalBinder,7,7,12
+com.example.feelgoodinc.services.MoodService,67,59,115
+com.example.feelgoodinc.services.MoodService.LocalBinder,3,3,8
+com.example.feelgoodinc.services.UserService,82,79,167
+com.example.feelgoodinc.services.UserService.LocalBinder,3,3,8
+
+Interface,CLOC,JLOC,LOC,NCLOC
+com.example.feelgoodinc.services.CalendarService.CalendarServiceCallback,3,3,6,3
+com.example.feelgoodinc.services.JournalService.OnJournalsFetchedListener,0,0,3,3
+com.example.feelgoodinc.services.MoodService.OnMoodsFetchedListener,0,0,3,3
+com.example.feelgoodinc.services.UserService.UserCallback,3,3,7,4
+
+Package,CLOC,CLOC(rec),JLOC,JLOC(rec),LOC,LOC(rec),LOCp,LOCp(rec),LOCt,LOCt(rec),NCLOC,NCLOCp,NCLOCp(rec),NCLOCt,NCLOCt(rec)
+,n/a,117,n/a,519,n/a,"4,795",n/a,"4,703",n/a,92,n/a,n/a,"4,616",n/a,88
+com,n/a,76,n/a,519,n/a,"2,354",n/a,"2,262",n/a,92,n/a,n/a,"2,193",n/a,88
+com.example,n/a,76,n/a,519,n/a,"2,354",n/a,"2,262",n/a,92,n/a,n/a,"2,193",n/a,88
+com.example.feelgoodinc,0,76,62,519,454,"2,354",362,"2,262",92,92,437,349,"2,193",88,88
+com.example.feelgoodinc.activityRecyclerView,0,0,4,4,31,31,31,31,0,0,31,31,31,0,n/a
+com.example.feelgoodinc.adapters,0,0,26,26,99,99,99,99,0,0,99,99,99,0,n/a
+com.example.feelgoodinc.fragments,0,34,74,105,404,868,404,868,0,0,387,387,836,0,n/a
+com.example.feelgoodinc.fragments.calmingActivities,0,5,0,0,232,232,232,232,0,0,227,227,227,0,n/a
+com.example.feelgoodinc.fragments.resourcesFragments,0,5,31,31,156,156,156,156,0,0,151,151,151,0,n/a
+com.example.feelgoodinc.fragments.tutorialFragments,0,5,0,0,76,76,76,76,0,0,71,71,71,0,n/a
+com.example.feelgoodinc.models,0,3,30,30,164,164,164,164,0,0,161,161,161,0,n/a
+com.example.feelgoodinc.services,0,22,292,292,738,738,738,738,0,0,717,717,717,0,n/a
+drawable,0,1,n/a,n/a,312,312,312,312,0,0,312,312,312,0,n/a
+font,0,0,n/a,n/a,28,28,28,28,0,0,28,28,28,0,n/a
+layout,0,0,n/a,n/a,"1,872","1,872","1,872","1,872",0,0,"1,872","1,872","1,872",0,n/a
+menu,0,0,n/a,n/a,23,23,23,23,0,0,23,23,23,0,n/a
+values,0,11,n/a,n/a,158,158,158,158,0,0,158,158,158,0,n/a
+values-land,0,0,n/a,n/a,3,3,3,3,0,0,3,3,3,0,n/a
+values-night,0,3,n/a,n/a,7,7,7,7,0,0,7,7,7,0,n/a
+values-w1240dp,0,0,n/a,n/a,3,3,3,3,0,0,3,3,3,0,n/a
+values-w600dp,0,0,n/a,n/a,3,3,3,3,0,0,3,3,3,0,n/a
+xml,0,26,n/a,n/a,32,32,32,32,0,0,14,14,14,0,n/a
+
+Module,JLOC,L(Groovy),L(HTML),L(J),L(KT),L(XML),LOC,LOCp,LOCt,NCLOC,NCLOCp,NCLOCt
+Feel_Good_Inc,n/a,4,"2,909",0,26,"12,400","17,285",0,0,"15,738",0,0
+Feel_Good_Inc.app,n/a,0,0,0,53,0,101,0,0,81,0,0
+Feel_Good_Inc.app.androidTest,5,0,0,78,0,0,78,0,78,69,0,69
+Feel_Good_Inc.app.main,509,0,0,"2,262",0,"2,486","4,748","4,703",0,"4,152","4,107",0
+Feel_Good_Inc.app.unitTest,5,0,0,14,0,0,14,0,14,9,0,9
+
+FileType,LOC,NCLOC
+.gitignore (GitIgnore),17,17
+C/C++,162,162
+CSS,54,54
+Files supported via TextMate bundles,68,68
+Groovy,4,4
+HTML,"2,909","2,909"
+JSON,29,29
+Java,"2,354","1,762"
+Kotlin,79,76
+Markdown,138,138
+Properties,36,10
+Scalable Vector Graphics,190,190
+Shrinker Config,18,0
+Text,"1,206",n/a
+XML,"14,886","14,554"
+YAML,76,76
+
+Project,CLOC,JLOC,L(Groovy),L(HTML),L(J),L(KT),L(XML),LOC,LOCp,LOCt,NCLOC,NCLOCp,NCLOCt
+project,"1,394",519,4,"2,909","2,354",79,"14,886","22,226","4,703",92,"20,049","4,107",78
+
