@@ -44,9 +44,11 @@ public class MoodFragment extends Fragment {
     MoodDatabaseHelper moodDatabaseHelper;
     Journal journalObj;
     Mood moodObj;
+    boolean isClicked;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        isClicked = false;
         View view = inflater.inflate(R.layout.fragment_mood, container, false);
         RadioGroup moodsGroup = view.findViewById(R.id.moodsGroup);
         Button confirmButton = view.findViewById(R.id.moodComfirmButton);
@@ -82,6 +84,7 @@ public class MoodFragment extends Fragment {
                 journalObj = new Journal(journalTitle, todayDate, todayDate, journalText);
                 journalDatabaseHelper.addNewJournal(journalObj, getActivity());
                 moodDatabaseHelper.addNewMood(moodObj,getActivity());
+                isClicked = true;
             }
         });
 
