@@ -41,7 +41,7 @@ import java.util.Objects;
  * </pre>
  */
 public class UserService extends Service {
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
     private final IBinder binder = new LocalBinder();
 
     /***
