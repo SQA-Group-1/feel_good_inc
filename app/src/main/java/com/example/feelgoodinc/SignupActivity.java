@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.feelgoodinc.models.User;
 import com.example.feelgoodinc.services.UserService;
 
 /***
@@ -115,9 +114,9 @@ public class SignupActivity extends AppCompatActivity {
         }
 
         if (isBound){
-            userService.registerUser(email, password, new UserService.UserCallback() {
+            userService.registerUser(email, password, new UserService.SignUpCallback() {
                 @Override
-                public void onSuccess(User user) {
+                public void onSuccess() {
                     Toast.makeText(getApplicationContext(),
                             "Registration successful", Toast.LENGTH_LONG).show();
                     // if the user created intent to login activity
@@ -127,9 +126,8 @@ public class SignupActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onError(Exception e) {
+                public void onAuthError(Exception e) {
                     // Registration failed
-
                     if (e instanceof IllegalArgumentException && e.getMessage() != null) {
                         // Password does not meet requirements
                         Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
@@ -139,7 +137,14 @@ public class SignupActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),
                                 "Could not sign up", Toast.LENGTH_LONG).show();
                     }
+                }
 
+                @Override
+                public void onPasswordValidationError(String s) {
+                    // Password does not meet requirements
+                    Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
+                    // show requirements
+                    passwordRequirements.setVisibility(View.VISIBLE);
                 }
             });
         }

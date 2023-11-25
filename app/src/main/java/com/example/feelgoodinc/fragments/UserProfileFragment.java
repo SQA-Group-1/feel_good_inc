@@ -140,12 +140,16 @@ public class UserProfileFragment extends Fragment {
         EditText newPassword = v.findViewById(R.id.newPassword);
         TextView passwordRequirements = v.findViewById(R.id.passwordRequirements);
 
+        if (oldPassword.getText() == null || newPassword.getText() == null) {
+            return;
+        }
+
         if (isBound){
             // change user's password
             userService.assignNewPassword(oldPassword.getText().toString(), newPassword.getText().toString(),
-                    new UserService.UserCallback() {
+                    new UserService.SignUpCallback() {
                 @Override
-                public void onSuccess(User user) {
+                public void onSuccess() {
                     // if task succeeds
                     // hide form now that password has been changed
                     View passwordForm = v.findViewById(R.id.passwordForm);
@@ -157,18 +161,17 @@ public class UserProfileFragment extends Fragment {
                 }
 
                 @Override
-                public void onError(Exception e) {
-                    if (e instanceof IllegalArgumentException && e.getMessage() != null) {
-                        // Password does not meet requirements
-                        Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-                        // show requirements
-                        passwordRequirements.setVisibility(View.VISIBLE);
+                public void onAuthError(Exception e) {
+                    Log.d("COMP3013", "Error: " + e.toString());
+                    Toast.makeText(getContext(), "Password could not be changed", Toast.LENGTH_LONG).show();
+                }
 
-                    } else {
-                        // Other errors
-                        Log.d("COMP3013", "Error: " + e.toString());
-                        Toast.makeText(getContext(), "Password could not be changed", Toast.LENGTH_LONG).show();
-                    }
+                @Override
+                public void onPasswordValidationError(String s) {
+                    // Password does not meet requirements
+                    Toast.makeText(getContext(), s, Toast.LENGTH_LONG).show();
+                    // show requirements
+                    passwordRequirements.setVisibility(View.VISIBLE);
                 }
             });
 

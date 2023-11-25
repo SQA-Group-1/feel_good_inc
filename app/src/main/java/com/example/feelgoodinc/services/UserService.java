@@ -86,7 +86,6 @@ public class UserService extends Service {
         if(firebaseUser != null){
             firebaseUser.reload();
         }
-
         return mapUser(firebaseUser);
     }
 
@@ -97,7 +96,7 @@ public class UserService extends Service {
      * @param password the password inputted by the user
      * @param callback interface to track success/error and send data back to activity
      */
-    public void loginUser(String email, String password, UserCallback callback){
+    public void loginUser(String email, String password, LoginCallback callback){
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 User user = getCurrentUser();
@@ -122,20 +121,19 @@ public class UserService extends Service {
      * @param password the password inputted by the user
      * @param callback interface to track success/error and send data back to activity
      */
-    public void registerUser(String email, String password, UserCallback callback){
+    public void registerUser(String email, String password, SignUpCallback callback){
         if (validatePassword(password)){
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    User user = getCurrentUser();
-                    callback.onSuccess(user);
+                    callback.onSuccess();
                 } else {
-                    callback.onError(task.getException());
+                    callback.onAuthError(task.getException());
                 }
             });
+        } else {
+            // give a specific error if the password is invalid
+            callback.onPasswordValidationError("Password does not meet the required criteria.");
         }
-
-        // give a specific error if the password is invalid
-        callback.onError(new IllegalArgumentException("Password does not meet the required criteria."));
     }
 
     /***
@@ -145,7 +143,7 @@ public class UserService extends Service {
      * @param newPassword password the user wants to change to
      * @param callback interface to track success/error and send data back to activity
      */
-    public void assignNewPassword(String oldPassword, String newPassword, UserCallback callback){
+    public void assignNewPassword(String oldPassword, String newPassword, SignUpCallback callback){
         if (validatePassword(newPassword)){
             FirebaseUser firebaseUser = mAuth.getCurrentUser();
             if(firebaseUser != null){
@@ -158,14 +156,14 @@ public class UserService extends Service {
                         changePassword(newPassword, firebaseUser, callback);
                     } else {
                         // password check failed
-                        callback.onError(task.getException());
+                        callback.onAuthError(task.getException());
                     }
                 });
             }
+        } else {
+            // give a specific error if the password is invalid
+            callback.onPasswordValidationError("Password does not meet the required criteria.");
         }
-
-        // give a specific error if the password is invalid
-        callback.onError(new IllegalArgumentException("Password does not meet the required criteria."));
     }
 
     /***
@@ -175,14 +173,13 @@ public class UserService extends Service {
      * @param firebaseUser current user
      * @param callback interface to track success/error and send data back to activity
      */
-    private void changePassword(String newPassword, FirebaseUser firebaseUser, UserCallback callback){
+    private void changePassword(String newPassword, FirebaseUser firebaseUser, SignUpCallback callback){
         firebaseUser.updatePassword(newPassword)
             .addOnCompleteListener(task -> {
                 if (task.isSuccessful()){
-                    User user = getCurrentUser();
-                    callback.onSuccess(user);
+                    callback.onSuccess();
                 } else {
-                    callback.onError(task.getException());
+                    callback.onAuthError(task.getException());
                 }
             });
     }
@@ -235,8 +232,18 @@ public class UserService extends Service {
     /***
      * callback interface for sending data back to the bound activity
      */
-    public interface UserCallback {
+    public interface LoginCallback {
         void onSuccess(User user);
         void onError(Exception e);
+    }
+
+    /***
+     * callback interface for sending data back to the bound activity
+     */
+    public interface SignUpCallback {
+        void onSuccess();
+        void onAuthError(Exception e);
+        void onPasswordValidationError(String s);
+
     }
 }
