@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.feelgoodinc.models.User;
 import com.example.feelgoodinc.services.UserService;
 
 /***
@@ -96,7 +98,7 @@ public class SignupActivity extends AppCompatActivity {
      *  A User object is returned
      *  Displays Toast messages to inform user of success/failure
      */
-    private void registerNewUser() {
+    void registerNewUser() {
         String email, password;
         email = emailTextView.getText().toString();
         password = passwordTextView.getText().toString();
@@ -116,7 +118,7 @@ public class SignupActivity extends AppCompatActivity {
         if (isBound){
             userService.registerUser(email, password, new UserService.SignUpCallback() {
                 @Override
-                public void onSuccess() {
+                public void onSuccess(User user) {
                     Toast.makeText(getApplicationContext(),
                             "Registration successful", Toast.LENGTH_LONG).show();
                     // if the user created intent to login activity

@@ -23,8 +23,8 @@ import com.example.feelgoodinc.models.User;
 import com.example.feelgoodinc.services.UserService;
 
 public class UserProfileFragment extends Fragment {
-    private UserService userService;
-    private boolean isBound = false;
+    public UserService userService;
+    public boolean isBound = false;
 
     /***
      * Create service connection for binding the service
@@ -149,7 +149,7 @@ public class UserProfileFragment extends Fragment {
             userService.assignNewPassword(oldPassword.getText().toString(), newPassword.getText().toString(),
                     new UserService.SignUpCallback() {
                 @Override
-                public void onSuccess() {
+                public void onSuccess(User user) {
                     // if task succeeds
                     // hide form now that password has been changed
                     View passwordForm = v.findViewById(R.id.passwordForm);

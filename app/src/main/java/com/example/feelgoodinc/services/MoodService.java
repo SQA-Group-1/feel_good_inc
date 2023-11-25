@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.feelgoodinc.models.Journal;
 import com.example.feelgoodinc.models.Mood;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -95,14 +96,20 @@ public class MoodService extends Service {
         moodsRef = firestore.collection("users").document(UserService.getCurrentUserKey()).collection("moods");
     }
 
+    public interface OnMoodsFetchedListener {
+        void onMoodsFetched(List<Mood> moods);
+    }
+
     /**
      * This method updates a list of {@link Mood}s for the input month.
      *
      * @param date should be a {@link Date} within the month you are trying to get the moods for
      */
-    public List<Mood> getMoodsForMonth(Date date) {
+    public List<Mood> getMoodsForMonth(Date date, OnMoodsFetchedListener listener) {
         ArrayList<Mood> results = new ArrayList<>();
-
+        if (moodsRef == null) {
+            listener.onMoodsFetched(results);
+        }
         // get the start of the month epoch
         // get the end of the month epoch
         ZoneId zone = ZoneId.of("Europe/London"); //FIXME: might regret defaulting to London time
@@ -119,12 +126,16 @@ public class MoodService extends Service {
         moodsRef.whereGreaterThanOrEqualTo("moodWhen", start).whereLessThanOrEqualTo("moodWhen", end).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
-                    Mood mood = Mood.fromMap(document.getData());
-                    Log.d("Feel Good Inc", document.getId() + " => " + document.getData());
-                    results.add(mood);
+                    if(document.exists()){
+                        Mood mood = Mood.fromMap(document.getData());
+                        Log.d("Feel Good Inc", document.getId() + " => " + document.getData());
+                        results.add(mood);
+                    }
                 }
+                listener.onMoodsFetched(results);
             } else {
                 Log.d("COMP3013", "Error getting documents");
+                listener.onMoodsFetched(results);
             }
         });
 

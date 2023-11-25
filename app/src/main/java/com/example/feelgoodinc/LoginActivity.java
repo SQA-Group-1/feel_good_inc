@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
      *  Service returns a User object
      *  Displays Toast messages to inform user of success/failure
      */
-    private void loginUserAccount() {
+    void loginUserAccount() {
 
         String email = emailTextView.getText().toString();
         String password = passwordTextView.getText().toString();

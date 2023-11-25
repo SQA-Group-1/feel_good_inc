@@ -41,7 +41,7 @@ import java.util.Objects;
  * </pre>
  */
 public class UserService extends Service {
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
     private final IBinder binder = new LocalBinder();
 
     /***
@@ -125,7 +125,8 @@ public class UserService extends Service {
         if (validatePassword(password)){
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    callback.onSuccess();
+                    User user = getCurrentUser();
+                    callback.onSuccess(user);
                 } else {
                     callback.onAuthError(task.getException());
                 }
@@ -177,7 +178,8 @@ public class UserService extends Service {
         firebaseUser.updatePassword(newPassword)
             .addOnCompleteListener(task -> {
                 if (task.isSuccessful()){
-                    callback.onSuccess();
+                    User user = getCurrentUser();
+                    callback.onSuccess(user);
                 } else {
                     callback.onAuthError(task.getException());
                 }
@@ -241,7 +243,7 @@ public class UserService extends Service {
      * callback interface for sending data back to the bound activity
      */
     public interface SignUpCallback {
-        void onSuccess();
+        void onSuccess(User user);
         void onAuthError(Exception e);
         void onPasswordValidationError(String s);
 
