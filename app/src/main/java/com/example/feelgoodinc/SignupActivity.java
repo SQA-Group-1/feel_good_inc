@@ -6,11 +6,13 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.feelgoodinc.models.User;
 import com.example.feelgoodinc.services.UserService;
 
@@ -100,6 +102,8 @@ public class SignupActivity extends AppCompatActivity {
         String email, password;
         email = emailTextView.getText().toString();
         password = passwordTextView.getText().toString();
+        TextView passwordRequirements = findViewById(R.id.passwordRequirements);
+
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(),
                             "Please enter your email", Toast.LENGTH_LONG).show();
@@ -112,7 +116,7 @@ public class SignupActivity extends AppCompatActivity {
         }
 
         if (isBound){
-            userService.registerUser(email, password, new UserService.UserCallback() {
+            userService.registerUser(email, password, new UserService.SignUpCallback() {
                 @Override
                 public void onSuccess(User user) {
                     Toast.makeText(getApplicationContext(),
@@ -124,10 +128,25 @@ public class SignupActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onError(Exception e) {
+                public void onAuthError(Exception e) {
                     // Registration failed
-                    Toast.makeText(getApplicationContext(),
-                            "Could not sign up", Toast.LENGTH_LONG).show();
+                    if (e instanceof IllegalArgumentException && e.getMessage() != null) {
+                        // Password does not meet requirements
+                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                        // show requirements
+                        passwordRequirements.setVisibility(View.VISIBLE);
+                    } else {
+                        Toast.makeText(getApplicationContext(),
+                                "Could not sign up", Toast.LENGTH_LONG).show();
+                    }
+                }
+
+                @Override
+                public void onPasswordValidationError(String s) {
+                    // Password does not meet requirements
+                    Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
+                    // show requirements
+                    passwordRequirements.setVisibility(View.VISIBLE);
                 }
             });
         }

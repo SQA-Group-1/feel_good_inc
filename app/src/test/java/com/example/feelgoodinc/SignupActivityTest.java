@@ -55,7 +55,7 @@ public class SignupActivityTest {
         EditText passwordEditText = signupActivityMock.findViewById(R.id.password);
 
         String userEmail = "test@example.com";
-        String userPassword = "correctPassword";
+        String userPassword = "Password123!";
 
         emailEditText.setText(userEmail);
         passwordEditText.setText(userPassword);
@@ -63,7 +63,7 @@ public class SignupActivityTest {
         User mockUser = Mockito.mock(User.class);
         //mock service callback
         doAnswer(invocation -> {
-            UserService.UserCallback callback = invocation.getArgument(2);
+            UserService.SignUpCallback callback = invocation.getArgument(2);
             callback.onSuccess(mockUser);
             return null;
         }).when(userServiceMock).registerUser(eq(userEmail), eq(userPassword), any());
@@ -77,8 +77,8 @@ public class SignupActivityTest {
     public void registerUser_EmailFailure(){
         //mock service callback
         doAnswer(invocation -> {
-            UserService.UserCallback callback = invocation.getArgument(2);
-            callback.onError(new Exception("Registration failed"));
+            UserService.SignUpCallback callback = invocation.getArgument(2);
+            callback.onAuthError(new Exception("Registration failed"));
             return null;
         }).when(userServiceMock).registerUser(Mockito.anyString(), Mockito.anyString(), any());
 
@@ -107,8 +107,8 @@ public class SignupActivityTest {
 
         //mock service callback
         doAnswer(invocation -> {
-            UserService.UserCallback callback = invocation.getArgument(2);
-            callback.onError(new Exception("Registration failed"));
+            UserService.SignUpCallback callback = invocation.getArgument(2);
+            callback.onAuthError(new Exception("Registration failed"));
             return null;
         }).when(userServiceMock).registerUser(Mockito.anyString(), Mockito.anyString(), any());
 

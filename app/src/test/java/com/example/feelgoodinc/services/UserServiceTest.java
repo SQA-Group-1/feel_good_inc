@@ -39,7 +39,10 @@ public class UserServiceTest {
     private UserService userServiceMock;
 
     @Mock
-    private UserService.UserCallback userCallback;
+    private UserService.LoginCallback loginCallback;
+
+    @Mock
+    private UserService.SignUpCallback signUpCallback;
 
     @Before
     public void setup() {
@@ -99,7 +102,7 @@ public class UserServiceTest {
     public void loginUser_Successful() {
         //user inputs
         String email = "test@example.com";
-        String password = "password123";
+        String password = "Password123!";
 
         //mock signInWithEmailAndPassword
         FirebaseAuth mockedFirebaseAuth = mock(FirebaseAuth.class);
@@ -115,11 +118,11 @@ public class UserServiceTest {
                 .thenReturn(mockTask);
 
         //log in user
-        userServiceMock.loginUser(email, password, userCallback);
+        userServiceMock.loginUser(email, password, loginCallback);
 
         //verify behaviour
         verify(mockedFirebaseAuth).signInWithEmailAndPassword(eq(email), eq(password));
-        verify(userCallback, never()).onError(any());
+        verify(loginCallback, never()).onError(any());
     }
 
     @Test
@@ -135,14 +138,14 @@ public class UserServiceTest {
                 .thenReturn(failedTask);
 
         //log in user
-        userServiceMock.loginUser(email, password, userCallback);
+        userServiceMock.loginUser(email, password, loginCallback);
     }
 
     @Test
     public void registerUser_Successful() {
         //mock user inputs
         String email = "test@example.com";
-        String password = "password123";
+        String password = "Password123!";
 
         //set up mAuth mock
         FirebaseUser mockFirebaseUser = mock(FirebaseUser.class);
@@ -158,11 +161,11 @@ public class UserServiceTest {
                 .thenReturn(mockTask);
 
         //register user
-        userServiceMock.registerUser(email, password, userCallback);
+        userServiceMock.registerUser(email, password, signUpCallback);
 
         //verify behaviour
         verify(mockedFirebaseAuth).createUserWithEmailAndPassword(eq(email), eq(password));
-        verify(userCallback, never()).onError(any());
+        verify(loginCallback, never()).onError(any());
     }
 
     @Test
@@ -178,7 +181,7 @@ public class UserServiceTest {
                 .thenReturn(failedTask);
 
         //register user
-        userServiceMock.registerUser(email, password, userCallback);
+        userServiceMock.registerUser(email, password, signUpCallback);
   }
 
     @Test

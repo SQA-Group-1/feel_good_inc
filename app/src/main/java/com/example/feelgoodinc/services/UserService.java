@@ -86,7 +86,6 @@ public class UserService extends Service {
         if(firebaseUser != null){
             firebaseUser.reload();
         }
-
         return mapUser(firebaseUser);
     }
 
@@ -97,9 +96,7 @@ public class UserService extends Service {
      * @param password the password inputted by the user
      * @param callback interface to track success/error and send data back to activity
      */
-    public void loginUser(String email, String password, UserCallback callback){
-        // TODO: encrypt password
-
+    public void loginUser(String email, String password, LoginCallback callback){
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 User user = getCurrentUser();
@@ -124,15 +121,20 @@ public class UserService extends Service {
      * @param password the password inputted by the user
      * @param callback interface to track success/error and send data back to activity
      */
-    public void registerUser(String email, String password, UserCallback callback){
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                User user = getCurrentUser();
-                callback.onSuccess(user);
-            } else {
-                callback.onError(task.getException());
-            }
-        });
+    public void registerUser(String email, String password, SignUpCallback callback){
+        if (validatePassword(password)){
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    User user = getCurrentUser();
+                    callback.onSuccess(user);
+                } else {
+                    callback.onAuthError(task.getException());
+                }
+            });
+        } else {
+            // give a specific error if the password is invalid
+            callback.onPasswordValidationError("Password does not meet the required criteria.");
+        }
     }
 
     /***
@@ -142,23 +144,26 @@ public class UserService extends Service {
      * @param newPassword password the user wants to change to
      * @param callback interface to track success/error and send data back to activity
      */
-    public void assignNewPassword(String oldPassword, String newPassword, UserCallback callback){
+    public void assignNewPassword(String oldPassword, String newPassword, SignUpCallback callback){
+        if (validatePassword(newPassword)){
+            FirebaseUser firebaseUser = mAuth.getCurrentUser();
+            if(firebaseUser != null){
+                firebaseUser.reload();
 
-        FirebaseUser firebaseUser = mAuth.getCurrentUser();
-        if(firebaseUser != null){
-            firebaseUser.reload();
+                AuthCredential credential = EmailAuthProvider.getCredential(Objects.requireNonNull(firebaseUser.getEmail()), oldPassword);
 
-            AuthCredential credential = EmailAuthProvider.getCredential(Objects.requireNonNull(firebaseUser.getEmail()), oldPassword);
-
-            firebaseUser.reauthenticate(credential)
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful()){
-                            changePassword(newPassword, firebaseUser, callback);
-                        } else {
-                            // password check failed
-                            callback.onError(task.getException());
-                        }
-                    });
+                firebaseUser.reauthenticate(credential).addOnCompleteListener(task -> {
+                    if (task.isSuccessful()){
+                        changePassword(newPassword, firebaseUser, callback);
+                    } else {
+                        // password check failed
+                        callback.onAuthError(task.getException());
+                    }
+                });
+            }
+        } else {
+            // give a specific error if the password is invalid
+            callback.onPasswordValidationError("Password does not meet the required criteria.");
         }
     }
 
@@ -169,18 +174,33 @@ public class UserService extends Service {
      * @param firebaseUser current user
      * @param callback interface to track success/error and send data back to activity
      */
-    private void changePassword(String newPassword, FirebaseUser firebaseUser, UserCallback callback){
+    private void changePassword(String newPassword, FirebaseUser firebaseUser, SignUpCallback callback){
         firebaseUser.updatePassword(newPassword)
             .addOnCompleteListener(task -> {
                 if (task.isSuccessful()){
                     User user = getCurrentUser();
                     callback.onSuccess(user);
                 } else {
-                    callback.onError(task.getException());
+                    callback.onAuthError(task.getException());
                 }
             });
     }
 
+    /***
+     * takes string input and compares it with regex to make sure that the entered password contains:
+     * at least 1 uppercase character
+     * at least 1 lowercase character
+     * at least 1 number
+     * at least 1 special character
+     * and is 8 or more characters long
+     * @param password user entered password
+     * @return true if password is valid
+     */
+    private boolean validatePassword(String password){
+        // check if password meets requirements
+        String regex = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$!%^&+=])(?=\\S+$).{8,}";
+        return password.matches(regex);
+    }
 
     /***
      * convert the {@link FirebaseUser} to our {@link User} class
@@ -214,8 +234,18 @@ public class UserService extends Service {
     /***
      * callback interface for sending data back to the bound activity
      */
-    public interface UserCallback {
+    public interface LoginCallback {
         void onSuccess(User user);
         void onError(Exception e);
+    }
+
+    /***
+     * callback interface for sending data back to the bound activity
+     */
+    public interface SignUpCallback {
+        void onSuccess(User user);
+        void onAuthError(Exception e);
+        void onPasswordValidationError(String s);
+
     }
 }

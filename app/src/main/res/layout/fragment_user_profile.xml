@@ -32,30 +32,23 @@
         android:id="@+id/changePassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="211dp"
-        android:layout_marginBottom="1dp"
         android:text="@string/change_password"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toTopOf="@+id/passwordForm"
-        app:layout_constraintStart_toStartOf="@+id/passwordForm"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userEmail" />
 
     <LinearLayout
         android:id="@+id/passwordForm"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingLeft="30dp"
         android:paddingTop="30dp"
         android:paddingRight="30dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/changePassword">
 
         <TextView
@@ -69,12 +62,12 @@
             android:id="@+id/oldPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:autofillHints="@string/enter_password"
             android:ems="10"
             android:hint="@string/enter_password"
             android:inputType="textPassword"
-            android:textSize="20sp"
-            android:autofillHints="@string/enter_password"
-            android:layout_marginBottom="20dp"/>
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView7"
@@ -87,12 +80,21 @@
             android:id="@+id/newPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:autofillHints="@string/enter_password"
             android:ems="10"
             android:hint="@string/enter_password"
             android:inputType="textPassword"
-            android:textSize="20sp"
-            android:autofillHints="@string/enter_password"
-            android:layout_marginBottom="20dp"/>
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/passwordRequirements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/password_reqs"
+            android:textColor="@color/primary"
+            android:textSize="12sp"
+            android:visibility="invisible"/>
 
         <Button
             android:id="@+id/submitPasswordButton"

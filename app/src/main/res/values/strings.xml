@@ -99,5 +99,6 @@
     <string name="create_an_account">Create an account</string>
     <string name="title_activity_signup">SignupActivity</string>
     <string name="enter_old_password_tag">Enter Old Password</string>
+    <string name="password_reqs">Password Requirements:\n8+ characters\n1+ lowercase characters\n1+ uppercase characters\n1+ special characters\nno spaces</string>
 
 </resources>

@@ -10,7 +10,6 @@ import static org.mockito.Mockito.doAnswer;
 import android.content.Intent;
 import android.os.Looper;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.test.core.app.ApplicationProvider;
 
@@ -66,7 +65,7 @@ public class LoginActivityTest {
         User mockUser = new User();
         //mock service callback
         doAnswer(invocation -> {
-            UserService.UserCallback callback = invocation.getArgument(2);
+            UserService.LoginCallback callback = invocation.getArgument(2);
             callback.onSuccess(mockUser);
             return null;
         }).when(userService).loginUser(eq(userEmail), eq(userPassword), any());
@@ -90,7 +89,7 @@ public class LoginActivityTest {
 
         //mock callback
         doAnswer(invocation -> {
-            UserService.UserCallback callback = invocation.getArgument(2);
+            UserService.LoginCallback callback = invocation.getArgument(2);
             callback.onError(new Exception("Login error"));
             return null;
         }).when(userService).loginUser(eq(userEmail), eq(userPassword), any());
@@ -104,7 +103,7 @@ public class LoginActivityTest {
     public void loginUser_EmailFailure(){
         //mock service callback
         doAnswer(invocation -> {
-            UserService.UserCallback callback = invocation.getArgument(2);
+            UserService.LoginCallback callback = invocation.getArgument(2);
             callback.onError(new Exception("Invalid credentials"));
             return null;
         }).when(userService).loginUser(Mockito.anyString(), Mockito.anyString(), any());
@@ -131,7 +130,7 @@ public class LoginActivityTest {
 
         //mock service callback
         doAnswer(invocation -> {
-            UserService.UserCallback callback = invocation.getArgument(2);
+            UserService.LoginCallback callback = invocation.getArgument(2);
             callback.onError(new Exception("Invalid credentials"));
             return null;
         }).when(userService).loginUser(Mockito.anyString(), Mockito.anyString(), any());
