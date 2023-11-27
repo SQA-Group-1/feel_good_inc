@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.feelgoodinc"
-        minSdk = 33
+        minSdk = 30
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -64,8 +64,13 @@ dependencies {
 
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     implementation("com.github.sundeepk:compact-calendar-view:3.0.0")
+
     testImplementation("org.mockito:mockito-core:4.11.0")
     testImplementation("androidx.test:core:1.5.0")
     androidTestImplementation("androidx.test:core:1.5.0")
     testImplementation("org.robolectric:robolectric:4.11.1")
+
+//    testImplementation("org.mockito:mockito-core:3.11.2")
+//    androidTestImplementation("org.mockito:mockito-android:3.11.2")
+
 }

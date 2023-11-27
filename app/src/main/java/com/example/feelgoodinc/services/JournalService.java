@@ -15,7 +15,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.time.LocalDate;
 import java.time.YearMonth;
-import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
@@ -100,6 +99,12 @@ public class JournalService extends Service {
         super.onCreate();
         firestore = FirebaseFirestore.getInstance();
 
+        //TODO: probably should find a better way
+        // create a RunTimeException, if there is no user currently logged in
+        if (UserService.getCurrentUserKey() == null) {
+            throw new RuntimeException(new UserNotLoggedInException("Ensure a user is logged in before using JournalService"));
+        }
+
         // point to which directory the journals should be placed in the cloud firestore
         journalsRef = firestore.collection("users").document(UserService.getCurrentUserKey()).collection("journals");
     }
@@ -123,6 +128,11 @@ public class JournalService extends Service {
         if (journalsRef == null) {
             listener.onJournalsFetched(results);
         }
+
+//        if (UserService.getCurrentUserKey().isEmpty()) {
+//            throw new UserNotLoggedInException("test");
+//        }
+
         // get epochs for start and end of month
         ZonedDateTime dateTime = date.toInstant().atZone(TimeZone.getDefault().toZoneId());
         YearMonth yearMonth = YearMonth.of(dateTime.getYear(), dateTime.getMonth());
@@ -164,5 +174,17 @@ public class JournalService extends Service {
                 .addOnFailureListener(e ->
                         Toast.makeText(activity.getApplicationContext(), "Failure", Toast.LENGTH_LONG).show()
         );
+    }
+}
+
+class UserNotLoggedInException extends Exception
+{
+    // Parameterless Constructor
+    public UserNotLoggedInException() {}
+
+    // Constructor that accepts a message
+    public UserNotLoggedInException(String message)
+    {
+        super(message);
     }
 }

@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.graphics.Color;
 import android.os.IBinder;
+import android.util.Log;
+
 import androidx.core.content.ContextCompat;
 import com.example.feelgoodinc.R;
 import com.example.feelgoodinc.models.Journal;
@@ -102,56 +104,58 @@ public class CalendarService {
         AtomicReference<List<Journal>> journals = new AtomicReference<>();
         AtomicReference<List<Mood>> moods = new AtomicReference<>();
         if(moodBound && journalBound) {
-            journalService.getJournalsForMonth(date, journals1 -> {
-                journals.set(journals1);
-                // Fetch moods asynchronously
-                moodService.getMoodsForMonth(date, moods1 -> {
-                    moods.set(moods1);
-                    for(Mood mood : moods.get()){
-                        Journal journal = findJournal(journals.get(),mood.getMoodWhen());
-                        if(journal != null) {
-                            //Add event with colour
-                            if (mood.getMoodType().equals(Mood.MoodType.RAD)) {
-                                int colour = ContextCompat.getColor(context, R.color.rad);
-                                addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
-                                if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
-                                    calendarView.setCurrentDayBackgroundColor(colour);
+
+                journalService.getJournalsForMonth(date, journals1 -> {
+                    journals.set(journals1);
+                    // Fetch moods asynchronously
+                    moodService.getMoodsForMonth(date, moods1 -> {
+                        moods.set(moods1);
+                        for(Mood mood : moods.get()){
+                            Journal journal = findJournal(journals.get(),mood.getMoodWhen());
+                            if(journal != null) {
+                                //Add event with colour
+                                if (mood.getMoodType().equals(Mood.MoodType.RAD)) {
+                                    int colour = ContextCompat.getColor(context, R.color.rad);
+                                    addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
+                                    if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
+                                        calendarView.setCurrentDayBackgroundColor(colour);
+                                    }
                                 }
-                            }
-                            if (mood.getMoodType().equals(Mood.MoodType.GOOD)) {
-                                int colour = ContextCompat.getColor(context, R.color.good);
-                                addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
-                                if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
-                                    calendarView.setCurrentDayBackgroundColor(colour);
+                                if (mood.getMoodType().equals(Mood.MoodType.GOOD)) {
+                                    int colour = ContextCompat.getColor(context, R.color.good);
+                                    addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
+                                    if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
+                                        calendarView.setCurrentDayBackgroundColor(colour);
+                                    }
                                 }
-                            }
-                            if (mood.getMoodType().equals(Mood.MoodType.MEH)) {
-                                int colour = ContextCompat.getColor(context, R.color.meh);
-                                addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
-                                if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
-                                    calendarView.setCurrentDayBackgroundColor(colour);
+                                if (mood.getMoodType().equals(Mood.MoodType.MEH)) {
+                                    int colour = ContextCompat.getColor(context, R.color.meh);
+                                    addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
+                                    if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
+                                        calendarView.setCurrentDayBackgroundColor(colour);
+                                    }
                                 }
-                            }
-                            if (mood.getMoodType().equals(Mood.MoodType.SAD)) {
-                                int colour = ContextCompat.getColor(context, R.color.sad);
-                                addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
-                                if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
-                                    calendarView.setCurrentDayBackgroundColor(colour);
+                                if (mood.getMoodType().equals(Mood.MoodType.SAD)) {
+                                    int colour = ContextCompat.getColor(context, R.color.sad);
+                                    addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
+                                    if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
+                                        calendarView.setCurrentDayBackgroundColor(colour);
+                                    }
                                 }
-                            }
-                            if (mood.getMoodType().equals(Mood.MoodType.AWFUL)) {
-                                int colour = ContextCompat.getColor(context, R.color.awful);
-                                addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
-                                if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
-                                    calendarView.setCurrentDayBackgroundColor(colour);
+                                if (mood.getMoodType().equals(Mood.MoodType.AWFUL)) {
+                                    int colour = ContextCompat.getColor(context, R.color.awful);
+                                    addDateColourWithData(calendarView, mood.getMoodWhen(), journal.getContent(), colour);
+                                    if(areDatesOnSameDay(mood.getMoodWhen(),Calendar.getInstance().getTime())){
+                                        calendarView.setCurrentDayBackgroundColor(colour);
+                                    }
+
                                 }
 
                             }
-
                         }
-                    }
+                    });
                 });
-            });
+
 
         }
     }

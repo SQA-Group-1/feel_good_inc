@@ -153,7 +153,9 @@ public class MoodFragment extends Fragment {
                     moodService.addNewMood(moodObj, getActivity());
                 }
                 if (journalBound) {
-                    journalService.addNewJournal(journalObj, getActivity());
+
+                        journalService.addNewJournal(journalObj, getActivity());
+
                 }
 
             }

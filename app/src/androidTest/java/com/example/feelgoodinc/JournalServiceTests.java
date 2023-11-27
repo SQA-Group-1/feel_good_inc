@@ -73,13 +73,13 @@ public class JournalServiceTests {
         List<Journal> journalsForMonth = new LinkedList<>();
 
         // Verify that the service is working correctly.
-        service.getJournalsForMonth(Date.from(Instant.now()), (journals) -> {
+        journalsForMonth = service.getJournalsForMonth(Date.from(Instant.now()), (journals) -> {
 
         });
 
         List<Journal> test = new LinkedList<>();
         assertThat(journalsForMonth, instanceOf(test.getClass()));
-        assertTrue(false);
+        assertTrue(!journalsForMonth.isEmpty());
     }
 
 
