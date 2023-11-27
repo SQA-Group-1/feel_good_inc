@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
+
 import com.example.feelgoodinc.models.User;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
@@ -149,7 +150,6 @@ public class UserService extends Service {
             FirebaseUser firebaseUser = mAuth.getCurrentUser();
             if(firebaseUser != null){
                 firebaseUser.reload();
-
                 AuthCredential credential = EmailAuthProvider.getCredential(Objects.requireNonNull(firebaseUser.getEmail()), oldPassword);
 
                 firebaseUser.reauthenticate(credential).addOnCompleteListener(task -> {
