@@ -15,6 +15,7 @@ import android.os.IBinder;
 
 import com.example.feelgoodinc.models.User;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -182,7 +183,75 @@ public class UserServiceTest {
 
         //register user
         userServiceMock.registerUser(email, password, signUpCallback);
-  }
+
+    }
+
+    @Test
+    public void changePassword_Successful() {
+        // Mock user inputs
+        String oldPassword = "Password123!";
+        String newPassword = "NewPassword456!";
+
+        // Mock FirebaseAuth and FirebaseUser
+        FirebaseAuth mockedFirebaseAuth = mock(FirebaseAuth.class);
+        FirebaseUser mockedFirebaseUser = mock(FirebaseUser.class);
+
+        when(mockedFirebaseAuth.getCurrentUser()).thenReturn(mockedFirebaseUser);
+        when(mockedFirebaseUser.getEmail()).thenReturn("test@example.com");
+
+        // Set up the UserService with the mocked FirebaseAuth
+        UserService userServiceMock = new UserService();
+        userServiceMock.mAuth = mockedFirebaseAuth;
+
+        // Mock reauthentication Task
+        @SuppressWarnings("unchecked")
+        Task<Void> mockReauthTask = mock(Task.class);
+
+        // Mock the AuthCredential and reauthenticate method
+        when(mockedFirebaseUser.reauthenticate(any(AuthCredential.class))).thenReturn(mockReauthTask);
+
+        // Change password
+        userServiceMock.assignNewPassword(oldPassword, newPassword, signUpCallback);
+
+        // Verify callbacks
+        verify(signUpCallback, never()).onAuthError(any());
+        verify(signUpCallback, never()).onPasswordValidationError(any());
+    }
+
+
+    @Test
+    public void changePassword_Failure() {
+        // Mock user inputs
+        String oldPassword = "Password123!";
+
+        // invalid password
+        String newPassword = "newpassword456!";
+
+        // Mock FirebaseAuth and FirebaseUser
+        FirebaseAuth mockedFirebaseAuth = mock(FirebaseAuth.class);
+        FirebaseUser mockedFirebaseUser = mock(FirebaseUser.class);
+
+        when(mockedFirebaseAuth.getCurrentUser()).thenReturn(mockedFirebaseUser);
+        when(mockedFirebaseUser.getEmail()).thenReturn("test@example.com");
+
+        // Set up the UserService with the mocked FirebaseAuth
+        UserService userServiceMock = new UserService();
+        userServiceMock.mAuth = mockedFirebaseAuth;
+
+        // Mock reauthentication Task
+        @SuppressWarnings("unchecked")
+        Task<Void> mockReauthTask = mock(Task.class);
+
+        // Mock the AuthCredential and reauthenticate method
+        when(mockedFirebaseUser.reauthenticate(any(AuthCredential.class))).thenReturn(mockReauthTask);
+
+        // Change password
+        userServiceMock.assignNewPassword(oldPassword, newPassword, signUpCallback);
+
+        // Verify callbacks
+        verify(signUpCallback, never()).onAuthError(any());
+        verify(signUpCallback).onPasswordValidationError(any());
+    }
 
     @Test
     public void onBind() {
