@@ -99,4 +99,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
+    <TextView
+        android:id="@+id/passwordRequirements"
+        android:layout_width="202dp"
+        android:layout_height="92dp"
+        android:text="@string/password_reqs"
+        android:textColor="@color/primary"
+        android:textSize="12sp"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginLink" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
