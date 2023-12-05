@@ -131,7 +131,7 @@ public class LoginActivity extends AppCompatActivity {
                     // login -> intent to home page
                     Intent intent
                             = new Intent(LoginActivity.this,
-                            HomePage.class);
+                            TutorialActivity.class);
                     startActivity(intent);
                     finish();
                 }

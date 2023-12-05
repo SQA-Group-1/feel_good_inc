@@ -47,7 +47,7 @@ public class HomeFragment extends Fragment implements CalendarService.CalendarSe
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         ImageButton button = view.findViewById(R.id.tutorialButton);
-        button.setOnClickListener(l -> account());
+        button.setOnClickListener(l -> tutorial());
         CompactCalendarView compactCalendarView = view.findViewById(R.id.calendar);
         //Example usage of adding event
         calendarService = new CalendarService(this.getContext(),this);
@@ -85,7 +85,7 @@ public class HomeFragment extends Fragment implements CalendarService.CalendarSe
     /**
      * Moves to the account page on button press
      */
-    public void account(){
+    public void tutorial(){
         Intent intent = new Intent(getActivity(), TutorialActivity.class);
         startActivity(intent);
     }
