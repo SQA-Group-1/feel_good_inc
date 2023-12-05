@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
      *  Service returns a User object
      *  Displays Toast messages to inform user of success/failure
      */
-    private void loginUserAccount() {
+    void loginUserAccount() {
 
         String email = emailTextView.getText().toString();
         String password = passwordTextView.getText().toString();
@@ -122,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         if (isBound){
-            userService.loginUser(email, password, new UserService.UserCallback() {
+            userService.loginUser(email, password, new UserService.LoginCallback() {
                 @Override
                 public void onSuccess(User user) {
                     // if task succeeds
