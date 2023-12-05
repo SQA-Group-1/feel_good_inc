@@ -121,8 +121,10 @@ public class SignupActivity extends AppCompatActivity {
                 public void onSuccess(User user) {
                     Toast.makeText(getApplicationContext(),
                             "Registration successful", Toast.LENGTH_LONG).show();
-                    // if the user created intent to login activity
-                    Intent intent = new Intent(SignupActivity.this, HomePage.class);
+                    // login -> intent to home page
+                    Intent intent
+                            = new Intent(SignupActivity.this,
+                            TutorialActivity.class);
                     startActivity(intent);
                     finish();
                 }

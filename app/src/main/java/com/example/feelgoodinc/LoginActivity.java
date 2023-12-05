@@ -128,10 +128,8 @@ public class LoginActivity extends AppCompatActivity {
                     // if task succeeds
                     Toast.makeText(getApplicationContext(),
                             "Logged in", Toast.LENGTH_LONG).show();
-                    // login -> intent to home page
-                    Intent intent
-                            = new Intent(LoginActivity.this,
-                            TutorialActivity.class);
+                    // if the user created intent to login activity
+                    Intent intent = new Intent(LoginActivity.this, HomePage.class);
                     startActivity(intent);
                     finish();
                 }
